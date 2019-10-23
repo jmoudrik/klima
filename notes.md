@@ -4,3 +4,7 @@ gugloval jsem jak co nejlip usetrit
 a (sample size = 10):
 	- nasel jsem jen seznamy + textove vysvetleni
 	- nic interaktivniho
+
+tohle se mi libi:
+	https://www.vimvic.cz/clanek/8-tipu-jak-setrit-penize
+	- light font, quotes
