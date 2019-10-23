@@ -1,4 +1,6 @@
 # Summary
+[CR] https://doi.org/10.1016/j.scitotenv.2018.07.233
+	- Matuštík, Jan, and Vladimír Kočí. "Environmental impact of personal consumption from life cycle perspective–A Czech Republic case study." Science of The Total Environment 646 (2019): 177-186.
 
 ## Intro
 Jak muzu pomoct v boji s globalnim oteplovanim?
@@ -186,6 +188,10 @@ tricko - 11kg CO2
 [4] beef - https://www.pnas.org/content/early/2014/07/17/1402183111
 [5] infografika bb - https://www.bbc.com/news/science-environment-46459714
 
+[6] nemecko - https://www.sciencedirect.com/science/article/pii/S0959652617309666
+[7] svedi - https://www.mdpi.com/2071-1050/9/12/2227/htm
+
+
 - vege > kure,ryba > veprovy >> hovezi
 	- beef - hodne CH4, hodne vody, hodne pudy, maly conversion factor
 - maximalizovat rostlinou stravu, bilkoviny z e.g. fazoli, soji
@@ -203,6 +209,19 @@ tricko - 11kg CO2
 		(7 - 4)
 
 
+- cmp clanku (kg / rok, kg / den
+	- matustik		788		2.15
+
+	- nemci			1250	3.42
+
+	- svedi vegan	594		1.62
+	- svedi maso	1980	5.42
+
+	- uk vegan 		1054	2.89
+	- uk maso avg	2109	5.78
+	- uk masozrout 	2624	7.19
+
+
 # Domacnosti
 
 [1] http://www.ekoblog.cz/?q=node/284
@@ -211,6 +230,24 @@ tricko - 11kg CO2
 [4] https://zpravy.aktualne.cz/ekonomika/nova-cisla-jak-cesi-vyuzivaji-energii-spotreba-klesla-o-tret/r~a9ed4fc4f9d111e6984a002590604f2e/
 
 - maly byt, hodne lidi (cr pod prumerem EU v metrazi) [3]
+
+- prumerna spotreba  domacnosti, zdroj [3]
+	In [2]: tj_dom = 196585                                         
+	In [3]: tj_dom / 4304173                                        
+	Out[3]: 0.04567311769299236
+
+	In [4]: tj_dom / 4304173 * 1000                                 
+	Out[4]: 45.673117692992356
+
+	In [5]: gj_dom_avg = tj_dom / 4304173 * 1000                    
+
+	In [6]: gj_dom_avg                                              
+	Out[6]: 45.673117692992356
+
+	In [7]: gj_dom_avg * 0.28                                       
+	Out[7]: 12.78847295403786
+
+- chudy topej malo, nemaj tak zatepleno, 
 
 
 ## Tepelné čerpadlo
@@ -247,10 +284,10 @@ LETADLO = zere ~ 200g/km
 ## Zatepleni
 
 - zatepleni fasady (desitky procent spotreby)
+- zatepleni fasady, strechy
 - termostaticke ventily
 - utesnena okna, dvere
 - vymena oken
-- zatepleni fasady, strechy
 
 https://www.usetreno.cz/tipy-na-zatepleni-domu/
 https://forum.tzb-info.cz/124596-prumerna-hodnota-uspory-po-zatepleni-domu
