@@ -56,7 +56,7 @@ Jídelníček:
                        valueAllowUnset: true"></select>
 &ndash;
 
-<b data-bind="text: jidlo_den"></b><b> kg CO<sub>2</sub> / den</b>, což je stejné jako
+<b data-bind="text: jidlo_den().toFixed(2)"></b><b> kg CO<sub>2</sub> / den</b>, což je stejné jako
 <span data-bind="html: autem_html(jidlo_den()/ 1000)"></span>. V součtu je to
 <span data-bind="html: format_co2(jidlo_den() * 365 / 1000)"></span>
 </p>
@@ -90,7 +90,7 @@ function format_cena(kc) {
 // TODO hezci widgety na letadlo & auto
 
 function letadlem_html(tuny_co2) {
-		var let_co2 = lety[ref_let] * DATA.letadlo_co2_km_avg / 1000;
+		var let_co2 = lety[ref_let] * DATA.letadlo_co2_km_equiv / 1000;
 		var ratio = tuny_co2 / let_co2;
 
 		return "<b>" + ratio.toFixed(1) + "</b> letů <b>" + ref_let + "</b>";
@@ -98,6 +98,7 @@ function letadlem_html(tuny_co2) {
 
 function autem_html(tuny_co2) {
 		var auto_km = 1000 * tuny_co2 / DATA.auto_co2_km_avg;
+	// TODO tohle nejak divne zaokrouhluje - vegan 10 km za den , 3500 km za rok - WTF
 		return "<b>" + auto_km.toFixed(0) + " km</b> ujetých osobním autem";
 }
 
@@ -119,7 +120,7 @@ function AppViewModel() {
 	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
 
 	this.cerpadlo_cop = ko.observable(3);
-	this.cena_kwh = ko.observable(3); // kc / kwh
+	this.cena_kwh = ko.observable(3);		// kc / kwh
 	this.ucinnost_kotel_uhli = ko.observable(0.7); 
 
     this.elektrokotel_co2 = ko.computed(function() {
@@ -142,7 +143,6 @@ function AppViewModel() {
 		var cmp_html = ", stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
 		return "<b>za rok " + tuny_co2.toFixed(2) + " tun CO<sub>2</sub></b>" + cmp_html;
 	};
-
 }
 
 // Activates knockout.js
