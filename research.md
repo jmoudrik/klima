@@ -144,6 +144,7 @@ tricko - 11kg CO2
 [1] kolo - https://slate.com/technology/2011/08/how-soon-does-a-bike-pay-back-its-initial-carbon-footprint.html
 [2] auto - https://www.lowcvp.org.uk/assets/workingdocuments/MC-P-11-15a%20Lifecycle%20emissions%20report.pdf
 [3] auto srovnani, life-cycle emise - https://www.europarl.europa.eu/news/en/headlines/society/20190313STO31218/co2-emissions-from-cars-facts-and-figures-infographics
+[4] srovnani - https://www.eea.europa.eu/media/infographics/co2-emissions-from-passenger-transport/view
 
 - vyroba kola sezere 250 kg CO2
 ~ = 2500 km ujetych autem
@@ -210,16 +211,8 @@ tricko - 11kg CO2
 
 
 - cmp clanku (kg / rok, kg / den
-	- matustik		788		2.15
+	- LEPE V TABULCE @ https://docs.google.com/spreadsheets/d/11ycKaiOyciznR5F-IYGSz-_JwiBuXcArox4qTV7c74s/edit#gid=560756490
 
-	- nemci			1250	3.42
-
-	- svedi vegan	594		1.62
-	- svedi maso	1980	5.42
-
-	- uk vegan 		1054	2.89
-	- uk maso avg	2109	5.78
-	- uk masozrout 	2624	7.19
 
 
 # Domacnosti
