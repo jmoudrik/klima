@@ -5,17 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- Material Icons CSS -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="./knockout-latest.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <style>
 	h2 i.material-icons {
 		font-size: 35px;
+	}
+	#popoverData {
+		 font-weight: bold;
 	}
   </style>
 
@@ -24,7 +27,7 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Jak mohu pomoci v boji s globálním oteplováním?</h1>
+        <h1>Globálním oteplování: Jak mohu pomoci?</h1>
     </div>
     <hr />
 <!--
@@ -32,27 +35,21 @@
 -->
 
     <h2><a name="uvod"></a>Úvod</h2>
-	<p>
-<!-- TODO: ozdrojovat, rozmyslet jaky je presne ten JBTD - oteplovani, ochrana prirody, voda, .. a podle toho story -->
-	Globální oteplování je způsobeno hlavně vypouštěním CO<sub>2</sub> do vzduchu lidmi.
+<p>
+Pomůcka pro lidi, kteří chtějí vědět, jak účinně pomoci v boji s globálním oteplováním.
 </p>
 <p>
-Průměrný Čech k oteplování osobně nejvíce přispívá:
+Průměrný Čech vyprodukuje <span data-bind="html: format_co2_cmp(DATA.cr_avg_total_est / 1000)"></span>. Z toho:
     <ul>
-  		
-		<li><i class="material-icons">house</i> vytápěním domácnosti, <b>40%</b>.</li>
-        <li><i class="material-icons">restaurant</i> svým jídelníčkem, <b>30%</b>.</li>
-		<li><i class="material-icons">directions_car</i>dopravou, <b>10%</b></li>
+		<li><i class="material-icons">house</i> vytápěním domácnosti,
+			<b data-bind='text: (100 * DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est).toFixed(0) + "%"'></b>.</li>
+        <li><i class="material-icons">restaurant</i> svým jídelníčkem,
+			<b data-bind='text: (100 * DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est).toFixed(0) + "%"'></b>.</li>
+		</li>
+		<li><i class="material-icons">directions_car</i>dopravou,
+			<b data-bind='text: (100 * DATA.cr_avg_doprava_est / DATA.cr_avg_total_est).toFixed(0) + "%"'></b>.</li>
+		</li>
     </ul>
-
-<!--
-	TODO ref / vypocet, viz data
- <a href="#ref1">[1]</a>
--->
-</p>
-<p>
-Tato stránka je pomůcka pro lidi, kteří chtějí v boji s globálním oteplovánim
-pomoci a chtějí to udělat nejefektivnějším způsobem.
 </p>
 <hr />
 
@@ -80,12 +77,21 @@ pomoci a chtějí to udělat nejefektivnějším způsobem.
     <hr />
 
 <!--
+	Jídelníček
+-->
+
+<!--
 	REFERENCE
 -->
 
     <h2>Odkazy &amp; zdroje</h2>
-	<!-- TODO: udelat to min akademicky a vic UX-friendly -->
 <ul>
+	<!-- TODO: udelat to min akademicky a vic UX-friendly -->
+	<li>
+	<a href="data.js">Zdrojovaná data</a>
+	</li>
+
+	<!-- TODO: matustik pryc -->
 	<li>[1] <a name="ref1"></a> Matuštík, Jan, and Vladimír Kočí. <em>"Environmental impact of personal consumption from life cycle perspective–A Czech Republic case study."</em> Science of The Total Environment 646 (2019): 177-186. <a href="https://doi.org/10.1016/j.scitotenv.2018.07.233">doi</a>
 	</li>
 </ul>
@@ -94,6 +100,19 @@ pomoci a chtějí to udělat nejefektivnějším způsobem.
    <footer>
        <p> 2019, vyrobil <a href='http://j2m.cz/~jm/'>jm</a>, <a href="https://github.com/jmoudrik/klima">github repo</a></p>
     </footer>
+
+<!-- 
+
+script	
+
+-->
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="kalkulacka.js"></script>
+
+<script type="text/javascript">
+$('#popoverData').popover();
+</script>
+
 </div>
 </body>
 </html>

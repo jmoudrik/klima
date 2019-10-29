@@ -56,15 +56,16 @@ this.mat_cr_avg_teplo = 996;
 this.mat_cr_avg_tepla_voda = 418;
 
 // pro jidlo Matustik asi ne zcela duveryhodny - vysledky dost jinde, nez
-// proto dole vlastni odhad
 // UK : https://link.springer.com/article/10.1007%2Fs10584-014-1169-1
 // Germany : https://www.sciencedirect.com/science/article/pii/S0959652617309666
 // Sweden: https://www.mdpi.com/2071-1050/9/12/2227/htm
+// proto dole vlastni odhad
 this.mat_cr_avg_jidlo = 778;				// excl. biogenic-carbon 
 this.mat_cr_avg_jidlo_maso_prop = 0.47;  // excl. biogenic-carbon 
 this.mat_cr_avg_jidlo_mliko_prop = 0.25;	// excl. biogenic-carbon 
 
 // pro dopravgu Matustik asi ne-duveryhodny
+// (chybi osobni doprava)
 // proto dole vlastni odhad
 this.mat_cr_avg_doprava = 362;
 this.mat_cr_avg_doprava_auto = 0; // na auto asi zapomneli
@@ -94,7 +95,8 @@ this.cr_avg_doprava_public_est = this.cr_public_per_cap * 0.04;
 
 this.cr_avg_doprava_est = this.cr_avg_doprava_public_est + this.cr_avg_doprava_auto_est + this.cr_avg_doprava_letadlo_est;
 
-console.log(this.cr_avg_doprava_est);
+console.log("auto " + this.cr_avg_doprava_auto_est);
+console.log("doprava " + this.cr_avg_doprava_est);
 
 //
 //		Jidlo - odhad
@@ -107,8 +109,10 @@ this.cr_avg_jidlo_est = 1200;
 //
 //		Celkovy impact
 //
+// TODO - co ostatni vlivy - jina statistika treba
+// TODO - zkontrolovat energie 
 this.cr_avg_total_est = this.mat_cr_avg_energy_total + this.cr_avg_doprava_est + this.cr_avg_jidlo_est;
-console.log(this.cr_avg_total_est);
+console.log("total " + this.cr_avg_total_est );
 
 // jidlo kg CO2/den
 // maso ~= 40 % ; mliko ~= 25%
