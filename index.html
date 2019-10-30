@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
   <script type="text/javascript" src="./knockout-latest.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -39,15 +38,19 @@
 Pomůcka pro lidi, kteří chtějí vědět, jak účinně pomoci v boji s globálním oteplováním.
 </p>
 <p>
-Průměrný Čech vyprodukuje <span data-bind="html: format_co2_cmp(DATA.cr_avg_total_est / 1000)"></span>. Z toho:
+<!--
+TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
+reference
+ -->
+Průměrný Čech přímo vyprodukuje <b data-bind="html: format_co2(DATA.cr_avg_total_est / 1000)"></b>. Z toho:
     <ul>
 		<li><i class="material-icons">house</i> vytápěním domácnosti,
-			<b data-bind='text: (100 * DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est).toFixed(0) + "%"'></b>.</li>
+			<b data-bind='text: format_perc(DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est)'></b>.</li>
         <li><i class="material-icons">restaurant</i> svým jídelníčkem,
-			<b data-bind='text: (100 * DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est).toFixed(0) + "%"'></b>.</li>
+			<b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>.</li>
 		</li>
 		<li><i class="material-icons">directions_car</i>dopravou,
-			<b data-bind='text: (100 * DATA.cr_avg_doprava_est / DATA.cr_avg_total_est).toFixed(0) + "%"'></b>.</li>
+			<b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>.</li>
 		</li>
     </ul>
 </p>
@@ -60,11 +63,10 @@ Průměrný Čech vyprodukuje <span data-bind="html: format_co2_cmp(DATA.cr_avg_
 		<a name="doma"></a>
   		<i class="material-icons">house</i>
 		Vytápění domácnosti:
-		<small class="text-muted">Čím mohu pomoci a ušetřit?</small>
+		<small class="text-muted">Co má největší efekt?</small>
 </h2>
-<h4>Zateplením domu (střecha, zdi, okna)</h4>
-
 <h4>Topit plynem, nebo tepelným čerpadlem, ne uhlím</h4>
+<h4>Zateplit dům (střecha, zdi, okna)</h4>
 <h4>Zvážit instalaci solárních panelů</h4>
 <h4>Topit co nejméně, vytápět o 1 stupeň Celsia méně sníží spotřebu tepla o 6%.</h4>
 

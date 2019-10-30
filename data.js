@@ -7,6 +7,11 @@ this.cr_domacnosti_byty = 2473489;
 this.cr_domacnosti_domy = 1830684;
 this.cr_obyvatelstvo = 10566653;
 
+
+// https://data.oecd.org/czech-republic.htm
+// kg CO2 / rok / per-capita
+this.cr_total_per_cap = 9.6 * 1000;
+
 // https://www.carbonindependent.org/22.html
 // ekvivalent 250 kg CO2 / hodinu; pri rychlosti 900 km/h
 // nejspis je tohle spis nejaky horni odhad - vyssi kvantil ~ 60 ?

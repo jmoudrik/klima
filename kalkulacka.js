@@ -28,15 +28,20 @@ function autem_html(tuny_co2) {
 		return "<b>" + auto_km.toFixed(0) + " km</b> ujetých osobním autem";
 }
 
+function format_perc(stuff){
+	return (100*stuff).toFixed(0) + "%";
+}
+
 function format_co2(tuny_co2) {
 	return tuny_co2.toFixed(2) + " tun CO<sub>2</sub>";
 };
 
 function format_co2_cmp(tuny_co2) {
-	var cmp_html = "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
-	//return "<b>za rok</b> " + format_co2(tuny_co2) + cmp_html;
-	//return "<b>za rok</b> " + + cmp_html;
-	return '<a id="popoverData" class="btn text-primary" href="#" data-html="true" data-content="'+cmp_html+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+	var cmp_html = "</b>, stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2);
+	return "za rok <b>" + format_co2(tuny_co2) + cmp_html;
+
+	//var cmp_html = "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
+	//return '<a id="popoverData" class="btn text-primary" href="#" data-html="true" data-content="'+cmp_html+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
 };
 
 var typy_jidelnicku = ['vegan', 'vegetarián', 'průměr ČR', 'masožrout'];
