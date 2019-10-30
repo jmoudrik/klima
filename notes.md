@@ -75,13 +75,6 @@ tohle se mi libi:
 	- Snížením teploty v domácnosti se snižuje spotřeba a tím se šetří peníze i klima.
 
 
-## Doprava
-
-- Jet na dovolenou do bližších destinací.
-
-- Nejezdit autem sám. Preferovat MHD.
-
-
 ## Jídelníček
 
 - Jíst co nejméně hovězího a vepřového. Spotřebovat co nejméně mléka.
@@ -93,6 +86,13 @@ tohle se mi libi:
 	uděláte pro životní prostředí opravdu hodně.
 
 - Čím víc bezmasé stravy jíte, tím lépe.
+
+
+## Doprava
+
+- Jet na dovolenou do bližších destinací.
+
+- Nejezdit autem sám. Preferovat MHD.
 	
 
 ## Obecné principy
@@ -100,7 +100,6 @@ tohle se mi libi:
 - Žít co nejšetrněji a nejskromněji.
 	- Minimalizovat spotřebu.
 	- Používat věci, které už mám, nekupovat věci nové.
-	- 
 
 - Jít příkladem.
 - Řešit lokální problémy, povídat si s lidmi.

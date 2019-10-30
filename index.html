@@ -16,60 +16,142 @@
 	h2 i.material-icons {
 		font-size: 35px;
 	}
-	#popoverData {
+	.popoverData {
 		 font-weight: bold;
+	}
+	
+	.obsah_block {
+		margin-left: 10px;
 	}
   </style>
 
-    <title>Klima: jak pomoci?</title>
+    <title>Klima: jak mohu pomoci?</title>
 </head>
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Globálním oteplování: Jak mohu pomoci?</h1>
+        <h1>Globální oteplování:
+		<small class="text-muted">Jak mohu pomoci?</small></h1>
     </div>
     <hr />
 <!--
 	Uvod
--->
 
     <h2><a name="uvod"></a>Úvod</h2>
 <p>
-Pomůcka pro lidi, kteří chtějí vědět, jak účinně pomoci v boji s globálním oteplováním.
+Pomůcka pro lidi, kteří chtějí vědět, jak mohou účinně pomoci v boji s globálním oteplováním.
 </p>
+-->
 <p>
 <!--
 TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
 reference
  -->
-Průměrný Čech přímo vyprodukuje <b data-bind="html: format_co2(DATA.cr_avg_total_est / 1000)"></b>. Z toho:
+Průměrný Čech přímo ročně vyprodukuje asi <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
+</p>
+<p>
+Z toho největší část připadá na vytápění domácnosti, poté na produkci jídla a dopravu.
+</p>
     <ul>
-		<li><i class="material-icons">house</i> vytápěním domácnosti,
-			<b data-bind='text: format_perc(DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est)'></b>.</li>
-        <li><i class="material-icons">restaurant</i> svým jídelníčkem,
-			<b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>.</li>
+		<li><i class="material-icons">house</i> vytápění domácnosti,
+			<b data-bind='text: format_perc(DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est)'></b>
+&ndash;
+			<span data-bind="html: format_co2_cmp_pop(DATA.mat_cr_avg_energy_total / 1000)"></span>
+    <ul>
+<li>
+Topit ekologicky.
+</li>
+<li>
+Zateplit dům.
+</li>
+<li>
+Topit méně, nosit mikinu.
+</li>
+<li>
+Nenapouštět vanu, rychle se sprchovat.
+</li>
+    </ul>
 		</li>
-		<li><i class="material-icons">directions_car</i>dopravou,
-			<b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>.</li>
+        <li><i class="material-icons">restaurant</i> jídelníček,
+			<b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>
+&ndash;
+			<span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_jidlo_est / 1000)"></span>
+    <ul>
+<li>
+Jíst co nejméně masa a mléčných výrobků.
+</li>
+<li>
+Když maso, tak kuře, ne hovězí a vepřové.
+</li>
+<li>
+Jíst co nejvíce rostlinné stravy.
+</li>
+    </ul>
+		</li>
+		<li><i class="material-icons">directions_car</i>doprava,
+			<b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>
+&ndash;
+			<span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
+    <ul>
+<li>
+Jezdit a létat co nejméně.
+</li>
+<li>
+Preferovat hromadnou dopravu.
+</li>
+<li>
+Jet na dovolenou poblíž ČR.
+</li>
+    </ul>
+
 		</li>
     </ul>
-</p>
 <hr />
 
 <!--
 	Doma
 -->
-	<h2>
+<h2>
 		<a name="doma"></a>
   		<i class="material-icons">house</i>
 		Vytápění domácnosti:
 		<small class="text-muted">Co má největší efekt?</small>
 </h2>
-<h4>Topit plynem, nebo tepelným čerpadlem, ne uhlím</h4>
-<h4>Zateplit dům (střecha, zdi, okna)</h4>
-<h4>Zvážit instalaci solárních panelů</h4>
-<h4>Topit co nejméně, vytápět o 1 stupeň Celsia méně sníží spotřebu tepla o 6%.</h4>
+<div class="obsah_block">
+<h4>Zateplit dům (okna, zdi, střecha)</h4>
+	<p>Zateplení domu snižuje spotřebu energie na vytápění, často i o 30-60%,
+	a tím klesají i náklady na energie a emise CO2.
+</p>
 
+
+<h4>Netopit uhlím ani elektrickým kotlem, ale plynem, nebo tepelným čerpadlem.</h4>
+	<p>Oproti obyčejnému elektrickému kotli snižuje tepelné čerpadlo 
+	spotřebu elektřiny na vytápění 3-4 krát. S tím klesají i náklady
+	a emise CO2.
+</p>
+	<p>Moderní kotel na plyn má účinnost přes 90% a nízké emise CO2.
+</p>
+	<p>Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
+	jemné prachové částice a karcinogenní polycyklické aromatické uhlovodíky,
+	které jsou jednou z příčin vzniku rakoviny. Platí, že staré kotle na uhlí
+	jsou mnohem škodlivější, než nové s velkou účinností (ale stále je to horší než
+	tepelné čerpadlo, nebo plyn).
+</p>
+
+<!-- moc dlouhy
+
+<h4>Topit co nejméně, vytápět o 1 stupeň Celsia méně sníží spotřebu tepla o 6%.</h4>
+	<p>Snížením teploty v domácnosti se snižuje spotřeba a tím se šetří peníze i klima.
+</p>
+
+<h4>Zvážit instalaci solárních panelů</h4>
+	<p>Solární panely se vyplatí pokud jste schopni vyrobenou elektřinu sami spotřebovat,
+	například máte-li tepelné čerpadlo, nebo pro elektrický ohřev teplé vody.
+	U moderních panelů očekávejte návratnost 5-10 let.
+</p>
+-->
+
+<!--
 <div class="alert alert-info">
   <h4 class="alert-heading">Vytápění domácnosti: kalkulačka</h4>
   <p>Blablabla. Tady bude kalkulacka a zdroje</p>
@@ -77,10 +159,46 @@ Průměrný Čech přímo vyprodukuje <b data-bind="html: format_co2(DATA.cr_avg
   <p class="mb-0">Tohle je hezky text s malym bottom marginem</p>
 </div>
     <hr />
-
+-->
+</div>
 <!--
 	Jídelníček
 -->
+
+<h2>
+		<a name="jidelnicek"></a>
+  		<i class="material-icons">restaurant</i>
+		Jídelníček:
+		<small class="text-muted">Co má největší efekt?</small>
+</h2>
+
+<h4>Jíst méně masa, pít méně mléka a jíst více rostlinné stravy.</h4>
+<p>Produkce hovězího a vepřového masa má z jídla největší zátěž pro životní prostředí.
+	Krávy potřebují hodně vody (na pěstování krmiva), hodně půdy, a produkují
+	metan, který je silným skleníkovým plynem.
+</p>
+
+
+<!--
+	Doprava
+-->
+
+<h2>
+		<a name="doprava"></a>
+  		<i class="material-icons">directions_car</i>
+		Doprava:
+		<small class="text-muted">Čím můžu pomoci?</small>
+</h2>
+<h4>Jezdit a létat co nejméně.</h4>
+
+<h4>Nejezdit autem sám.</h4>
+
+<h4>Preferovat MHD.</h4>
+ 
+<h4>Jet na dovolenou do bližších destinací.</h4>
+<p>
+
+</p>
 
 <!--
 	REFERENCE
@@ -93,14 +211,31 @@ Průměrný Čech přímo vyprodukuje <b data-bind="html: format_co2(DATA.cr_avg
 	<a href="data.js">Zdrojovaná data</a>
 	</li>
 
-	<!-- TODO: matustik pryc -->
+	<!-- TODO: matustik pryc
 	<li>[1] <a name="ref1"></a> Matuštík, Jan, and Vladimír Kočí. <em>"Environmental impact of personal consumption from life cycle perspective–A Czech Republic case study."</em> Science of The Total Environment 646 (2019): 177-186. <a href="https://doi.org/10.1016/j.scitotenv.2018.07.233">doi</a>
 	</li>
+-->
 </ul>
+
+    <h2>O projektu</h2>
+<p>
+Touto stránkou chceme lidem, kteří chtějí vědět jak nejúčinněji mohou pomoct v boji s klimatickou změnou,
+poskytnout jednoduché informace o tom, jak pomoct tam, kde to přináší největší užitek.
+</p>
+<p>
+Snaha je poskytnout ověřené a zdrojované informace, ale je nutné brát v potaz to, že všechny zde uvedené statistiky jsou odhady,
+které stojí na zjednodušujících předpokladech a vycházejí z nepřesných dat.
+Smyslem uvedených statistik je tak poskytnout jen orientační přehled a řádově přiblížit,
+jak velké jsou jednotlivé faktory &ndash; na základě toho navrhnout konkrétní kroky, které dávají největší smysl.
+</p>
 
     <hr />
    <footer>
-       <p> 2019, vyrobil <a href='http://j2m.cz/~jm/'>jm</a>, <a href="https://github.com/jmoudrik/klima">github repo</a></p>
+       <p>
+Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-requesty) jsou vítány.
+	<br />
+2019, vytvořil <a href='mailto:j.moudrik@gmail.com'>j.moudrik@gmail.com</a>, vše dostupné pod MIT licencí na <a href="https://github.com/jmoudrik/klima">githubu</a>.
+</p>
     </footer>
 
 <!-- 
@@ -112,7 +247,7 @@ script
 <script type="text/javascript" src="kalkulacka.js"></script>
 
 <script type="text/javascript">
-$('#popoverData').popover();
+$('.popoverData').popover();
 </script>
 
 </div>
