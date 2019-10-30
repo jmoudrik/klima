@@ -116,7 +116,15 @@ this.cr_avg_jidlo_est = 1200;
 //
 // TODO - co ostatni vlivy - jina statistika treba
 // TODO - zkontrolovat energie 
-this.cr_avg_total_est = this.mat_cr_avg_energy_total + this.cr_avg_doprava_est + this.cr_avg_jidlo_est;
+// Per capita ma ceska republika emise 9.6 tun
+// s 1.2 faktorem je cr_avg_total_est ~ 5.2 tun;
+// zbytek odpovida ostatnim rozpocitanym faktorum ("spolecne")
+// 		- export energie, prumysl, infrastrukture, vzdelavani, zdravotnictvi, vlada, ...
+//
+// 1.2 faktor se snazi zohlednit jine "prime == ne spolecne" efekty nez "energie, doprava, jidlo",
+// e.g. konzumni zbozi - elektronika, obleceni
+// - jejich efekt je vyrazne mensi nez jidlo, doprava, energie - TODO reference
+this.cr_avg_total_est = 1.2 * (this.mat_cr_avg_energy_total + this.cr_avg_doprava_est + this.cr_avg_jidlo_est);
 console.log("total " + this.cr_avg_total_est );
 
 // jidlo kg CO2/den
