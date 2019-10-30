@@ -24,8 +24,13 @@ function letadlem_html(tuny_co2) {
 
 function autem_html(tuny_co2) {
 		var auto_km = 1000 * tuny_co2 / DATA.auto_co2_km_avg;
+		// XXX
+		var auto_str = (auto_km - auto_km % (Math.floor(auto_km))).toLocaleString('en').replace(/,/g,' ');
+
+		//var auto_str = auto_km.toFixed(0);
+
 	// TODO tohle nejak divne zaokrouhluje - vegan 10 km za den , 3500 km za rok - WTF
-		return "<b>" + auto_km.toFixed(0) + " km</b> ujetých osobním autem";
+		return "<b>" + auto_str + " km</b> ujetých osobním autem";
 }
 
 function format_perc(stuff){
@@ -39,9 +44,11 @@ function format_co2(tuny_co2) {
 function format_co2_cmp(tuny_co2) {
 	var cmp_html = "</b>, stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2);
 	return "za rok <b>" + format_co2(tuny_co2) + cmp_html;
+};
 
-	//var cmp_html = "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
-	//return '<a id="popoverData" class="btn text-primary" href="#" data-html="true" data-content="'+cmp_html+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+function format_co2_cmp_pop(tuny_co2) {
+	var cmp_html = "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
+	return '<a class="popoverData text-primary" href="#" data-html="true" data-content="'+cmp_html+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
 };
 
 var typy_jidelnicku = ['vegan', 'vegetarián', 'průměr ČR', 'masožrout'];
