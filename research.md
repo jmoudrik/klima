@@ -95,6 +95,12 @@ Airship (Zeppelin, Cargolifter ) as planned 	55 g
 	~ 1 km ujety autem
 - 50 g -> 2.5 km autem
 
+# Zbozi
+https://carboncatalogue.coclear.co/?sector=Computer%2C%20IT%20%26%20telecom&company=all&year=2015&sort=sector
+
+- mobil 40 kg
+- pocitac 400 kg
+
 
 # Odpady
 
