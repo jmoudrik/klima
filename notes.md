@@ -1,5 +1,13 @@
 # TODO
-	- výměna oken - kolik stoji, kolik setri
+
+- výměna oken - kolik stoji, kolik setri
+- konzumni zbozi & elektronika - celkem
+	- obleceni, elektro, hygiena, chemie, ..
+- miniatury
+- `data.js` - okomentovat
+	- co presne jednotlive promenne znamenaji
+	- co je to za zdroj
+	- jaky jsou motivace pro odhady/vypocty
 
 # dan
 - 2 sec decision - "love at first sight" - effect
@@ -107,4 +115,15 @@ tohle se mi libi:
 - Investovat zodpovědně.
 
 
+# Miniatury
+
+- tasky
+- vypocet: elektricky auto ze zasuvky (elektro mix CR) vs benzin
+	- srovnani s Polskem, Nemeckem, Norskem
+- solarni clanky
+- auto : emise na vyrobu vs ujety kilometry
+- myčka
+- auto vs elektroauto
+	- emise (prach, ...) koncentrované v elektrárně na škále, vs ve městech
+	- teplo ve městech (klima, spalovací motory)
 
