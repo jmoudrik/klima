@@ -1,4 +1,11 @@
 function AppViewModel() {
+	this.zatepleni_uspora = ko.observable(30);
+
+	this.zatepleni_uspora_kg = ko.computed(function() {
+		var ret = this.zatepleni_uspora() / 100 * DATA.mat_cr_avg_teplo;
+		return ret;
+	}, this);
+
 	this.tepla_voda_uspora = ko.observable(50);
 
 	this.tepla_voda_uspora_kg = ko.computed(function() {
@@ -7,7 +14,7 @@ function AppViewModel() {
 	}, this);
 
 
-	this.teplota_snizena = ko.observable(1);
+	this.teplota_snizena = ko.observable(2);
 
 	this.teplota_uspora_kg = ko.computed(function() {
 		// 1 stupen ~= 6% uspory energie
@@ -15,17 +22,10 @@ function AppViewModel() {
 		return ret;
 	}, this);
 
-	this.trigger_hack = ko.computed(function() {
-		// XXX omfg - this hack relies on the assumption that knockout processes 
-		// sequentially and that the popout created by index.html when tepla_voda_uspora_kg
-		// is updated, but turned off; here we hope the _hack function runs 
-		// after all bindings for tepla_voda_uspora_kg are processed and thus that
-		// the popover we aare enabling is already created
-		// Q: is there a nicer way??
-		var ignored = this.tepla_voda_uspora() + this.teplota_uspora_kg();
-		// need to enable the popover
+	this.updatePopover = function() {
+		console.log("update pops");
 		$('.popoverData').popover();
-	}, this);
+	};
 
 	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
 

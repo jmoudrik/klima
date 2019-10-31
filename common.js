@@ -65,15 +65,20 @@ function format_co2_cmp(tuny_co2) {
 	return "za rok <b>" + format_co2(tuny_co2) + cmp_html;
 };
 
-function format_co2_cmp_pop(tuny_co2) {
-	//var cmp_html = "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
-	var cmp_html = ("Stejně jako: <ul>" +
+function cmp_html(tuny_co2){
+	//return "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
+	return ("Stejně jako: <ul>" +
 		wrap_li(letadlem_html(tuny_co2)) +
 		wrap_li(somalci_html(tuny_co2)) +
 		wrap_li(mobil_html(tuny_co2)) +
 	    wrap_li(autem_html(tuny_co2)));
+}
 
-	return '<a class="popoverData selector="true" text-primary" href="#" data-html="true" data-content="'+cmp_html+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+function format_co2_cmp_pop(tuny_co2) {
+	// TODO popoverupdates are broken
+	//
+	//
+	return '<a class="popoverData selector="true" text-primary" href="#" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
 };
 
 var typy_jidelnicku = ['vegan', 'vegetarián', 'průměr ČR', 'masožrout'];

@@ -44,7 +44,7 @@
 
 </head>
 <body>
-<div class="container" data-bind="descendantsComplete: updatePopover">
+<div class="container">
     <div class="page-header">
         <h1>Globální oteplování:
 		<small class="text-muted">Jak mohu pomoci?</small></h1>
@@ -160,15 +160,23 @@ Jet na dovolenou poblíž ČR.
 (okna, zdi, střecha)
 -->
 <p>
-	<b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o 30-60%,
-	a tím klesají i náklady na energie a emise CO2.
+<b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o 30&ndash;60%,
+a tím klesají i náklady na energie a emise CO2. Zateplení zahrnuje především pořízení
+kvalitních oken, poté zateplení stěn a střechy.
+</p>
+<p>
+Například, zateplením domu o <input type="range" data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="100" step="10"> &nbsp; <b data-bind="text: zatepleni_uspora() + ' %'"></b>
+ sníží průměrný Čech své celkové emise o
+			<b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_avg_total_est)'></b>
+&ndash;
+			<span data-bind="html: format_co2_cmp_pop(zatepleni_uspora_kg() / 1000)"></span>.
 </p>
 
 
 <h4>3. Topit méně, snížit spotřebu teplé vody.</h4>
 <p>
 <b>Snížením teploty v domácnosti</b> o
- <input type="range" data-bind="value: teplota_snizena, valueUpdate: 'input'" min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
+ <input type="range" data-bind="value: teplota_snizena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
  sníží průměrný Čech své celkové emise o
 			<b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_avg_total_est)'></b>
 &ndash;
@@ -180,7 +188,7 @@ Jet na dovolenou poblíž ČR.
 celkových emisí průměrného občana.
 <br />
 Omezením spotřeby teplé vody o
- <input type="range" data-bind="value: tepla_voda_uspora, valueUpdate: 'input'" min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
+ <input type="range" data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
  sníží průměrný Čech své celkové emise o
 			<b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_avg_total_est)'></b>
 &ndash;
