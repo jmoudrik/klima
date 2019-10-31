@@ -1,14 +1,3 @@
-# TODO
-
-- výměna oken - kolik stoji, kolik setri
-- konzumni zbozi & elektronika - celkem
-	- obleceni, elektro, hygiena, chemie, ..
-- miniatury
-- `data.js` - okomentovat
-	- co presne jednotlive promenne znamenaji
-	- co je to za zdroj
-	- jaky jsou motivace pro odhady/vypocty
-
 # dan
 - 2 sec decision - "love at first sight" - effect
 	- infografika s 2ma panackama & vecma okolo, barchart
