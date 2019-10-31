@@ -60,6 +60,39 @@ var jidelnicek = {
 };
 
 
+// Reference & odkazy ze stranky
+var refs = {
+	'Atlas Masa' : [1, 'https://www.foeeurope.org/meat-atlas/'],
+	'Rostlinné Bílkoviny' :  [2, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/']
+}
+
+function render_ref(key){
+	var val = refs[key];
+	var num = val[0];
+	var url = val[1];
+	//return "<a href='#"+num+"'>["+num+"]</a>";
+	// ten popover zmizi kdyz se na nej najede, ergo ne moc uzitecny, unless fix
+	//
+	var popover_html = '['+num+'] ' + key ; //+ ": <a href='"+url+"'>"+key+'</a>';
+	return '<a class="popoverData text-primary" href="'+url+'" data-html="true" data-content="'+popover_html+'" rel="popover" data-placement="bottom" data-trigger="hover">['+num+']</a>';
+}
+
+function render_refs(){
+	var ret = ["<ul>"];
+
+	for (key in refs) {
+		var num = refs[key][0];
+		var url = refs[key][1];
+
+		ret.push("<li>");
+		ret.push("<a name='"+num+"'>["+num+"]</a>");
+		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
+		ret.push("</li>");
+	}
+	ret.push("</ul>");
+	return ret.join("\n");
+}
+
 function AppViewModel() {
 	this.selJidelnicek = ko.observable(typy_jidelnicku[2]);
 	this.jidlo_den = ko.computed(function() {
