@@ -46,6 +46,8 @@ Pomůcka pro lidi, kteří chtějí vědět, jak mohou účinně pomoci v boji s
 <!--
 TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
 reference
+
+TODO breakdown na jednotlive podcasti; energie domacnost > topeni | ohrev vody
  -->
 Průměrný Čech přímo ročně vyprodukuje asi <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
 </p>
@@ -65,10 +67,7 @@ Topit ekologicky.
 Zateplit dům.
 </li>
 <li>
-Topit méně, nosit mikinu.
-</li>
-<li>
-Nenapouštět vanu, rychle se sprchovat.
+Topit méně, snížit spotřebu teplé vody.
 </li>
     </ul>
 		</li>
@@ -81,10 +80,7 @@ Nenapouštět vanu, rychle se sprchovat.
 Jíst co nejméně masa a mléčných výrobků.
 </li>
 <li>
-Když maso, tak kuře, ne hovězí a vepřové.
-</li>
-<li>
-Jíst co nejvíce rostlinné stravy.
+Kuře a ryby místo hovězího a vepřového.
 </li>
     </ul>
 		</li>
@@ -94,7 +90,7 @@ Jíst co nejvíce rostlinné stravy.
 			<span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
     <ul>
 <li>
-Jezdit a létat co nejméně.
+Jezdit autem a létat co nejméně.
 </li>
 <li>
 Preferovat hromadnou dopravu.
@@ -106,6 +102,8 @@ Jet na dovolenou poblíž ČR.
 
 		</li>
     </ul>
+
+<br />
 <hr />
 
 <!--
@@ -115,34 +113,52 @@ Jet na dovolenou poblíž ČR.
 		<a name="doma"></a>
   		<i class="material-icons">house</i>
 		Vytápění domácnosti:
-		<small class="text-muted">Co má největší efekt?</small>
+		<small class="text-muted">Co má největší smysl?</small>
 </h2>
-<div class="obsah_block">
-<h4>Zateplit dům (okna, zdi, střecha)</h4>
-	<p>Zateplení domu snižuje spotřebu energie na vytápění, často i o 30-60%,
+<div class='obsah_block'>
+
+<h4>1. Topit ekologicky.</h4>
+	<p>
+	<b>Topit plynem, nebo tepelným čerpadlem, případně biomasou (např. pelety).</b>
+	</p>
+
+	<p>
+	<b>Netopit uhlím (hlavně ne ve starém kotli):</b>
+	Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
+	jemné prachové částice a polycyklické aromatické uhlovodíky, 
+	které způsobují rakovinu.
+	Platí, že staré kotle na uhlí jsou mnohem škodlivější,
+	než nové s velkou účinností, ale stále je to horší než
+	tepelné čerpadlo, nebo plyn.
+	<p>
+
+	</p>
+	<b>Netopit elektrickým kotlem:</b>
+	Oproti obyčejnému elektrickému kotli snižuje tepelné čerpadlo 
+	spotřebu elektřiny na vytápění 3-4 krát. Tolikrát klesají i náklady
+	a emise CO2. Tepelné čerpadlo má v průměru návratnost 5 let.
+	</p>
+
+<h4>2. Zateplit dům.</h4>
+<!--
+(okna, zdi, střecha)
+-->
+<p>
+	<b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o 30-60%,
 	a tím klesají i náklady na energie a emise CO2.
 </p>
 
 
-<h4>Netopit uhlím ani elektrickým kotlem, ale plynem, nebo tepelným čerpadlem.</h4>
-	<p>Oproti obyčejnému elektrickému kotli snižuje tepelné čerpadlo 
-	spotřebu elektřiny na vytápění 3-4 krát. S tím klesají i náklady
-	a emise CO2.
+<h4>3. Topit méně, snížit spotřebu teplé vody.</h4>
+<p>
+<b>Snížením teploty v domácnosti</b> se snižuje spotřeba (přibližně o 6% za 1° C) a tím se šetří peníze i klima.
 </p>
-	<p>Moderní kotel na plyn má účinnost přes 90% a nízké emise CO2.
-</p>
-	<p>Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
-	jemné prachové částice a karcinogenní polycyklické aromatické uhlovodíky,
-	které jsou jednou z příčin vzniku rakoviny. Platí, že staré kotle na uhlí
-	jsou mnohem škodlivější, než nové s velkou účinností (ale stále je to horší než
-	tepelné čerpadlo, nebo plyn).
+<p>
+<b>Ohřev teplé vody</b> odpovídá zhruba 10% celkové spotřeby. Například omezení délky koupání na polovinu má tak
+opravdu velký vliv, jak na produkci CO<sub>2</sub>, tak na náklady na energie.
 </p>
 
 <!-- moc dlouhy
-
-<h4>Topit co nejméně, vytápět o 1 stupeň Celsia méně sníží spotřebu tepla o 6%.</h4>
-	<p>Snížením teploty v domácnosti se snižuje spotřeba a tím se šetří peníze i klima.
-</p>
 
 <h4>Zvážit instalaci solárních panelů</h4>
 	<p>Solární panely se vyplatí pokud jste schopni vyrobenou elektřinu sami spotřebovat,
@@ -160,62 +176,109 @@ Jet na dovolenou poblíž ČR.
 </div>
     <hr />
 -->
+
 </div>
+
 <!--
 	Jídelníček
 -->
+<br />
+<hr />
 
 <h2>
 		<a name="jidelnicek"></a>
   		<i class="material-icons">restaurant</i>
 		Jídelníček:
-		<small class="text-muted">Co má největší efekt?</small>
+		<small class="text-muted">Co má největší smysl?</small>
 </h2>
 
-<h4>Jíst méně masa, pít méně mléka a jíst více rostlinné stravy.</h4>
-<p>Produkce hovězího a vepřového masa má z jídla největší zátěž pro životní prostředí.
-	Krávy potřebují hodně vody (na pěstování krmiva), hodně půdy, a produkují
-	metan, který je silným skleníkovým plynem.
+<div class='obsah_block'>
+<h4>
+1. Jíst co nejméně masa a mléčných výrobků.
+</h4>
+<p><b>Produkce hovězího a vepřového masa</b> má z jídla největší zátěž pro životní prostředí.
+	Například krávy potřebují hodně krmiva, vody, půdy, a produkují
+	hodně metanu, který je silným skleníkovým plynem.
+	<span data-bind="html: render_ref('Atlas Masa')"></span>
+	<b>Produkce mléka, másla a sýrů</b> má rovněž velký vliv.</p>
+<p><b>Omezení spotřeby masa</b>
+a mléčných výrobků, například o 1/4 (to odpovídá zhruba 2 dnům v týdnu) tak má nezanedbatelný
+vliv na celkovou spotřebu.
 </p>
-
+<p>
+Maso a mléčné výrobky lze nahradit rostlinnými ekvivalenty s vysokým podílem bílkovin
+&ndash; například luštěniny, ořechy a obiloviny. 
+	<span data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>
+</p>
+<h4>
+2. Kuře a ryby místo hovězího a vepřového.
+</h4>
+<p>
+Kromě omezení celkové spotřeby masa <b>můžete pomoct i změnou skladby jídelníčku</b>. Produkce kuřecího
+masa (nebo ryb) má pro životní prostředí mnohem menší zátěž, než hovězí, nebo vepřové.
+	<span data-bind="html: render_ref('Atlas Masa')"></span>
+Když si během týdne dáte 3 krát místo vepřového řízku řízek kuřecí, ušetříte za rok přibližně 3%
+celkových emisí.
+</p>
 
 <!--
 	Doprava
 -->
+</div>
+
+<br />
+<hr />
 
 <h2>
 		<a name="doprava"></a>
   		<i class="material-icons">directions_car</i>
 		Doprava:
-		<small class="text-muted">Čím můžu pomoci?</small>
+		<small class="text-muted">Co má největší smysl?</small>
 </h2>
-<h4>Jezdit a létat co nejméně.</h4>
-
-<h4>Nejezdit autem sám.</h4>
-
-<h4>Preferovat MHD.</h4>
- 
-<h4>Jet na dovolenou do bližších destinací.</h4>
+<div class='obsah_block'>
+<h4>
+1. Jezdit autem a létat co nejméně.
+</h4>
 <p>
-
+Jízda autem produkuje přibližně <span data-bind='text: (1000 * DATA.auto_co2_km_avg).toFixed(0)'></span> g CO<sub>2</sub> na kilometr,
+letadlo <span data-bind='text: (1000 * DATA.letadlo_co2_km_equiv).toFixed(0)'></span> g CO<sub>2</sub> na osobu a kilometr.
 </p>
+<p>
+Problém aut je v tom, že jezdí prázdná (často jen řidič, v průměru <span data-bind='text: DATA.auto_naplnenost_cr_est'></span> pasažéra).
+Například, kdyby se autem jezdilo ve třech, či čtyřech, šlo by v podstatě o ekologickou formu dopravy (na úrovni autobusu).
+Kromě toho auta produkují prach a další škodliviny, přičemž ve městech jsou tyto jedním z hlavních zdrojů znečištění ovzduší, 
+</p>
+
+<h4>
+2. Preferovat hromadnou dopravu.
+</h4>
+<p>
+Pokud by člověk nahradil 20% kilometrů naježděných autem za hromadnou dopravu, za rok by ušetřil <b>TODO</b>.
+</p>
+<h4>
+3. Jet na dovolenou poblíž ČR.
+</h4>
+<p>
+Pokud by člověk jel na dovolenou do jižních Čech, namísto letecky do letoviska v Turecku, ušetřil by tímto <b>TODO</b>.
+</p>
+</div>
 
 <!--
 	REFERENCE
 -->
+<br />
+<hr />
 
     <h2>Odkazy &amp; zdroje</h2>
 <ul>
 	<!-- TODO: udelat to min akademicky a vic UX-friendly -->
 	<li>
-	<a href="data.js">Zdrojovaná data</a>
+	<a href="data.js">Zdrojovaná a komentovaná data pro výpočty</a>
 	</li>
-
-	<!-- TODO: matustik pryc
-	<li>[1] <a name="ref1"></a> Matuštík, Jan, and Vladimír Kočí. <em>"Environmental impact of personal consumption from life cycle perspective–A Czech Republic case study."</em> Science of The Total Environment 646 (2019): 177-186. <a href="https://doi.org/10.1016/j.scitotenv.2018.07.233">doi</a>
-	</li>
--->
 </ul>
+	<div data-bind="html: render_refs()"></div>
+<br />
+<hr />
 
     <h2>O projektu</h2>
 <p>
@@ -223,12 +286,13 @@ Touto stránkou chceme lidem, kteří chtějí vědět jak nejúčinněji mohou 
 poskytnout jednoduché informace o tom, jak pomoct tam, kde to přináší největší užitek.
 </p>
 <p>
-Snaha je poskytnout ověřené a zdrojované informace, ale je nutné brát v potaz to, že všechny zde uvedené statistiky jsou odhady,
-které stojí na zjednodušujících předpokladech a vycházejí z nepřesných dat.
-Smyslem uvedených statistik je tak poskytnout jen orientační přehled a řádově přiblížit,
-jak velké jsou jednotlivé faktory &ndash; na základě toho navrhnout konkrétní kroky, které dávají největší smysl.
+Snaha je poskytnout ověřené a zdrojované informace, ale je nutné říct, že všechny zde uvedené statistiky a odhady
+stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat.
+Smyslem je tak poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké 
+&ndash; aby si každý na základě toho mohl vybrat kroky které mu osobně dávají největší smysl.
 </p>
 
+<br />
     <hr />
    <footer>
        <p>
