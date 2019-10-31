@@ -1,9 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151241103-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-151241103-1');
+	</script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- via the awesome https://favicon.io/favicon-generator/ -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -26,6 +41,7 @@
   </style>
 
     <title>Klima: jak mohu pomoci?</title>
+
 </head>
 <body>
 <div class="container">
@@ -55,7 +71,7 @@ Průměrný Čech přímo ročně vyprodukuje asi <span data-bind="html: format_
 Z toho největší část připadá na vytápění domácnosti, poté na produkci jídla a dopravu.
 </p>
     <ul>
-		<li><i class="material-icons">house</i> vytápění domácnosti,
+		<li><i class="material-icons">house</i> vytápění domácnosti, teplá voda,
 			<b data-bind='text: format_perc(DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est)'></b>
 &ndash;
 			<span data-bind="html: format_co2_cmp_pop(DATA.mat_cr_avg_energy_total / 1000)"></span>
