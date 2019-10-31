@@ -11,6 +11,8 @@ this.cr_obyvatelstvo = 10566653;
 // https://data.oecd.org/czech-republic.htm
 // kg CO2 / rok / per-capita
 this.cr_total_per_cap = 9.6 * 1000;
+// https://en.wikipedia.org/wiki/List_of_countries_by_carbon_dioxide_emissions_per_capita 
+this.somalia_total_per_cap = 0.1 * 1000;
 
 // https://www.carbonindependent.org/22.html
 // ekvivalent 250 kg CO2 / hodinu; pri rychlosti 900 km/h
@@ -59,6 +61,9 @@ this.elektrina_cr_mix_emise  = 1.1;
 this.mat_cr_avg_energy_total = 2000;
 this.mat_cr_avg_teplo = 996;
 this.mat_cr_avg_tepla_voda = 418;
+
+// TODO + spotrebice ; double check s CSU (aktualne)
+this.cr_energy_doma = this.mat_cr_avg_teplo + this.mat_cr_avg_tepla_voda;
 
 // pro jidlo Matustik asi ne zcela duveryhodny - vysledky dost jinde, nez
 // UK : https://link.springer.com/article/10.1007%2Fs10584-014-1169-1
@@ -137,6 +142,16 @@ this.jidlo_vegan_den = (1-0.4-0.25) * this.cr_avg_jidlo_est / 365;
 this.jidlo_vegetarian_den = (1-0.4) * this.cr_avg_jidlo_est / 365;
 this.jidlo_avg_den = this.cr_avg_jidlo_est / 365;
 this.jidlo_masozrout_den = 4;
+
+
+//
+//		Spotrebni elektronika
+//
+// https://docs.google.com/spreadsheets/d/1duR9HEHm2OMQwuLBl-h6GEjrIyv3D3x27NLPjFLFxHA/edit#gid=973728864
+this.mobil_vyroba = 35.82;
+// https://carboncatalogue.coclear.co/?sector=Computer%2C%20IT%20%26%20telecom&company=Dell%20Inc.&year=2015&sort=sector
+this.dell_lattitude_e7440_lca = 276;
+
 }
 
 var DATA = new make_data();

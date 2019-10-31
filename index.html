@@ -44,7 +44,7 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container" data-bind="descendantsComplete: updatePopover">
     <div class="page-header">
         <h1>Globální oteplování:
 		<small class="text-muted">Jak mohu pomoci?</small></h1>
@@ -72,9 +72,9 @@ Z toho největší část připadá na vytápění domácnosti, poté na produkc
 </p>
     <ul>
 		<li><i class="material-icons">house</i> vytápění domácnosti, teplá voda,
-			<b data-bind='text: format_perc(DATA.mat_cr_avg_energy_total  / DATA.cr_avg_total_est)'></b>
+			<b data-bind='text: format_perc(DATA.cr_energy_doma  / DATA.cr_avg_total_est)'></b>
 &ndash;
-			<span data-bind="html: format_co2_cmp_pop(DATA.mat_cr_avg_energy_total / 1000)"></span>
+			<span data-bind="html: format_co2_cmp_pop(DATA.cr_energy_doma / 1000)"></span>
     <ul>
 <li>
 Topit ekologicky.
@@ -167,11 +167,24 @@ Jet na dovolenou poblíž ČR.
 
 <h4>3. Topit méně, snížit spotřebu teplé vody.</h4>
 <p>
-<b>Snížením teploty v domácnosti</b> se snižuje spotřeba (přibližně o 6% za 1° C) a tím se šetří peníze i klima.
+<b>Snížením teploty v domácnosti</b> o
+ <input type="range" data-bind="value: teplota_snizena, valueUpdate: 'input'" min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
+ sníží průměrný Čech své celkové emise o
+			<b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_avg_total_est)'></b>
+&ndash;
+			<span data-bind="html: format_co2_cmp_pop(teplota_uspora_kg() / 1000)"></span>.
 </p>
 <p>
-<b>Ohřev teplé vody</b> odpovídá zhruba 10% celkové spotřeby. Například omezení délky koupání na polovinu má tak
-opravdu velký vliv, jak na produkci CO<sub>2</sub>, tak na náklady na energie.
+<b>Ohřev teplé vody</b> odpovídá zhruba
+<b data-bind='text: format_perc(DATA.mat_cr_avg_tepla_voda / DATA.cr_avg_total_est)'></b>
+celkových emisí průměrného občana.
+<br />
+Omezením spotřeby teplé vody o
+ <input type="range" data-bind="value: tepla_voda_uspora, valueUpdate: 'input'" min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
+ sníží průměrný Čech své celkové emise o
+			<b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_avg_total_est)'></b>
+&ndash;
+			<span data-bind="html: format_co2_cmp_pop(tepla_voda_uspora_kg() / 1000)"></span>.
 </p>
 
 <!-- moc dlouhy
@@ -323,8 +336,9 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 script	
 
 -->
-<script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" src="kalkulacka.js"></script>
+<script type="text/javascript" src="./data.js"></script>
+<script type="text/javascript" src="./common.js"></script>
+<script type="text/javascript" src="./kalkulacka.js"></script>
 
 <script type="text/javascript">
 $('.popoverData').popover();
