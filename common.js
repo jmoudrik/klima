@@ -45,6 +45,15 @@ function autem_html(tuny_co2) {
 		return "<b>" + auto_str + " km</b> ujetých autem";
 }
 
+function format_days(day) {
+    var tvary = ['dní', 'den', 'dny'];
+    var base = day + " ";
+    if(day <= 0) return base + tvary[0];
+    if(day == 1) return base + tvary[1];
+    if(day <= 4) return base + tvary[2];
+    return base + tvary[0];
+}
+
 function format_perc(stuff){
 	return (100*stuff).toFixed(0) + "%";
 }
