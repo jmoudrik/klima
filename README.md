@@ -34,6 +34,8 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 ## good to have
 
+- lepsi vizualizace "co2_cmp" - co lip rika pribeh
+- ikonka ke kalkulackam
 - update google analytics
 - výměna oken - kolik stoji, kolik setri
 - konzumni zbozi & elektronika - celkem
