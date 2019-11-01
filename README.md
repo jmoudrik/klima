@@ -21,13 +21,16 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 ## blocking public launch
 
 - grafika na celkovou spotrebu
+- zatepleni domu neni moc uzitecne, protoze nikdo nevi, co znamena zateplit o 30%
 - "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
 - lip ozdrojovat text a upresnit
 - `data.js` - okomentovat
 	- co presne jednotlive promenne znamenaji
 	- co je to za zdroj
 	- jaky jsou motivace pro odhady/vypocty
-- zatepleni domu neni moc uzitecne, protoze nikdo nevi, co znamena zateplit o 30%
+- `data.js`
+    - mat_* zkontrolovat vuci originalnim zdrojum
+    - a pouzit ty
 
 ## good to have
 
