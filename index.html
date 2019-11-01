@@ -165,6 +165,7 @@ a tím klesají i náklady na energie a emise CO2. Zateplení zahrnuje předevš
 kvalitních oken, poté zateplení stěn a střechy.
 </p>
 <p>
+<b>TODO - nejasne</b>
 Například, zateplením domu o <input type="range" data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="100" step="10"> &nbsp; <b data-bind="text: zatepleni_uspora() + ' %'"></b>
  sníží průměrný Čech své celkové emise o
 			<b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_avg_total_est)'></b>
@@ -177,7 +178,7 @@ Například, zateplením domu o <input type="range" data-bind="value: zatepleni_
 <p>
 <b>Snížením teploty v domácnosti</b> o
  <input type="range" data-bind="value: teplota_snizena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
- sníží průměrný Čech své celkové emise o
+ sníží průměrný Čech za rok své celkové emise o
 			<b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_avg_total_est)'></b>
 &ndash;
 			<span data-bind="html: format_co2_cmp_pop(teplota_uspora_kg() / 1000)"></span>.
@@ -189,7 +190,7 @@ celkových emisí průměrného občana.
 <br />
 Omezením spotřeby teplé vody o
  <input type="range" data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
- sníží průměrný Čech své celkové emise o
+ sníží průměrný Čech za rok své celkové emise o
 			<b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_avg_total_est)'></b>
 &ndash;
 			<span data-bind="html: format_co2_cmp_pop(tepla_voda_uspora_kg() / 1000)"></span>.
@@ -235,17 +236,21 @@ Omezením spotřeby teplé vody o
 </h4>
 <p><b>Produkce hovězího a vepřového masa</b> má z jídla největší zátěž pro životní prostředí.
 	Například krávy potřebují hodně krmiva, vody, půdy, a produkují
-	hodně metanu, který je silným skleníkovým plynem.
-	<span data-bind="html: render_ref('Atlas Masa')"></span>
+	hodně metanu, který je silným skleníkovým plynem.&nbsp;<span data-bind="html: render_ref('Atlas Masa')"></span>
 	<b>Produkce mléka, másla a sýrů</b> má rovněž velký vliv.</p>
-<p><b>Omezení spotřeby masa</b>
-a mléčných výrobků, například o 1/4 (to odpovídá zhruba 2 dnům v týdnu) tak má nezanedbatelný
-vliv na celkovou spotřebu.
+<p><b>Vynecháním masa a mléčných výrobků</b>
+	<input type="range" data-bind="value: maso_mleko_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+		   min="0" max="7" step="1">
+	&nbsp; <b data-bind="text: format_days(maso_mleko_uspora())"></b> v týdnu
+	(aneb <b data-bind="text: (maso_mleko_uspora() / 7 * 100).toFixed(0) + ' %'"></b> spotřeby masa a mléčných výrobků)
+	snížíte za rok své celkové emise o
+	<b data-bind='text: format_perc1(maso_mleko_uspora_kg() / DATA.cr_avg_total_est)'></b>
+	&ndash;
+	<span data-bind="html: format_co2_cmp_pop(maso_mleko_uspora_kg() / 1000)"></span>.
 </p>
 <p>
 Maso a mléčné výrobky lze nahradit rostlinnými ekvivalenty s vysokým podílem bílkovin
-&ndash; například luštěniny, ořechy a obiloviny. 
-	<span data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>
+	&ndash; například luštěniny, ořechy a obiloviny, viz&nbsp;<span data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
 </p>
 <h4>
 2. Kuře a ryby místo hovězího a vepřového.
@@ -256,6 +261,15 @@ masa (nebo ryb) je pro životní prostředí mnohem menší zátěž, než hově
 	<span data-bind="html: render_ref('Atlas Masa')"></span>
 Když si během týdne dáte 3 krát místo vepřového řízku řízek kuřecí, ušetříte za rok přibližně 3%
 celkových emisí.
+	<br />
+	Když kuřecím nahradíte
+	<input type="range" data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+			   min="0" max="100" step="10">
+	&nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby hovězího a vepřového,
+	snížíte za rok své celkové emise o
+	<b data-bind='text: format_perc1(vepr_hovezi_uspora_kg() / DATA.cr_avg_total_est)'></b>
+	&ndash;
+	<span data-bind="html: format_co2_cmp_pop(vepr_hovezi_uspora_kg() / 1000)"></span>.
 </p>
 
 <!--
@@ -290,7 +304,14 @@ Kromě toho auta produkují prach a další škodliviny, přičemž ve městech 
 2. Preferovat hromadnou dopravu.
 </h4>
 <p>
-Pokud by člověk nahradil 20% kilometrů naježděných autem za hromadnou dopravu, za rok by ušetřil <b>TODO</b>.
+Pokud by člověk nahradil
+<input type="range" data-bind="value: auto_mhd_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+	   min="0" max="100" step="10">
+&nbsp; <b data-bind="text: auto_mhd_uspora() + ' %'"></b>
+kilometrů naježděných autem za hromadnou dopravu, za rok by snížil své celkové emise přibližně o
+<b data-bind='text: format_perc1(auto_mhd_uspora_kg() / DATA.cr_avg_total_est)'></b>
+&ndash;
+<span data-bind="html: format_co2_cmp_pop(auto_mhd_uspora_kg() / 1000)"></span>.
 </p>
 <h4>
 3. Jet na dovolenou poblíž ČR.
