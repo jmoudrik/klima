@@ -143,6 +143,7 @@ this.cr_avg_doprava_letadlo_est = this.mat_cr_letadlo_km_per_cap * this.letadlo_
 // mobility per capita (passenger-km/year)
 this.cr_auto_mobility_per_cap = 10000;
 this.cr_public_per_cap = 3000;
+// kg CO2 / osobu / rok
 this.cr_avg_doprava_auto_est = this.cr_auto_mobility_per_cap * this.auto_co2_km_avg  / this.auto_naplnenost_cr_est;
 this.cr_avg_doprava_public_est = this.cr_public_per_cap * this.public_co2_km_avg;
 

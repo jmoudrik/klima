@@ -1,33 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151241103-1"></script>
-	<script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151241103-1"></script>
+    <script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 	  gtag('config', 'UA-151241103-1');
-	</script>
+
+
+
+    </script>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- via the awesome https://favicon.io/favicon-generator/ -->
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script type="text/javascript" src="./knockout-latest.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="./knockout-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
-  <style>
+    <style>
 	h2 i.material-icons {
 		font-size: 35px;
 	}
@@ -36,9 +42,12 @@
 	}
 	
 	.obsah_block {
-		margin-left: 10px;
+		margin-left: 20px;
 	}
-  </style>
+
+
+
+    </style>
 
     <title>Klima: jak mohu pomoci?</title>
 
@@ -47,351 +56,389 @@
 <div class="container">
     <div class="page-header">
         <h1>Globální oteplování:
-		<small class="text-muted">Jak mohu pomoci?</small></h1>
+            <small class="text-muted">Jak mohu pomoci?</small></h1>
     </div>
-    <hr />
-<!--
-	Uvod
+    <hr/>
+    <!--
+        Uvod
 
-    <h2><a name="uvod"></a>Úvod</h2>
-<p>
-Pomůcka pro lidi, kteří chtějí vědět, jak mohou účinně pomoci v boji s globálním oteplováním.
-</p>
--->
-<p>
-<!--
-TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
-reference
+        <h2><a name="uvod"></a>Úvod</h2>
+    <p>
+    Pomůcka pro lidi, kteří chtějí vědět, jak mohou účinně pomoci v boji s globálním oteplováním.
+    </p>
+    -->
+    <p>
+        <!--
+        TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
+        reference
 
-TODO breakdown na jednotlive podcasti; energie domacnost > topeni | ohrev vody
- -->
-Průměrný Čech přímo ročně vyprodukuje asi <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
-</p>
-<p>
-Z toho největší část připadá na vytápění domácnosti, poté na produkci jídla a dopravu.
-</p>
+        TODO breakdown na jednotlive podcasti; energie domacnost > topeni | ohrev vody
+         -->
+        Průměrný Čech přímo ročně vyprodukuje asi <span
+            data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
+    </p>
+    <p>
+        Z toho největší část připadá na vytápění domácnosti, poté na produkci jídla a dopravu.
+    </p>
     <ul>
-		<li><i class="material-icons">house</i> vytápění domácnosti, teplá voda,
-			<b data-bind='text: format_perc(DATA.cr_energy_doma  / DATA.cr_avg_total_est)'></b>
-&ndash;
-			<span data-bind="html: format_co2_cmp_pop(DATA.cr_energy_doma / 1000)"></span>
-    <ul>
-<li>
-Topit ekologicky.
-</li>
-<li>
-Zateplit dům.
-</li>
-<li>
-Topit méně, snížit spotřebu teplé vody.
-</li>
-    </ul>
-		</li>
+        <li><i class="material-icons">house</i> vytápění domácnosti, teplá voda,
+            <b data-bind='text: format_perc(DATA.cr_energy_doma  / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(DATA.cr_energy_doma / 1000)"></span>
+            <ul>
+                <li>
+                    Topit ekologicky.
+                </li>
+                <li>
+                    Zateplit dům.
+                </li>
+                <li>
+                    Snížit spotřebu teplé vody, topit méně.
+                </li>
+            </ul>
+        </li>
         <li><i class="material-icons">restaurant</i> jídelníček,
-			<b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>
-&ndash;
-			<span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_jidlo_est / 1000)"></span>
-    <ul>
-<li>
-Jíst co nejméně masa a mléčných výrobků.
-</li>
-<li>
-Kuře a ryby místo hovězího a vepřového.
-</li>
+            <b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_jidlo_est / 1000)"></span>
+            <ul>
+                <li>
+                    Jíst co nejméně masa a mléčných výrobků.
+                </li>
+                <li>
+                    Kuře a ryby místo hovězího a vepřového.
+                </li>
+            </ul>
+        </li>
+        <li><i class="material-icons">directions_car</i>doprava,
+            <b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
+            <ul>
+                <li>
+                    Co nejméně jezdit autem a létat.
+                </li>
+                <li>
+                    Preferovat hromadnou dopravu.
+                </li>
+                <li>
+                    Jet na dovolenou poblíž ČR.
+                </li>
+            </ul>
+
+        </li>
     </ul>
-		</li>
-		<li><i class="material-icons">directions_car</i>doprava,
-			<b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>
-&ndash;
-			<span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
-    <ul>
-<li>
-Co nejméně jezdit autem a létat.
-</li>
-<li>
-Preferovat hromadnou dopravu.
-</li>
-<li>
-Jet na dovolenou poblíž ČR.
-</li>
-    </ul>
 
-		</li>
-    </ul>
+    <br/>
 
-<br />
+    <!--
+        Doma
+    -->
+    <h2>
+        <a name="doma"></a>
+        <i class="material-icons">house</i>
+        Vytápění domácnosti:
+        <small class="text-muted">Co má největší smysl?</small>
+    </h2>
+    <hr/>
+    <div class='obsah_block'>
 
-<!--
-	Doma
--->
-<h2>
-		<a name="doma"></a>
-  		<i class="material-icons">house</i>
-		Vytápění domácnosti:
-		<small class="text-muted">Co má největší smysl?</small>
-</h2>
-<hr />
-<div class='obsah_block'>
+        <h3>1. Topit ekologicky.</h3>
+        <p>
+            <b>Topit plynem, nebo tepelným čerpadlem, případně biomasou (např. pelety).</b>
+        </p>
 
-<h4>1. Topit ekologicky.</h4>
-	<p>
-	<b>Topit plynem, nebo tepelným čerpadlem, případně biomasou (např. pelety).</b>
-	</p>
+        <p>
+            <b>Netopit uhlím (hlavně ne ve starém kotli):</b>
+            Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
+            jemné prachové částice a polycyklické aromatické uhlovodíky,
+            které způsobují rakovinu.
+            Platí, že staré kotle na uhlí jsou mnohem škodlivější,
+            než nové s velkou účinností, ale stále je to horší než
+            tepelné čerpadlo, nebo plyn.
+        <p>
 
-	<p>
-	<b>Netopit uhlím (hlavně ne ve starém kotli):</b>
-	Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
-	jemné prachové částice a polycyklické aromatické uhlovodíky, 
-	které způsobují rakovinu.
-	Platí, že staré kotle na uhlí jsou mnohem škodlivější,
-	než nové s velkou účinností, ale stále je to horší než
-	tepelné čerpadlo, nebo plyn.
-	<p>
+        </p>
+        <b>Netopit elektrickým kotlem:</b>
+        Oproti obyčejnému elektrickému kotli snižuje tepelné čerpadlo
+        spotřebu elektřiny na vytápění 3-4 krát. Tolikrát klesají i náklady
+        a emise CO2. Tepelné čerpadlo má v průměru návratnost 5 let.
+        </p>
 
-	</p>
-	<b>Netopit elektrickým kotlem:</b>
-	Oproti obyčejnému elektrickému kotli snižuje tepelné čerpadlo 
-	spotřebu elektřiny na vytápění 3-4 krát. Tolikrát klesají i náklady
-	a emise CO2. Tepelné čerpadlo má v průměru návratnost 5 let.
-	</p>
-
-<h4>2. Zateplit dům.</h4>
-<!--
-(okna, zdi, střecha)
--->
-<p>
-<b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o 30&ndash;60%,
-a tím klesají i náklady na energie a emise CO2. Zateplení zahrnuje především pořízení
-kvalitních oken, poté zateplení stěn a střechy.
-</p>
-<p>
-<b>TODO - nejasne</b>
-Například, zateplením domu o <input type="range" data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="100" step="10"> &nbsp; <b data-bind="text: zatepleni_uspora() + ' %'"></b>
- sníží průměrný Čech své celkové emise o
-			<b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_avg_total_est)'></b>
-&ndash;
-			<span data-bind="html: format_co2_cmp_pop(zatepleni_uspora_kg() / 1000)"></span>.
-</p>
+        <h3>2. Zateplit dům.</h3>
+        <!--
+        (okna, zdi, střecha)
+        -->
+        <p>
+            <b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o <b>30&ndash;60%</b>,
+            a tím klesají i náklady na energie a emise CO2. Zateplení zahrnuje především pořízení
+            kvalitních oken, poté zateplení stěn a střechy.
+        </p>
+        <p>
+            <b>TODO - nejasne</b>
+            Například, zateplením domu o <input type="range"
+                                                data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                                                min="0" max="100" step="10"> &nbsp; <b
+                data-bind="text: zatepleni_uspora() + ' %'"></b>
+            sníží průměrný Čech své celkové emise o
+            <b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(zatepleni_uspora_kg() / 1000)"></span>.
+        </p>
 
 
-<h4>3. Topit méně, snížit spotřebu teplé vody.</h4>
-<p>
-<b>Snížením teploty v domácnosti</b> o
- <input type="range" data-bind="value: teplota_snizena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
- sníží průměrný Čech za rok své celkové emise o
-			<b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_avg_total_est)'></b>
-&ndash;
-			<span data-bind="html: format_co2_cmp_pop(teplota_uspora_kg() / 1000)"></span>.
-</p>
-<p>
-<b>Ohřev teplé vody</b> odpovídá zhruba
-<b data-bind='text: format_perc(DATA.mat_cr_avg_tepla_voda / DATA.cr_avg_total_est)'></b>
-celkových emisí průměrného občana.
-<br />
-Omezením spotřeby teplé vody o
- <input type="range" data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
- sníží průměrný Čech za rok své celkové emise o
-			<b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_avg_total_est)'></b>
-&ndash;
-			<span data-bind="html: format_co2_cmp_pop(tepla_voda_uspora_kg() / 1000)"></span>.
-</p>
+        <h3>3. Snížit spotřebu teplé vody, topit méně.</h3>
+        <p>
+            <b>Ohřev teplé vody</b> odpovídá zhruba
+            <b data-bind='text: format_perc(DATA.mat_cr_avg_tepla_voda / DATA.cr_avg_total_est)'></b>
+            celkových emisí průměrného občana.
+        </p>
+        <p>
+            <b>Omezením spotřeby teplé vody</b> o
+            <input type="range"
+                   data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
+            sníží průměrný Čech za rok své celkové emise o
+            <b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(tepla_voda_uspora_kg() / 1000)"></span>.
+        </p>
 
-<!-- moc dlouhy
+        <p>
+            <b>Snížením teploty v domácnosti</b> o
+            <input type="range"
+                   data-bind="value: teplota_snizena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
+            sníží průměrný Čech za rok své celkové emise o
+            <b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(teplota_uspora_kg() / 1000)"></span>.
+        </p>
+        <!-- moc dlouhy
 
-<h4>Zvážit instalaci solárních panelů</h4>
-	<p>Solární panely se vyplatí pokud jste schopni vyrobenou elektřinu sami spotřebovat,
-	například máte-li tepelné čerpadlo, nebo pro elektrický ohřev teplé vody.
-	U moderních panelů očekávejte návratnost 5-10 let.
-</p>
--->
+        <h3>Zvážit instalaci solárních panelů</h3>
+            <p>Solární panely se vyplatí pokud jste schopni vyrobenou elektřinu sami spotřebovat,
+            například máte-li tepelné čerpadlo, nebo pro elektrický ohřev teplé vody.
+            U moderních panelů očekávejte návratnost 5-10 let.
+        </p>
+        -->
 
-<!--
-<div class="alert alert-info">
-  <h4 class="alert-heading">Vytápění domácnosti: kalkulačka</h4>
-  <p>Blablabla. Tady bude kalkulacka a zdroje</p>
-  <hr>
-  <p class="mb-0">Tohle je hezky text s malym bottom marginem</p>
-</div>
-    <hr />
--->
+        <!--
+        <div class="alert alert-info">
+          <h3 class="alert-heading">Vytápění domácnosti: kalkulačka</h3>
+          <p>Blablabla. Tady bude kalkulacka a zdroje</p>
+          <hr>
+          <p class="mb-0">Tohle je hezky text s malym bottom marginem</p>
+        </div>
+            <hr />
+        -->
 
-</div>
+    </div>
 
-<!--
-	Jídelníček
--->
-<br />
+    <!--
+        Jídelníček
+    -->
+    <br/>
 
-<h2>
-		<a name="jidelnicek"></a>
-  		<i class="material-icons">restaurant</i>
-		Jídelníček:
-		<small class="text-muted">Co má největší smysl?</small>
-</h2>
-<hr />
+    <h2>
+        <a name="jidelnicek"></a>
+        <i class="material-icons">restaurant</i>
+        Jídelníček:
+        <small class="text-muted">Co má největší smysl?</small>
+    </h2>
+    <hr/>
 
-<div class='obsah_block'>
-<h4>
-1. Jíst co nejméně masa a mléčných výrobků.
-</h4>
-<p><b>Produkce hovězího a vepřového masa</b> má z jídla největší zátěž pro životní prostředí.
-	Například krávy potřebují hodně krmiva, vody, půdy, a produkují
-	hodně metanu, který je silným skleníkovým plynem.&nbsp;<span data-bind="html: render_ref('Atlas Masa')"></span>
-	<b>Produkce mléka, másla a sýrů</b> má rovněž velký vliv.</p>
-<p><b>Vynecháním masa a mléčných výrobků</b>
-	<input type="range" data-bind="value: maso_mleko_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
-		   min="0" max="7" step="1">
-	&nbsp; <b data-bind="text: format_days(maso_mleko_uspora())"></b> v týdnu
-	(aneb <b data-bind="text: (maso_mleko_uspora() / 7 * 100).toFixed(0) + ' %'"></b> spotřeby masa a mléčných výrobků)
-	snížíte za rok své celkové emise o
-	<b data-bind='text: format_perc1(maso_mleko_uspora_kg() / DATA.cr_avg_total_est)'></b>
-	&ndash;
-	<span data-bind="html: format_co2_cmp_pop(maso_mleko_uspora_kg() / 1000)"></span>.
-</p>
-<p>
-Maso a mléčné výrobky lze nahradit rostlinnými ekvivalenty s vysokým podílem bílkovin
-	&ndash; například luštěniny, ořechy a obiloviny, viz&nbsp;<span data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
-</p>
-<h4>
-2. Kuře a ryby místo hovězího a vepřového.
-</h4>
-<p>
-Kromě omezení celkové spotřeby masa <b>můžete pomoct i změnou skladby jídelníčku</b>. Produkce kuřecího
-masa (nebo ryb) je pro životní prostředí mnohem menší zátěž, než hovězí, nebo vepřové.
-	<span data-bind="html: render_ref('Atlas Masa')"></span>
-Když si během týdne dáte 3 krát místo vepřového řízku řízek kuřecí, ušetříte za rok přibližně 3%
-celkových emisí.
-	<br />
-	Když kuřecím nahradíte
-	<input type="range" data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
-			   min="0" max="100" step="10">
-	&nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby hovězího a vepřového,
-	snížíte za rok své celkové emise o
-	<b data-bind='text: format_perc1(vepr_hovezi_uspora_kg() / DATA.cr_avg_total_est)'></b>
-	&ndash;
-	<span data-bind="html: format_co2_cmp_pop(vepr_hovezi_uspora_kg() / 1000)"></span>.
-</p>
+    <div class='obsah_block'>
+        <h3>
+            1. Jíst co nejméně masa a mléčných výrobků.
+        </h3>
+        <p><b>Produkce hovězího a vepřového masa</b> má z jídla největší zátěž pro životní prostředí.
+            Například krávy potřebují hodně krmiva, vody, půdy, a produkují
+            hodně metanu, který je silným skleníkovým plynem.&nbsp;<span
+                    data-bind="html: render_ref('Atlas Masa')"></span>
+            <b>Produkce mléka, másla a sýrů</b> má rovněž velký vliv.</p>
+        <p><b>Vynecháním masa a mléčných výrobků</b>
+            <input type="range"
+                   data-bind="value: maso_mleko_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   min="0" max="7" step="1">
+            &nbsp; <b data-bind="text: format_days(maso_mleko_uspora())"></b> v týdnu
+            (aneb <b data-bind="text: (maso_mleko_uspora() / 7 * 100).toFixed(0) + ' %'"></b> celkové spotřeby masa a
+            mléčných
+            výrobků)
+            snížíte za rok své celkové emise o
+            <b data-bind='text: format_perc1(maso_mleko_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(maso_mleko_uspora_kg() / 1000)"></span>.
+        </p>
+        <div class="alert alert-info">
+            <p class="mb-0">
+                <i class="material-icons">local_grocery_store</i>
+                Maso a mléčné výrobky lze nahradit rostlinnými ekvivalenty s vysokým podílem bílkovin
+                &ndash; například luštěniny, ořechy a obiloviny, viz&nbsp;<span
+                    data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
+            </p>
+        </div>
+        <h3>
+            2. Kuře a ryby místo hovězího a vepřového.
+        </h3>
+        <p>
+            Kromě omezení celkové spotřeby masa <b>můžete pomoct i změnou skladby jídelníčku</b>. Produkce kuřecího
+            masa (nebo ryb) je pro životní prostředí mnohem menší zátěž, než hovězí, nebo vepřové.
+            <span data-bind="html: render_ref('Atlas Masa')"></span>
+            <br/>
+            Když kuřecím nahradíte
+            <input type="range"
+                   data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   min="0" max="100" step="10">
+            &nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby hovězího a vepřového,
+            snížíte za rok své celkové emise o
+            <b data-bind='text: format_perc1(vepr_hovezi_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(vepr_hovezi_uspora_kg() / 1000)"></span>.
+        </p>
 
-<!--
-	Doprava
--->
-</div>
+        <!--
+            Doprava
+        -->
+    </div>
 
-<br />
+    <br/>
 
-<h2>
-		<a name="doprava"></a>
-  		<i class="material-icons">directions_car</i>
-		Doprava:
-		<small class="text-muted">Co má největší smysl?</small>
-</h2>
-<hr />
-<div class='obsah_block'>
-<h4>
-1. Co nejméně jezdit autem a létat.
-</h4>
-<p>
-Jízda autem produkuje přibližně <span data-bind='text: (1000 * DATA.auto_co2_km_avg).toFixed(0)'></span> g CO<sub>2</sub> na kilometr,
-letadlo <span data-bind='text: (1000 * DATA.letadlo_co2_km_equiv).toFixed(0)'></span> g CO<sub>2</sub> na osobu a kilometr.
-</p>
-<p>
-Problém aut je v tom, že jezdí prázdná (často jen řidič, v průměru <span data-bind='text: DATA.auto_naplnenost_cr_est'></span> pasažéra).
-Například, kdyby se autem jezdilo ve třech, či čtyřech, šlo by v podstatě o ekologickou formu dopravy (na úrovni autobusu).
-Kromě toho auta produkují prach a další škodliviny, přičemž ve městech jsou tyto jedním z hlavních zdrojů znečištění ovzduší.
-</p>
+    <h2>
+        <a name="doprava"></a>
+        <i class="material-icons">directions_car</i>
+        Doprava:
+        <small class="text-muted">Co má největší smysl?</small>
+    </h2>
+    <hr/>
+    <div class='obsah_block'>
+        <h3>
+            1. Co nejméně jezdit autem a létat.
+        </h3>
+        <p>
+            Jízda autem produkuje přibližně <span data-bind='text: (1000 * DATA.auto_co2_km_avg).toFixed(0)'></span> g
+            CO<sub>2</sub> na kilometr,
+            letadlo <span data-bind='text: (1000 * DATA.letadlo_co2_km_equiv).toFixed(0)'></span> g CO<sub>2</sub> na
+            osobu a kilometr.
+            Na 1&nbsp;kilometr je tak auto (s jedním pasažérem) zhruba
+            <b data-bind='text: (DATA.letadlo_co2_km_equiv / DATA.auto_co2_km_avg).toFixed(1)'></b>&nbsp;krát
+            lepší.
+        </p>
+        <div class="alert alert-info">
+            <p class="mb-0">
+                <i class="material-icons">info</i>
+                Problém aut je v tom, že jezdí prázdná (při dojíždění do práce například často jen řidič, v průměru
+                <span data-bind='text: DATA.auto_naplnenost_cr_est'></span> pasažéra).
+                Pokud by se v průměrném autě jezdilo ve třech, či čtyřech šlo by v podstatě o ekologickou formu dopravy
+                (na
+                úrovni autobusu).
+                Kromě toho auta produkují prach a další škodliviny, přičemž ve městech jsou tyto jedním z hlavních
+                zdrojů
+                znečištění ovzduší.
+            </p>
+        </div>
 
-<h4>
-2. Preferovat hromadnou dopravu.
-</h4>
-<p>
-Pokud by člověk nahradil
-<input type="range" data-bind="value: auto_mhd_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
-	   min="0" max="100" step="10">
-&nbsp; <b data-bind="text: auto_mhd_uspora() + ' %'"></b>
-kilometrů naježděných autem za hromadnou dopravu, za rok by snížil své celkové emise přibližně o
-<b data-bind='text: format_perc1(auto_mhd_uspora_kg() / DATA.cr_avg_total_est)'></b>
-&ndash;
-<span data-bind="html: format_co2_cmp_pop(auto_mhd_uspora_kg() / 1000)"></span>.
-</p>
-<h4>
-3. Jet na dovolenou poblíž ČR.
-</h4>
-<p>
-	Pokud by člověk jel na dovolenou do Čech, namísto
-	<select data-bind="options: destinace_dovolena,
+        <br/>
+        <h3>
+            2. Preferovat hromadnou dopravu.
+        </h3>
+        <p>
+            Pokud by člověk nahradil
+            <input type="range"
+                   data-bind="value: auto_mhd_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   min="0" max="100" step="10">
+            &nbsp; <b data-bind="text: auto_mhd_uspora() + ' %'"></b>
+            kilometrů které najezdí autem za hromadnou dopravu, za rok by snížil své celkové emise přibližně o
+            <b data-bind='text: format_perc1(auto_mhd_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(auto_mhd_uspora_kg() / 1000)"></span>.
+        </p>
+        <br/>
+        <h3>
+            3. Jet na dovolenou poblíž ČR.
+        </h3>
+        <p>
+            Pokud by člověk jel na dovolenou do Čech, namísto
+            <select data-bind="options: destinace_dovolena,
                        value: sel_dovolena,
                        valueAllowUnset: true"></select>,
-	ušetřil by tím
-	<b data-bind='text: format_perc1(dovolena_uspora_kg() / DATA.cr_avg_total_est)'></b>
-	&ndash;
-	<span data-bind="html: format_co2_cmp_pop(dovolena_uspora_kg() / 1000)"></span>
-	ročních emisí průměrného Čecha.
-</p>
-	<div class="alert alert-info">
-	<p>
-	<i class="material-icons">info</i>
-        Všimněte si, že dovolená autem (kalkulačka předpokládá, že na dovolenou jedete ve
-		<span data-bind="text: DATA.auto_naplnenost_dovolena_cr_est"></span> lidech)
-		je mnohem ekologičtější, než letecká dovolená (na kilometr zhruba
-		<b data-bind="text: (DATA.letadlo_co2_km_equiv
+            ušetřil by tím
+            <b data-bind='text: format_perc1(dovolena_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            &ndash;
+            <span data-bind="html: format_co2_cmp_pop(dovolena_uspora_kg() / 1000)"></span>
+            ročních emisí průměrného Čecha.
+        </p>
+        <div class="alert alert-info">
+            <p class="mb-0">
+                <i class="material-icons">info</i>
+                Všimněte si, že dovolená autem (když jedete na dovolenou například ve
+                <span data-bind="text: DATA.auto_naplnenost_dovolena_cr_est"></span> lidech,
+                což zde předpokláme)
+                je mnohem ekologičtější, než letecká dovolená (na kilometr zhruba
+                <b data-bind="text: (DATA.letadlo_co2_km_equiv
 							/ DATA.auto_co2_km_avg
 							* DATA.auto_naplnenost_dovolena_cr_est).toFixed(1)"></b> krát).
-		Letecká doprava vychází hůř i protože se často létá na větší vzdálenosti.
-	</p>
-</div>
-</div>
+                Krom menších emisí na kilometr je to i tím, že autem se jezdí na menší vzdálenosti.
+            </p>
+        </div>
+    </div>
 
-<!--
-	REFERENCE
--->
-<br />
+    <!--
+        REFERENCE
+    -->
+    <br/>
 
     <h2>Odkazy &amp; zdroje</h2>
-<hr />
-<ul>
-	<!-- TODO: udelat to min akademicky a vic UX-friendly -->
-	<li>
-	<a href="data.js">Zdrojovaná a komentovaná data pro výpočty</a>
-	</li>
-</ul>
-	<div data-bind="html: render_refs()"></div>
-<br />
+    <hr/>
+    <ul>
+        <!-- TODO: udelat to min akademicky a vic UX-friendly -->
+        <li>
+            <a href="data.js">Zdrojovaná a komentovaná data pro výpočty</a>
+        </li>
+    </ul>
+    <div data-bind="html: render_refs()"></div>
+    <br/>
 
     <h2>O projektu</h2>
-<hr />
-<p>
-Touto stránkou chceme lidem, kteří chtějí vědět jak nejúčinněji mohou pomoct v boji s klimatickou změnou,
-poskytnout jednoduché informace o tom, jak pomoct tam, kde to přináší největší užitek.
-</p>
-<p>
-Snaha je poskytnout ověřené a zdrojované informace, ale je nutné říct, že všechny zde uvedené statistiky a odhady
-stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat.
-Smyslem je tak poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké 
-&ndash; aby si každý na základě toho mohl vybrat kroky které mu osobně dávají největší smysl.
-</p>
+    <hr/>
+    <p>
+        Touto stránkou chceme lidem, kteří chtějí vědět jak nejúčinněji mohou pomoct v boji s klimatickou změnou,
+        poskytnout jednoduché informace o tom, jak pomoct tam, kde to přináší největší užitek.
+    </p>
+    <p>
+        Snaha je poskytnout ověřené a zdrojované informace, ale je nutné říct, že všechny zde uvedené statistiky a
+        odhady
+        stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat.
+        Smyslem je tak poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
+        &ndash; aby si každý na základě toho mohl vybrat kroky které mu osobně dávají největší smysl.
+    </p>
 
-<br />
-    <hr />
-   <footer>
-       <p>
-Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-requesty) jsou velmi vítány.
-	<br />
-	<b>2019</b>, vytvořil <a href='mailto:j.moudrik@gmail.com'>j.moudrik@gmail.com</a>, vše dostupné pod MIT licencí na <a href="https://github.com/jmoudrik/klima">githubu</a>.
-</p>
+    <br/>
+    <hr/>
+    <footer>
+        <p>
+            Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-requesty) jsou velmi vítány.
+            <br/>
+            <b>2019</b>, vytvořil <a href='mailto:j.moudrik@gmail.com'>j.moudrik@gmail.com</a>, vše dostupné pod MIT
+            licencí na <a href="https://github.com/jmoudrik/klima">githubu</a>.
+        </p>
     </footer>
 
-<!-- 
+    <!--
 
-script	
+    script
 
--->
-<script type="text/javascript" src="./data.js"></script>
-<script type="text/javascript" src="./common.js"></script>
-<script type="text/javascript" src="./kalkulacka.js"></script>
+    -->
+    <script type="text/javascript" src="./data.js"></script>
+    <script type="text/javascript" src="./common.js"></script>
+    <script type="text/javascript" src="./kalkulacka.js"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 $('.popoverData').popover();
-</script>
+
+
+
+    </script>
 
 </div>
 </body>

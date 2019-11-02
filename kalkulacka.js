@@ -1,44 +1,49 @@
 function AppViewModel() {
+    // procenta o kolik zateplim
 	this.zatepleni_uspora = ko.observable(30);
 
 	this.zatepleni_uspora_kg = ko.computed(function() {
-		var ret = this.zatepleni_uspora() / 100 * DATA.mat_cr_avg_teplo;
-		return ret;
+		var uspora = this.zatepleni_uspora() / 100 * DATA.mat_cr_avg_teplo;
+		return uspora;
 	}, this);
 
+    // procenta teply vody co si odpustim
 	this.tepla_voda_uspora = ko.observable(50);
 
 	this.tepla_voda_uspora_kg = ko.computed(function() {
-		var ret = this.tepla_voda_uspora() / 100 * DATA.mat_cr_avg_tepla_voda;
-		return ret;
+		var uspora = this.tepla_voda_uspora() / 100 * DATA.mat_cr_avg_tepla_voda;
+		return uspora;
 	}, this);
 
-	this.vepr_hovezi_uspora= ko.observable(20);
+    // procenta veprovyho & hoveziho, co si odpustim
+	this.vepr_hovezi_uspora = ko.observable(20);
 
 	this.vepr_hovezi_uspora_kg = ko.computed(function() {
+	    // kolik veprovyho a hoveziho jim celkem
 	    var vepr_hovezi_celkem_avg = (DATA.mat_cr_avg_veprovy * DATA.veprovy_kg_co2
 	                                + DATA.mat_cr_avg_hovezi * DATA.hovezi_kg_co2);
-	    //console.log(vepr_hovezi_celkem_avg + DATA.mat_cr_avg_kureci * DATA.kureci_kg_co2);
 
 	    var kure_misto_toho =  DATA.kureci_kg_co2 * (
 	                    // kolik veprovyho & hoveziho si odpustim
 	                DATA.mat_cr_avg_veprovy * this.vepr_hovezi_uspora() / 100
 	                + DATA.mat_cr_avg_hovezi * this.vepr_hovezi_uspora() / 100);
-	    //console.log(kure_misto_toho);
 
-		var jim_ted = (100 - this.vepr_hovezi_uspora()) / 100 * vepr_hovezi_celkem_avg + kure_misto_toho;
-	    //console.log(jim_ted);
+        // to vepr/hovezi co jeste porad jim, i po omezeni
+        var zbytek_vepr_hovezi = (100 - this.vepr_hovezi_uspora()) / 100 * vepr_hovezi_celkem_avg;
+		var jim_ted = zbytek_vepr_hovezi + kure_misto_toho;
 
-		// formulujem jako uspora, tzn to co ji prumerny cech - to co jim ted
-		return vepr_hovezi_celkem_avg - jim_ted;
+		var uspora = vepr_hovezi_celkem_avg - jim_ted;
+		return uspora;
 	}, this);
 
+    // stupne celsia o ktery min topim
 	this.teplota_snizena = ko.observable(2);
 
 	this.teplota_uspora_kg = ko.computed(function() {
-		// 1 stupen ~= 6% uspory energie
-		var ret = this.teplota_snizena() * 0.06 * DATA.mat_cr_avg_teplo;
-		return ret;
+        // detailnejsi rozbor viz e.g. https://forum.tzb-info.cz/121298-zvyseni-teploty-domu-o-1st-6-a-realita/vsechny-prispevky
+		// radove neco jako 1 stupen ~= 6% uspory energie
+		var uspora = this.teplota_snizena() * 0.06 * DATA.mat_cr_avg_teplo;
+		return uspora;
 	}, this);
 
 	this.auto_mhd_uspora = ko.observable(20);
@@ -46,15 +51,18 @@ function AppViewModel() {
 	this.auto_mhd_uspora_kg = ko.computed(function() {
 		var usetreno_za_auto = this.auto_mhd_uspora() / 100 * DATA.cr_avg_doprava_auto_est ;
         var pridano_za_mhd = this.auto_mhd_uspora() / 100 * DATA.cr_auto_mobility_per_cap * DATA.public_co2_km_avg;
-		return usetreno_za_auto - pridano_za_mhd;
+		var uspora = usetreno_za_auto - pridano_za_mhd;
+		return uspora;
 	}, this);
 
+    // pocet dni bez masa/mleka
 	this.maso_mleko_uspora = ko.observable(2);
 
 	this.maso_mleko_uspora_kg = ko.computed(function() {
+	    // celkove emise za maso & mleko
 	    var maso_mleko_celkem = ( DATA.jidlo_maso_ratio + DATA.jidlo_mleko_ratio ) * DATA.cr_avg_jidlo_est;
-		var ret = this.maso_mleko_uspora() / 7 * maso_mleko_celkem;
-		return ret;
+		var uspora = this.maso_mleko_uspora() / 7 * maso_mleko_celkem;
+		return uspora;
 	}, this);
 
 	this.sel_dovolena = ko.observable(destinace_dovolena[3]);
@@ -74,13 +82,17 @@ function AppViewModel() {
 
         // 2 * pze jedem/letime tam a zpet
 	    var dist = 2* dovolena[this.sel_dovolena()];
+	    // XXX hack to update the popover
+	    // could not find event that triggers the "change" for the <select> reliably
+	    // (and it is not 'onchange'), for this to be updated by <... data-bind="... event:{onchange:updatePopover...}">
+	    // we update the popover 200ms after return from this method, hoping that
+	    // the new popover will be by then inserted to DOM.
 	    updatePopoverDelayed();
 	    return dist;
 	}, this);
     // helper
 
-    // old
-
+    // TODO clean up
 	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
 
 	this.cerpadlo_cop = ko.observable(3);
@@ -102,7 +114,6 @@ function AppViewModel() {
     this.cerpadlo_co2 = ko.computed(function() {
 		return this.dum_spotreba() * DATA.elektrina_cr_mix_emise / this.cerpadlo_cop();
 	}, this);
-
 }
 
 // Activates knockout.js
