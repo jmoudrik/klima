@@ -1,7 +1,47 @@
 function AppViewModel() {
+    // MWh / rok
+	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
+	this.cerpadlo_cop = ko.observable(3);       // topny faktor cerpadla
+	this.cerpadlo_cena = ko.observable(220000);
+	this.cena_kwh = ko.observable(3.5);         // kc / kwh
+	this.elektrina_cr_mix_emise = ko.observable(DATA.elektrina_cr_mix_emise);
+	this.ucinnost_kotel_uhli = ko.observable(0.5);
+	this.ucinnost_kotel_plyn = ko.observable(0.95);
+
+    // emise jednotlivych zpusobu topeni
+    // vse v t CO2 / rok
+
+    this.elektrokotel_co2 = ko.computed(function() {
+		return this.dum_spotreba() * this.elektrina_cr_mix_emise();
+	}, this);
+
+    this.kotel_na_plyn_co2 = ko.computed(function() {
+		return this.dum_spotreba() * DATA.plyn_emise / this.ucinnost_kotel_plyn();
+	}, this);
+
+    this.kotel_na_uhli_co2 = ko.computed(function() {
+		return this.dum_spotreba() * DATA.hnede_uhli_emise / this.ucinnost_kotel_uhli();
+	}, this);
+
+    this.cerpadlo_co2 = ko.computed(function() {
+		return this.dum_spotreba() * this.elektrina_cr_mix_emise() / this.cerpadlo_cop();
+	}, this);
+
+    // kolik rocne cerpadlem setrim CZK oproti elektrickymu kotli
+    this.cerpadlo_setrim = ko.computed(function() {
+        var cena_zaklad = this.dum_spotreba() * 1000 * this.cena_kwh();
+		return cena_zaklad - (cena_zaklad / this.cerpadlo_cop());
+	}, this);
+
+    // za kolik let se navrati investice do cerpadla
+    this.cerpadlo_navratnost = ko.computed(function() {
+		return this.cerpadlo_cena() / this.cerpadlo_setrim();
+	}, this);
+
     // procenta o kolik zateplim
 	this.zatepleni_uspora = ko.observable(30);
 
+    // kg co2 uspora
 	this.zatepleni_uspora_kg = ko.computed(function() {
 		var uspora = this.zatepleni_uspora() / 100 * DATA.mat_cr_avg_teplo;
 		return uspora;
@@ -10,6 +50,7 @@ function AppViewModel() {
     // procenta teply vody co si odpustim
 	this.tepla_voda_uspora = ko.observable(50);
 
+    // kg co2 uspora
 	this.tepla_voda_uspora_kg = ko.computed(function() {
 		var uspora = this.tepla_voda_uspora() / 100 * DATA.mat_cr_avg_tepla_voda;
 		return uspora;
@@ -18,6 +59,7 @@ function AppViewModel() {
     // procenta veprovyho & hoveziho, co si odpustim
 	this.vepr_hovezi_uspora = ko.observable(20);
 
+    // kg co2 uspora
 	this.vepr_hovezi_uspora_kg = ko.computed(function() {
 	    // kolik veprovyho a hoveziho jim celkem
 	    var vepr_hovezi_celkem_avg = (DATA.mat_cr_avg_veprovy * DATA.veprovy_kg_co2
@@ -39,6 +81,7 @@ function AppViewModel() {
     // stupne celsia o ktery min topim
 	this.teplota_snizena = ko.observable(2);
 
+    // kg co2 uspora
 	this.teplota_uspora_kg = ko.computed(function() {
         // detailnejsi rozbor viz e.g. https://forum.tzb-info.cz/121298-zvyseni-teploty-domu-o-1st-6-a-realita/vsechny-prispevky
 		// radove neco jako 1 stupen ~= 6% uspory energie
@@ -46,8 +89,10 @@ function AppViewModel() {
 		return uspora;
 	}, this);
 
+    // kolik procent autem ujetych km nahradim hromadnou dopravou
 	this.auto_mhd_uspora = ko.observable(20);
 
+    // kg co2 uspora
 	this.auto_mhd_uspora_kg = ko.computed(function() {
 		var usetreno_za_auto = this.auto_mhd_uspora() / 100 * DATA.cr_avg_doprava_auto_est ;
         var pridano_za_mhd = this.auto_mhd_uspora() / 100 * DATA.cr_auto_mobility_per_cap * DATA.public_co2_km_avg;
@@ -55,9 +100,10 @@ function AppViewModel() {
 		return uspora;
 	}, this);
 
-    // pocet dni bez masa/mleka
+    // pocet dni v tydnu bez masa/mleka
 	this.maso_mleko_uspora = ko.observable(2);
 
+    // kg co2 uspora
 	this.maso_mleko_uspora_kg = ko.computed(function() {
 	    // celkove emise za maso & mleko
 	    var maso_mleko_celkem = ( DATA.jidlo_maso_ratio + DATA.jidlo_mleko_ratio ) * DATA.cr_avg_jidlo_est;
@@ -65,8 +111,11 @@ function AppViewModel() {
 		return uspora;
 	}, this);
 
+    // kam bych jel na dovolenou
 	this.sel_dovolena = ko.observable(destinace_dovolena[3]);
 
+    // kolik kg usporim tim, ze misto toho zustanu v cechach
+    // data viz `common.js/dovolena`
 	this.dovolena_uspora_kg = ko.computed(function() {
         // predpokladame, ze cesta po cechach je "zadarmo"
         // pro letadlo je to rozumne:
@@ -89,30 +138,6 @@ function AppViewModel() {
 	    // the new popover will be by then inserted to DOM.
 	    updatePopoverDelayed();
 	    return dist;
-	}, this);
-    // helper
-
-    // TODO clean up
-	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
-
-	this.cerpadlo_cop = ko.observable(3);
-	this.cena_kwh = ko.observable(3);		// kc / kwh
-	this.ucinnost_kotel_uhli = ko.observable(0.9); 
-
-    this.elektrokotel_co2 = ko.computed(function() {
-		return this.dum_spotreba() * DATA.elektrina_cr_mix_emise;
-	}, this);
-
-    this.kotel_na_plyn_co2 = ko.computed(function() {
-		return this.dum_spotreba() * DATA.plyn_emise / 0.95;
-	}, this);
-
-    this.kotel_na_uhli_co2 = ko.computed(function() {
-		return this.dum_spotreba() * DATA.hnede_uhli_emise / this.ucinnost_kotel_uhli();
-	}, this);
-
-    this.cerpadlo_co2 = ko.computed(function() {
-		return this.dum_spotreba() * DATA.elektrina_cr_mix_emise / this.cerpadlo_cop();
 	}, this);
 }
 

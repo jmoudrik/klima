@@ -110,7 +110,7 @@
                 </li>
             </ul>
         </li>
-        <li><i class="material-icons">directions_car</i>doprava,
+        <li><i class="material-icons">directions_car</i> doprava,
             <b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
@@ -142,32 +142,80 @@
     </h2>
     <hr/>
     <div class='obsah_block'>
-
         <h3>1. Topit ekologicky.</h3>
         <p>
-            <b>Topit plynem, nebo tepelným čerpadlem, případně biomasou (např. pelety).</b>
+            <b>Netopit uhlím ve starém kotli a netopit elektrokotlem.</b>
         </p>
 
-        <p>
-            <b>Netopit uhlím (hlavně ne ve starém kotli):</b>
-            Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
-            jemné prachové částice a polycyklické aromatické uhlovodíky,
-            které způsobují rakovinu.
-            Platí, že staré kotle na uhlí jsou mnohem škodlivější,
-            než nové s velkou účinností, ale stále je to horší než
-            tepelné čerpadlo, nebo plyn.
-        <p>
-
-        </p>
-        <b>Netopit elektrickým kotlem:</b>
-        Oproti obyčejnému elektrickému kotli snižuje tepelné čerpadlo
-        spotřebu elektřiny na vytápění 3-4 krát. Tolikrát klesají i náklady
-        a emise CO2. Tepelné čerpadlo má v průměru návratnost 5 let.
+        <p>Když protopíte: <input type="range" data-bind="value: dum_spotreba, valueUpdate: 'input'" min="1" max="30"> &nbsp;
+            <b data-bind="text: dum_spotreba"></b><b> MWh / rok</b>, což je
+            <b data-bind="text: (dum_spotreba() * 3600 / 1000).toFixed(0)"></b><b> GJ / rok</b>
+            <br>
+            <button data-bind="click: dum_spotreba(DATA.cr_domacnost_topeni_avg)">Jako průměrná česká domácnost</button>.
+            <br>
+            Cena elektřiny: <input type="range" data-bind="value: cena_kwh, valueUpdate: 'input'" min="0.5" max="5" step="0.1"> &nbsp; <b data-bind="text: cena_kwh"></b> <b>Kč / kWh</b>.
         </p>
 
+
+        <p><b>Kotel na uhlí</b> (účinnost 50%) vyprodukuje za rok <span data-bind="html: format_co2_cmp_pop(kotel_na_uhli_co2())"></span>
+
+        </p>
+
+        <p><b>Kotel na plyn</b> (účinnost 95%) vyprodukuje za rok <span data-bind="html: format_co2_cmp_pop(kotel_na_plyn_co2())"></span></p>
+
+        <p><b>Elektrický kotel</b> vyprodukuje za rok <span data-bind="html: format_co2_cmp_pop(elektrokotel_co2())"></span>,
+            s náklady na elektřinu <span data-bind="html: format_cena(dum_spotreba() * 1000 * cena_kwh())"></span>.
+        </p>
+
+        <p><b>Tepelné čerpadlo</b> s topným faktorem COP
+            <input type="range" data-bind="value: cerpadlo_cop, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="2" max="5" step='0.1'>
+            &nbsp;
+            <b data-bind="text: cerpadlo_cop"></b>
+            vyprodukuje za rok
+            <span data-bind="html: format_co2_cmp_pop(cerpadlo_co2())"></span>,
+            s náklady na elektřinu <span data-bind="html: format_cena(dum_spotreba() * 1000 * cena_kwh() / cerpadlo_cop())"></span>.
+        </p>
+        <div class="alert alert-info">
+            <p>
+                <i class="material-icons">smoking_rooms</i>
+                Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
+                jemné prachové částice a polycyklické aromatické uhlovodíky,
+                které způsobují rakovinu. Staré kotle na uhlí jsou mnohem škodlivější,
+                než nové s velkou účinností, ale stále je to horší než
+                tepelné čerpadlo, nebo plyn.
+            </p>
+            <p>
+                <i class="material-icons">info</i>
+                Oproti obyčejnému elektrickému kotli má tepelné čerpadlo
+                <b data-bind="text: cerpadlo_cop"></b> krát (přesně o COP)
+                nižší náklady a emise, ročně s ním ušetříte
+                <b data-bind="html: format_cena(cerpadlo_setrim())"></b>.
+                Stojí-li tepelné čerpadlo
+                <input type="range"
+                       data-bind="value: cerpadlo_cena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                       min="150000" max="350000" step='10000'>
+                &nbsp;
+                <b data-bind="html: format_cena(cerpadlo_cena())"></b>, investice se vám vrátí za
+                <b data-bind="text: Math.ceil(cerpadlo_navratnost())"></b> let.
+            </p>
+            <p class="mb-0">
+                <i class="material-icons">help</i>
+                Jaktože má tepelné čerpadlo větší emise CO<sub>2</sub> než plynový kotel? Je to tím, že elektřina v České republice je <b>hodně špinavá</b> &ndash; přes 40% energie se vyrobí v hnědouhelných elektrárnách, viz
+                <a href="https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku">[wikipedie]</a>.
+                Bude-li ČR v budoucnosti vyrábět energii čistěji, emise tepelných čerpadel (a elektrokotlů) budou klesat.
+                <!--
+                <input type="range"
+                       data-bind="value: elektrina_cr_mix_emise, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                       min="0.0" max="1.5" step='0.1'>
+                &nbsp;
+                <b data-bind="html: elektrina_cr_mix_emise"></b>.
+                -->
+            </p>
+        </div>
+        <!-- TODO solar -->
         <h3>2. Zateplit dům.</h3>
         <!--
-        (okna, zdi, střecha)
+        (TODO okna, zdi, střecha)
         -->
         <p>
             <b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o <b>30&ndash;60%</b>,
@@ -274,7 +322,7 @@
             <p class="mb-0">
                 <i class="material-icons">local_grocery_store</i>
                 Maso a mléčné výrobky lze nahradit rostlinnými ekvivalenty s vysokým podílem bílkovin
-                &ndash; například luštěniny, ořechy a obiloviny, viz&nbsp;<span
+                &ndash; například tofu, luštěniny, ořechy a obiloviny, viz&nbsp;<span
                     data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
             </p>
         </div>

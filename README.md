@@ -22,7 +22,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 - grafika na celkovou spotrebu
 - vsechno doladit
-- nejak vylepsit, neco tomu chybi - Co nejméně jezdit autem a létat.
+- nejak vylepsit, neco tomu chybi - sekce "Co nejméně jezdit autem a létat"
 - zatepleni domu neni moc uzitecne, protoze nikdo nevi, co znamena zateplit o 30%
 - "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
 - lip ozdrojovat text a upresnit
@@ -30,12 +30,14 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 	- co presne jednotlive promenne znamenaji
 	- co je to za zdroj
 	- jaky jsou motivace pro odhady/vypocty
+- koupit domenu
+- update google analytics
 	
 ## good to have
 
-- lepsi vizualizace "co2_cmp" - co lip rika pribeh
-- ikonka ke kalkulackam ?
-- update google analytics
+- lepsi vizualizace
+    - e.g. "co2_cmp" - co lip rika pribeh
+    - ikonka ke kalkulackam ?
 - research - výměna oken - kolik stoji, kolik setri
 - konzumni zbozi & elektronika - celkem
 	- obleceni, elektro, hygiena, chemie, ..
@@ -47,6 +49,15 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - `data.js`
     - mat_* zkontrolovat vuci originalnim zdrojum
     - a pouzit ty
+- zvazit nejaky vic intuitivne pochopitelny
+    framing tech procentualnich srovnani jako
+    - "to odpovida 20 % rocnim emisim z jidla", namisto
+      "to odpovida 1.5 % celkovym emisim" 
+    - pze pocit z 1.5 % je "to je skoro nula"
+    - zatimco pocit z 20 % je "to je docela dost"
+    - a clovek je spatny v prestavovani si malych cisel
+    - na druhou stranu je spravne, ze je jasne videt, ze
+        "letadlo do thajska" 5x prebije veskerou usporu co clovek dela jinde
 
 ## druha faze
 
