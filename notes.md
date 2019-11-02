@@ -116,3 +116,29 @@ tohle se mi libi:
 	- emise (prach, ...) koncentrované v elektrárně na škále, vs ve městech
 	- teplo ve městech (klima, spalovací motory)
 
+
+
+# Vliv bohatstvi z pohledu emisi - mozne faktory (hypotezy)
+## Bohati
+- vic letaji pracovne
+- maji vic penez, vic konzumuji
+- maji vic penez, vic letaji na dovolenou (exotictejsi destinace)
++ maji vic penez, muzou si poridit
+    + pasivni barak
+    + ekologicky kotel, paliva, zateplit barak
+    + zelenou elektrinu
++ maji vic penez, maji vic moznosti jak pomoct
+    + muzou investovat do sustainable biz 
++ maji vic saturovane zakladni potreby, muzou resit boj s klimatickou zmenou
+
+## Chudí
+- topi uhlim
+- nemaji penize, nemuzou si poridit
+    - novy kotel
+    - zatepleni, eko-paliva, ..
+- maji uplne jine problemy, nez klimatickou zmenu, nemaji cas/energii to resit
++ maji min penez, malo konzumuji, vic setri
++ maji min penez, malo jezdi na dovolenou, ne moc letecky, kdyz uz tak po cechach
+
+
+
