@@ -34,15 +34,18 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 ## good to have
 
+- dovolena autem
 - lepsi vizualizace "co2_cmp" - co lip rika pribeh
 - ikonka ke kalkulackam
 - update google analytics
-- výměna oken - kolik stoji, kolik setri
+- research - výměna oken - kolik stoji, kolik setri
 - konzumni zbozi & elektronika - celkem
 	- obleceni, elektro, hygiena, chemie, ..
 - fix broken popover updates
 	- popover je treba zapnout pomoci jquery, ale generuju je v knockoutu programaticky
 	a tak je ten update trochu hack ("mouse out")
+- research - co zelena energie (e.g. od PRE)
+    - je to predrazeny BS, co je jen zisk navic pro PRE, nebo to pomaha?
 
 ## druha faze
 
