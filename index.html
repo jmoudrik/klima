@@ -317,8 +317,28 @@ kilometrů naježděných autem za hromadnou dopravu, za rok by snížil své ce
 3. Jet na dovolenou poblíž ČR.
 </h4>
 <p>
-Pokud by člověk jel na dovolenou do jižních Čech, namísto letecky do letoviska v Turecku, ušetřil by tímto <b>TODO</b>.
+	Pokud by člověk jel na dovolenou do Čech, namísto
+	<select data-bind="options: destinace_dovolena,
+                       value: sel_dovolena,
+                       valueAllowUnset: true"></select>,
+	ušetřil by tím
+	<b data-bind='text: format_perc1(dovolena_uspora_kg() / DATA.cr_avg_total_est)'></b>
+	&ndash;
+	<span data-bind="html: format_co2_cmp_pop(dovolena_uspora_kg() / 1000)"></span>
+	ročních emisí průměrného Čecha.
 </p>
+	<div class="alert alert-info">
+	<p>
+	<i class="material-icons">info</i>
+        Všimněte si, že dovolená autem (kalkulačka předpokládá, že na dovolenou jedete ve
+		<span data-bind="text: DATA.auto_naplnenost_dovolena_cr_est"></span> lidech)
+		je mnohem ekologičtější, než letecká dovolená (na kilometr zhruba
+		<b data-bind="text: (DATA.letadlo_co2_km_equiv
+							/ DATA.auto_co2_km_avg
+							* DATA.auto_naplnenost_dovolena_cr_est).toFixed(1)"></b> krát).
+		Letecká doprava vychází hůř i protože se často létá na větší vzdálenosti.
+	</p>
+</div>
 </div>
 
 <!--

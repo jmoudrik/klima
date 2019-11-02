@@ -49,7 +49,6 @@ function AppViewModel() {
 		return usetreno_za_auto - pridano_za_mhd;
 	}, this);
 
-
 	this.maso_mleko_uspora = ko.observable(2);
 
 	this.maso_mleko_uspora_kg = ko.computed(function() {
@@ -58,10 +57,29 @@ function AppViewModel() {
 		return ret;
 	}, this);
 
-	this.updatePopover = function() {
-		console.log("update pops");
-		$('.popoverData').popover();
-	};
+	this.sel_dovolena = ko.observable(destinace_dovolena[3]);
+
+	this.dovolena_uspora_kg = ko.computed(function() {
+        // predpokladame, ze cesta po cechach je "zadarmo"
+        // pro letadlo je to rozumne:
+            // vzdalenost kterou lidi ujedou z domova na letiste by ujeli po cechach, tzn
+            // (to je imo celkem ok predpoklad, cesta po cechach je vyrazne kratsi
+            // a min zatezujici, nez litani, takze se to ztrati).
+            // kdyztak muzem pripocitat 100 km, nebo tak
+            // navic na dovolenou autem se vetsinou jede ve vic lidech a tim je
+            // jizda na osobo-kilometr vyrazne levnejsi (~ 40 g/km pri 3 lidech v aute)
+        // autem je to trosku blbejsi odhad, ale nevime, kde bydli, atp, kam jedou
+        // stejne tak, pocitame vzdalenost z Prahy (ktera je priblizne veprostred, takze
+        // se ty chyby pravdepodobne nejak odectou a +- je to ok
+
+        // 2 * pze jedem/letime tam a zpet
+	    var dist = 2* dovolena[this.sel_dovolena()];
+	    updatePopoverDelayed();
+	    return dist;
+	}, this);
+    // helper
+
+    // old
 
 	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
 

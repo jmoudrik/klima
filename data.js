@@ -60,6 +60,10 @@ this.auto_naplnenost_avg_eu = 1.4;
 // tak dejme tomu 1.5, at mame jistotu dolniho odhadu emisi
 // (nechceme krivdit motoristum)
 this.auto_naplnenost_cr_est = 1.5;
+// odhad toho, v kolika lidech jezdi cesi v prumeru na dovolenou autem
+// zdrojem je soukroma statistika v rodine
+// (/ vycucano z prstu, tzn je to predpoklad, spis nez sound evidence-based)
+this.auto_naplnenost_dovolena_cr_est = 3;
 
 // # Emise z Paliv
 // [12] https://www.mpo.cz/dokument6794.html
@@ -194,6 +198,24 @@ this.mobil_vyroba = 35.82;
 // https://carboncatalogue.coclear.co/?sector=Computer%2C%20IT%20%26%20telecom&company=Dell%20Inc.&year=2015&sort=sector
 this.dell_lattitude_e7440_lca = 276;
 
+// Ostatni
+this.letecke_vzdalenosti = {
+    // vse v km
+	'Praha > Londýn': 1034,
+	'Praha > Moskva': 1668,
+	'Praha > New York': 6568,
+	'Praha > Madrid': 1760,
+	'Praha > Ankara': 1830,
+	'Praha > Bangkok': 8660,
+	'Praha > Káhira': 2634,
+    'Praha > Athény': 1560,
+}
+this.autem_vzdalenosti = {
+    // zdroj Mapy.cz
+    'Praha > Zadar': 964,
+    'Praha > Řím': 1303,
+    'Praha > Budapešť': 525,
+}
 }
 
 var DATA = new make_data();

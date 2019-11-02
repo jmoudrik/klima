@@ -1,9 +1,4 @@
 
-var lety = {
-	'Praha > Londýn': 1034,
-	'Praha > Moskva': 1668,
-	'Praha > New York': 6568,
-}
 
 var ref_let = 'Praha > New York';
 
@@ -16,7 +11,7 @@ function format_cena(kc) {
 // TODO hezci widgety na letadlo & auto
 
 function letadlem_html(tuny_co2) {
-		var let_co2 = lety[ref_let] * DATA.letadlo_co2_km_equiv / 1000;
+		var let_co2 = DATA.letecke_vzdalenosti[ref_let] * DATA.letadlo_co2_km_equiv / 1000;
 		var ratio = tuny_co2 / let_co2;
 
 		return "<b>" + ratio.toFixed(1) + "</b> letů <b>" + ref_let + "</b>";
@@ -98,6 +93,34 @@ var jidelnicek = {
 'masožrout':DATA.jidlo_masozrout_den
 };
 
+// top destiance vybrany z
+// TODO chorvatsko, atp
+// https://www.idnes.cz/cestovani/kolem-sveta/turiste-dovolena-zebricek-destinaci-nejoblibenejsi-destinace-2018.A190410_160855_kolem-sveta_hig
+// this.sel_dovolena = ko.observable(destinace_dovolena[0]);
+var destinace_dovolena = [
+'autem do Chorvatska',
+'autem do Itálie',
+'autem do Maďarska',
+'letecky do Egypta',
+'letecky do Řecka',
+'letecky do Španělska',
+'letecky do Turecka',
+'letecky do Thajska',
+];
+var auto_passenger_co2 = DATA.auto_co2_km_avg / DATA.auto_naplnenost_dovolena_cr_est;
+console.log(auto_passenger_co2)
+
+var dovolena = {
+// pouzivame Praha > Zadar, protoze Zahreb neni u more, takze Zadar (veprostred pobrezi) je lepsi odhad
+'autem do Chorvatska' : DATA.autem_vzdalenosti['Praha > Zadar'] * auto_passenger_co2,
+'autem do Itálie' : DATA.autem_vzdalenosti['Praha > Řím'] * auto_passenger_co2,
+'autem do Maďarska' : DATA.autem_vzdalenosti['Praha > Budapešť'] * auto_passenger_co2,
+'letecky do Egypta' : DATA.letecke_vzdalenosti['Praha > Káhira']* DATA.letadlo_co2_km_equiv,
+'letecky do Řecka' :DATA.letecke_vzdalenosti['Praha > Athény']* DATA.letadlo_co2_km_equiv,
+'letecky do Španělska' :DATA.letecke_vzdalenosti['Praha > Madrid']* DATA.letadlo_co2_km_equiv,
+'letecky do Turecka' : DATA.letecke_vzdalenosti['Praha > Ankara']* DATA.letadlo_co2_km_equiv,
+'letecky do Thajska' : DATA.letecke_vzdalenosti['Praha > Bangkok']* DATA.letadlo_co2_km_equiv,
+};
 
 // Reference & odkazy ze stranky
 var refs = {
@@ -131,4 +154,22 @@ function render_refs(){
 	ret.push("</ul>");
 	return ret.join("\n");
 }
+
+function updatePopover() {
+        console.log("update pops");
+        $('.popoverData').popover();
+}
+
+function updatePopoverDelayedPromise() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+    updatePopover();
+    }, 200);
+  });
+};
+
+var updatePopoverDelayed = async function() {
+    var stuff = await updatePopoverDelayedPromise();
+};
+
 
