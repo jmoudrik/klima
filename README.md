@@ -21,6 +21,8 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 ## blocking public launch
 
 - grafika na celkovou spotrebu
+- vsechno doladit
+- nejak vylepsit, neco tomu chybi - Co nejméně jezdit autem a létat.
 - zatepleni domu neni moc uzitecne, protoze nikdo nevi, co znamena zateplit o 30%
 - "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
 - lip ozdrojovat text a upresnit
@@ -28,15 +30,11 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 	- co presne jednotlive promenne znamenaji
 	- co je to za zdroj
 	- jaky jsou motivace pro odhady/vypocty
-- `data.js`
-    - mat_* zkontrolovat vuci originalnim zdrojum
-    - a pouzit ty
-
+	
 ## good to have
 
-- dovolena autem
 - lepsi vizualizace "co2_cmp" - co lip rika pribeh
-- ikonka ke kalkulackam
+- ikonka ke kalkulackam ?
 - update google analytics
 - research - výměna oken - kolik stoji, kolik setri
 - konzumni zbozi & elektronika - celkem
@@ -46,6 +44,9 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 	a tak je ten update trochu hack ("mouse out")
 - research - co zelena energie (e.g. od PRE)
     - je to predrazeny BS, co je jen zisk navic pro PRE, nebo to pomaha?
+- `data.js`
+    - mat_* zkontrolovat vuci originalnim zdrojum
+    - a pouzit ty
 
 ## druha faze
 
