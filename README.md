@@ -32,6 +32,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 	- jaky jsou motivace pro odhady/vypocty
 - koupit domenu
 - update google analytics
+- projit TODOs
 	
 ## good to have
 
