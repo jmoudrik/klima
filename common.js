@@ -9,13 +9,19 @@ function letadlem_html(tuny_co2) {
 function somalci_html(tuny_co2) {
 		var ratio = tuny_co2 * 1000 / DATA.somalia_total_per_cap ;
         var integral = ratio.toFixed(0);
-		return "<b>" + integral + "</b> " + format_somali(integral) + " za celý rok";
+		return "<b>" + ratio.toFixed(1) + "</b> Somálců za celý rok";
+		//return "<b>" + ratio.toFixed(1) + "</b> " + format_somali(integral) + " za celý rok";
 }
 
 function cesi_html(tuny_co2) {
-		var ratio = tuny_co2 * 1000 / DATA.cr_avg_total_est ;
+    var ratio = tuny_co2 * 1000 / DATA.cr_avg_total_est ;
+    if (tuny_co2 * 1000 >= DATA.cr_avg_total_est){
         var integral = ratio.toFixed(0);
-		return "<b>" + integral + "</b> " + format_czechs(integral) + " za celý rok";
+		return "<b>" + ratio.toFixed(1) + "</b> Čechů za celý rok";
+		//return "<b>" + ratio.toFixed(1) + "</b> " + format_czechs(integral) + " za celý rok";
+    } else {
+		return "<b>" + (100*ratio).toFixed(1) + " %</b> roční spotřeby průměrného Čecha.";
+    }
 }
 
 function mobil_html(tuny_co2) {
@@ -29,7 +35,7 @@ function format_num_czech(float_num) {
 }
 
 function format_cena(kc) {
-	return "<b>" + format_num_czech(kc) + ",- Kč</b>" ;
+	return "<b>" + format_num_czech(kc) + " Kč</b>" ;
 }
 
 function autem_html(tuny_co2) {
@@ -85,7 +91,7 @@ function format_co2_cmp(tuny_co2) {
 function cmp_html(tuny_co2){
 	//return "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
 	return ("Stejně jako: <ul>" +
-	    (tuny_co2 * 1000 >= DATA.cr_avg_total_est ? wrap_li(cesi_html(tuny_co2)) : '') +
+	    wrap_li(cesi_html(tuny_co2)) +
 		wrap_li(letadlem_html(tuny_co2)) +
 		wrap_li(somalci_html(tuny_co2)) +
 		wrap_li(mobil_html(tuny_co2)) +
@@ -94,8 +100,19 @@ function cmp_html(tuny_co2){
 
 function format_co2_cmp_pop(tuny_co2) {
 	// TODO popoverupdates are broken
-	return '<a class="popoverData selector="true" text-primary" href="#" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+	return '<a class="popoverData popover_bold" selector="true" text-primary" href="#" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
 };
+
+function format_cena_ref(cenakwh, cena_tot) {
+	return (
+	'<a class="popoverData" selector="true" text-primary" data-html="true" '+
+	'data-content="Při ceně <b>'+cenakwh.toFixed(1)+' Kč</b> za 1 kWh" '+
+	'rel="popover" data-placement="bottom" data-trigger="hover">'+
+	's náklady na elektřinu '+
+    format_cena(cena_tot)
+	+'</a>');
+}
+
 
 var typy_jidelnicku = ['vegan', 'vegetarián', 'průměr ČR', 'masožrout'];
 var jidelnicek = {
@@ -117,7 +134,7 @@ var destinace_dovolena = [
     'letecky do Řecka',
     'letecky do Španělska',
     'letecky do Turecka',
-    'letecky do Thajska',
+        'letecky do Thajska',
 ];
 var auto_passenger_co2 = DATA.auto_co2_km_avg / DATA.auto_naplnenost_dovolena_cr_est;
 
@@ -135,19 +152,22 @@ var dovolena = {
 
 // Reference & odkazy ze stranky
 var refs = {
-	'Atlas Masa' : [1, 'https://www.foeeurope.org/meat-atlas/'],
-	'Rostlinné Bílkoviny' :  [2, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/']
+	'Atlas Masa' : [3, 'https://www.foeeurope.org/meat-atlas/', ''],
+	'Rostlinné Bílkoviny' :  [4, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/', ''],
+	'Zpráva o životním prostředí ČR':  [1, 'https://www.mzp.cz/C1257458002F0DC7/cz/zpravy_o_stavu_zivotniho_prostredi_publikace/$FILE/SOPSZP-Zprava_ZP_CR_2015-20170301.pdf', ''],
+	'Energetika v Česku - wikipedie' : [2, 'https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku', ''],
 }
 
 function render_ref(key){
 	var val = refs[key];
 	var num = val[0];
 	var url = val[1];
+	var suff = val[2];
 	//return "<a href='#"+num+"'>["+num+"]</a>";
 	// ten popover zmizi kdyz se na nej najede, ergo ne moc uzitecny, unless fix
 	//
-	var popover_html = '['+num+'] ' + key ; //+ ": <a href='"+url+"'>"+key+'</a>';
-	return '<a class="popoverData text-primary" href="'+url+'" data-html="true" data-content="'+popover_html+'" rel="popover" data-placement="bottom" data-trigger="hover">['+num+']</a>';
+	var popover_html = '<b>['+num+']</b> ' + key + (suff ? " " + suff:''); //+ ": <a href='"+url+"'>"+key+'</a>'
+	return '<a class="popoverData popover_bold text-primary" href="'+url+'" data-html="true" data-content="'+popover_html+'" rel="popover" data-placement="bottom" data-trigger="hover">['+num+']</a>';
 }
 
 function render_refs(){

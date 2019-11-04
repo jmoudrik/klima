@@ -8,9 +8,6 @@
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 	  gtag('config', 'UA-151241103-1');
-
-
-
     </script>
 
     <!-- Required meta tags -->
@@ -37,14 +34,24 @@
 	h2 i.material-icons {
 		font-size: 35px;
 	}
-	.popoverData {
+	.popover_bold {
 		 font-weight: bold;
 	}
-	
 	.obsah_block {
 		margin-left: 20px;
 	}
+     button div {
+        display: flex;
+        align-items: center;
+      }
+     .material-icons {
+        margin-right: 5px;
+      }
 
+      .under_dot {
+        border-bottom: 1px dotted #000;
+        text-decoration: none;
+      }
 
 
     </style>
@@ -81,7 +88,8 @@
         Z toho největší část připadá na vytápění domácnosti, poté na produkci jídla a dopravu.
     </p>
     <ul>
-        <li><i class="material-icons">house</i> vytápění domácnosti, teplá voda,
+        <li>
+            <i class="material-icons">house</i> vytápění domácnosti, teplá voda,
             <b data-bind='text: format_perc(DATA.cr_energy_doma  / DATA.cr_avg_total_est)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(DATA.cr_energy_doma / 1000)"></span>
@@ -142,45 +150,83 @@
     </h2>
     <hr/>
     <div class='obsah_block'>
+        <p>
+            <button type="button"
+                    class="btn btn-outline-primary btn-sm"
+                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_avg)), , event: { keypress: updatePopover, mouseout: updatePopover }">
+                Průměrná domácnost
+            </button>
+            protopí za rok <input type="range" data-bind="value: dum_spotreba, valueUpdate: 'input'" min="1" max="30">
+            &nbsp;
+            <b data-bind="text: dum_spotreba"></b><b> MWh / rok</b>.
+            <!--, což je
+            <b data-bind="text: (dum_spotreba() * 3600 / 1000).toFixed(0)"></b><b> GJ / rok</b>
+            -->
+            <br/>
+            Průměrná spotřeba se liší podle toho, bydlíte-li v
+            <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
+                    data-bind="click: dum_spotreba(DATA.cr_domacnost_topeni_byt_avg)">
+                <div>
+                    <i class="material-icons">apartment</i>
+                    bytě
+                </div>
+            </button>
+            , nebo
+            <button type="button" class="btn btn-outline-primary btn-sm" title="Dům"
+                    data-bind="click: dum_spotreba(DATA.cr_domacnost_topeni_dum_avg)">
+                <div>
+                    <i class="material-icons">house</i>
+                    domě
+                </div>
+            </button>
+            <!--
+            Cena elektřiny: <input type="range" data-bind="value: cena_kwh, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="0.5" max="5" step="0.1"> &nbsp; <b data-bind="text: cena_kwh"></b> <b>Kč / kWh</b>.
+            -->
+        </p>
+
         <h3>1. Topit ekologicky.</h3>
         <p>
-            <b>Netopit uhlím ve starém kotli a netopit elektrokotlem.</b>
-        </p>
+            To znamená především <b>netopit uhlím</b> ve starém kotli a <b>netopit elektrokotlem</b>. Pro výše uvedenou
+            domácnost platí, že:
+        <ul>
+            <li>
+                <b>Kotel na uhlí</b> (účinnost 50%) vyprodukuje za rok <span
+                    data-bind="html: format_co2_cmp_pop(kotel_na_uhli_co2())"></span>
+            </li>
+            <li>
+                <b>Kotel na plyn</b> (účinnost 95%) vyprodukuje za rok <span
+                    data-bind="html: format_co2_cmp_pop(kotel_na_plyn_co2())"></span>
 
-        <p>Když protopíte: <input type="range" data-bind="value: dum_spotreba, valueUpdate: 'input'" min="1" max="30"> &nbsp;
-            <b data-bind="text: dum_spotreba"></b><b> MWh / rok</b>, což je
-            <b data-bind="text: (dum_spotreba() * 3600 / 1000).toFixed(0)"></b><b> GJ / rok</b>
-            <br>
-            <button data-bind="click: dum_spotreba(DATA.cr_domacnost_topeni_avg)">Jako průměrná česká domácnost</button>.
-            <br>
-            Cena elektřiny: <input type="range" data-bind="value: cena_kwh, valueUpdate: 'input'" min="0.5" max="5" step="0.1"> &nbsp; <b data-bind="text: cena_kwh"></b> <b>Kč / kWh</b>.
-        </p>
-
-
-        <p><b>Kotel na uhlí</b> (účinnost 50%) vyprodukuje za rok <span data-bind="html: format_co2_cmp_pop(kotel_na_uhli_co2())"></span>
-
-        </p>
-
-        <p><b>Kotel na plyn</b> (účinnost 95%) vyprodukuje za rok <span data-bind="html: format_co2_cmp_pop(kotel_na_plyn_co2())"></span></p>
-
-        <p><b>Elektrický kotel</b> vyprodukuje za rok <span data-bind="html: format_co2_cmp_pop(elektrokotel_co2())"></span>,
-            s náklady na elektřinu <span data-bind="html: format_cena(dum_spotreba() * 1000 * cena_kwh())"></span>.
-        </p>
-
-        <p><b>Tepelné čerpadlo</b> s topným faktorem COP
-            <input type="range" data-bind="value: cerpadlo_cop, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }" min="2" max="5" step='0.1'>
-            &nbsp;
-            <b data-bind="text: cerpadlo_cop"></b>
-            vyprodukuje za rok
-            <span data-bind="html: format_co2_cmp_pop(cerpadlo_co2())"></span>,
-            s náklady na elektřinu <span data-bind="html: format_cena(dum_spotreba() * 1000 * cena_kwh() / cerpadlo_cop())"></span>.
+            </li>
+            <li>
+                <b>Elektrický kotel</b> vyprodukuje za rok <span
+                    data-bind="html: format_co2_cmp_pop(elektrokotel_co2())"></span>,
+                <span class="under_dot">
+                    <span data-bind="html: format_cena_ref(cena_kwh(), dum_spotreba() * 1000 * cena_kwh())"></span>.
+                </span>
+            </li>
+            <li>
+                <b>Tepelné čerpadlo</b> s topným faktorem COP
+                <input type="range"
+                       data-bind="value: cerpadlo_cop, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                       min="2" max="5" step='0.1'>
+                &nbsp;
+                <b data-bind="text: cerpadlo_cop"></b>
+                vyprodukuje za rok
+                <span data-bind="html: format_co2_cmp_pop(cerpadlo_co2())"></span>,
+                <span class="under_dot">
+                    <span data-bind="html: format_cena_ref(cena_kwh(), dum_spotreba() * 1000 * cena_kwh() / cerpadlo_cop())"></span>.
+                </span>
+            </li>
+        </ul>
         </p>
         <div class="alert alert-info">
             <p>
                 <i class="material-icons">smoking_rooms</i>
-                Kotle na uhlí produkují kromě množství CO2 hlavně zdraví velmi škodlivé
-                jemné prachové částice a polycyklické aromatické uhlovodíky,
-                které způsobují rakovinu. Staré kotle na uhlí jsou mnohem škodlivější,
+                Kromě množství vypuštěného CO<sub>2</sub> jsou kotle na uhlí hlavním zdrojem zdraví velmi škodlivých
+                a karcinogenních malých prachových částic PM<sub>2.5</sub>,
+                viz&nbsp;<span data-bind="html: render_ref('Zpráva o životním prostředí ČR')"></span>.
+                Staré kotle na uhlí jsou mnohem škodlivější,
                 než nové s velkou účinností, ale stále je to horší než
                 tepelné čerpadlo, nebo plyn.
             </p>
@@ -200,9 +246,12 @@
             </p>
             <p class="mb-0">
                 <i class="material-icons">help</i>
-                Jaktože má tepelné čerpadlo větší emise CO<sub>2</sub> než plynový kotel? Je to tím, že elektřina v České republice je <b>hodně špinavá</b> &ndash; přes 40% energie se vyrobí v hnědouhelných elektrárnách, viz
-                <a href="https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku">[wikipedie]</a>.
-                Bude-li ČR v budoucnosti vyrábět energii čistěji, emise tepelných čerpadel (a elektrokotlů) budou klesat.
+                Jaktože má tepelné čerpadlo větší emise CO<sub>2</sub> než plynový kotel? Je to tím, že elektřina v
+                České republice je <b>hodně špinavá</b> &ndash; přes 40% energie se vyrobí v hnědouhelných elektrárnách,
+                viz&nbsp;<span
+                    data-bind="html: render_ref('Energetika v Česku - wikipedie')"></span>.
+                Bude-li ČR v budoucnosti vyrábět energii čistěji, emise tepelných čerpadel (a elektrokotlů) budou
+                klesat.
                 <!--
                 <input type="range"
                        data-bind="value: elektrina_cr_mix_emise, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
@@ -237,6 +286,7 @@
 
         <h3>3. Snížit spotřebu teplé vody, topit méně.</h3>
         <p>
+            <i class="material-icons">bathtub</i>
             <b>Ohřev teplé vody</b> odpovídá zhruba
             <b data-bind='text: format_perc(DATA.mat_cr_avg_tepla_voda / DATA.cr_avg_total_est)'></b>
             celkových emisí průměrného občana.
@@ -322,8 +372,8 @@
             <p class="mb-0">
                 <i class="material-icons">local_grocery_store</i>
                 Maso a mléčné výrobky lze nahradit rostlinnými ekvivalenty s vysokým podílem bílkovin
-                &ndash; například tofu, luštěniny, ořechy a obiloviny, viz&nbsp;<span
-                    data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
+                &ndash; například tofu, luštěniny, ořechy a obiloviny,
+                viz&nbsp;<span data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
             </p>
         </div>
         <h3>
@@ -426,7 +476,7 @@
                 <b data-bind="text: (DATA.letadlo_co2_km_equiv
 							/ DATA.auto_co2_km_avg
 							* DATA.auto_naplnenost_dovolena_cr_est).toFixed(1)"></b> krát).
-                Krom menších emisí na kilometr je to i tím, že autem se jezdí na menší vzdálenosti.
+                Krom menších emisí na kilometr je to i tím, že na dovolenou autem se jezdí na menší vzdálenosti.
             </p>
         </div>
     </div>
@@ -455,9 +505,9 @@
     </p>
     <p>
         Snaha je poskytnout ověřené a zdrojované informace, ale je nutné říct, že všechny zde uvedené statistiky a
-        odhady
-        stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat.
-        Smyslem je tak poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
+        odhady stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat, nelze je tedy brát
+        vážně do poslední desetiny procenta.
+        Smyslem je poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
         &ndash; aby si každý na základě toho mohl vybrat kroky které mu osobně dávají největší smysl.
     </p>
 
@@ -482,12 +532,10 @@
     <script type="text/javascript" src="./kalkulacka.js"></script>
 
     <script type="text/javascript">
-$('.popoverData').popover();
-
+    $('.popoverData').popover();
 
 
     </script>
-
 </div>
 </body>
 </html>

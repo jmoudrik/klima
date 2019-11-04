@@ -4,6 +4,9 @@ function make_data () {
 // [1] https://www.czso.cz/csu/czso/spotreba-paliv-a-energii-v-domacnostech
 // kolik protopi prumerna domacnost
 this.cr_domacnost_topeni_avg = 12.78; // MWh / rok
+// TODO
+this.cr_domacnost_topeni_byt_avg = 8; // MWh / rok
+this.cr_domacnost_topeni_dum_avg = 15; // MWh / rok
 this.cr_domacnosti_byty = 2473489;
 this.cr_domacnosti_domy = 1830684;
 this.cr_domacnosti_pocet = 4304173;

@@ -1,8 +1,9 @@
 function AppViewModel() {
     // MWh / rok
-	this.dum_spotreba = ko.observable(DATA.cr_domacnost_topeni_avg);
+	this.dum_spotreba = ko.observable(Math.ceil(DATA.cr_domacnost_topeni_avg));
 	this.cerpadlo_cop = ko.observable(3);       // topny faktor cerpadla
 	this.cerpadlo_cena = ko.observable(220000);
+	// TODO XXX v html tooltipu co ukazuje cenu je to staticky
 	this.cena_kwh = ko.observable(3.5);         // kc / kwh
 	this.elektrina_cr_mix_emise = ko.observable(DATA.elektrina_cr_mix_emise);
 	this.ucinnost_kotel_uhli = ko.observable(0.5);
@@ -139,8 +140,12 @@ function AppViewModel() {
 	    updatePopoverDelayed();
 	    return dist;
 	}, this);
-}
+};
+
 
 // Activates knockout.js
-ko.applyBindings(new AppViewModel());  
+var model = new AppViewModel();
+ko.applyBindings(model);
+//
+model.dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_avg));
 
