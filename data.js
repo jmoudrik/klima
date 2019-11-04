@@ -3,15 +3,41 @@ function make_data () {
 // Obecne statistiky o Ceske Republice
 // [1] https://www.czso.cz/csu/czso/spotreba-paliv-a-energii-v-domacnostech
 // kolik protopi prumerna domacnost
-this.cr_domacnost_topeni_avg = 12.78; // MWh / rok
-// TODO
-this.cr_domacnost_topeni_byt_avg = 8; // MWh / rok
-this.cr_domacnost_topeni_dum_avg = 15; // MWh / rok
-this.cr_domacnosti_byty = 2473489;
-this.cr_domacnosti_domy = 1830684;
-this.cr_domacnosti_pocet = 4304173;
-console.assert(this.cr_domacnosti_domy + this.cr_domacnosti_byty == this.cr_domacnosti_pocet )
+this.cr_domacnosti_byty_pocet = 2473489; // byty =def= bytove domy (to je trochu jinak nez CZSO, ale data jsou spravne)
+this.cr_domacnosti_domy_pocet = 1830684; // domy =def= rodinne domy
+this.cr_domacnosti_pocet = this.cr_domacnosti_domy_pocet + this.cr_domacnosti_byty_pocet;
 this.cr_obyvatelstvo = 10566653;
+
+// celkove spotreby, vse v TJ / rok
+this.cr_domacnosti_topeni = 196585;
+this.cr_domacnosti_ohrev_vody = 50822;
+this.cr_domacnosti_vareni = 19555;
+// spotrebice zahrnuji osvetleni
+this.cr_domacnosti_spotrebice = 21067;
+this.cr_domacnosti_ostatni = 181 + 4395;
+this.cr_domacnosti_celkem = (this.cr_domacnosti_topeni + this.cr_domacnosti_ohrev_vody
+                            + this.cr_domacnosti_vareni + this.cr_domacnosti_spotrebice
+                            + this.cr_domacnosti_ostatni);
+this.cr_topeni_ratio = this.cr_domacnosti_topeni / this.cr_domacnosti_celkem;
+
+// TJ [1, strana 80]
+this.cr_domacnosti_celkem_byty = 92117;
+this.cr_domacnosti_celkem_domy = 186335;
+
+// TJ -> GJ -> MJ -> MWh
+var TJ_to_MWH = 1000 * 1000 / 3600;
+
+// prumerne spotreby - vse v MWh / rok
+this.cr_domacnost_topeni_avg = this.cr_domacnosti_topeni * TJ_to_MWH / this.cr_domacnosti_pocet;
+
+// # Odhad spotreby na vytapeni pro byty vs. rodinne domy
+// pro tyhle veci nemuzu najit v te zprave [1] prima data
+// odhad (nize) predpoklada, ze podil energii spotrebovanych na teplo vs ostatni vydaje je stejny pro domy a byty
+// - to asi neni uplne pravda, protoze se da cekat, ze rodinne domy budou spotrebovavat na vytapeni vetsi podil
+// - tzn, domum to asi spotrebu trochu snizuje, bytum zvysuje
+// oba tyhle trendy jsou ale smerem k prumeru, takze to je imo ok odhad
+this.cr_domacnost_topeni_byt_avg_est = this.cr_domacnosti_celkem_byty * TJ_to_MWH * this.cr_topeni_ratio / this.cr_domacnosti_byty_pocet;
+this.cr_domacnost_topeni_dum_avg_est = this.cr_domacnosti_celkem_domy * TJ_to_MWH * this.cr_topeni_ratio / this.cr_domacnosti_domy_pocet;
 
 // # Celkove emise v CR per capita
 // [2] https://data.oecd.org/czech-republic.htm
@@ -168,6 +194,7 @@ this.cr_avg_jidlo_est = 1200;
 // TODO - co ostatni vlivy - jina statistika treba
 // TODO - zkontrolovat energie 
 // Per capita ma ceska republika emise 9.6 tun
+
 // s 1.2 faktorem je cr_avg_total_est ~ 5.2 tun;
 // zbytek odpovida ostatnim rozpocitanym faktorum ("spolecne")
 // 		- export energie, prumysl, infrastrukture, vzdelavani, zdravotnictvi, vlada, ...
@@ -175,7 +202,9 @@ this.cr_avg_jidlo_est = 1200;
 // 1.2 faktor se snazi zohlednit jine "prime == ne spolecne" efekty nez "energie, doprava, jidlo",
 // e.g. konzumni zbozi - elektronika, obleceni
 // - jejich efekt je vyrazne mensi nez jidlo, doprava, energie - TODO reference
-this.cr_avg_total_est = 1.2 * (this.mat_cr_avg_energy_total + this.cr_avg_doprava_est + this.cr_avg_jidlo_est);
+var cr_total_mult_factor = 1.1;
+
+this.cr_avg_total_est = cr_total_mult_factor * (this.mat_cr_avg_energy_total + this.cr_avg_doprava_est + this.cr_avg_jidlo_est);
 console.log("total " + this.cr_avg_total_est );
 
 // jidlo kg CO2/den

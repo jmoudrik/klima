@@ -16,7 +16,6 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 ## blocking beta launch
 
-- kalkulacky pro jednotlivy akce
 
 ## blocking public launch
 
@@ -33,6 +32,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - koupit domenu
 - update google analytics
 - projit TODOs
+- lepsi argumentace pro solarni clanky
 	
 ## good to have
 

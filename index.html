@@ -8,6 +8,7 @@
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 	  gtag('config', 'UA-151241103-1');
+
     </script>
 
     <!-- Required meta tags -->
@@ -44,14 +45,18 @@
         display: flex;
         align-items: center;
       }
+     h2 span {
+        display: flex;
+        align-items: center;
+      }
      .material-icons {
         margin-right: 5px;
       }
-
       .under_dot {
         border-bottom: 1px dotted #000;
         text-decoration: none;
       }
+
 
 
     </style>
@@ -153,8 +158,9 @@
         <p>
             <button type="button"
                     class="btn btn-outline-primary btn-sm"
-                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_avg)), , event: { keypress: updatePopover, mouseout: updatePopover }">
-                Průměrná domácnost
+                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_avg)),
+                               event: { keypress: updatePopover, mouseout: updatePopover }">
+                Průměrná česká domácnost
             </button>
             protopí za rok <input type="range" data-bind="value: dum_spotreba, valueUpdate: 'input'" min="1" max="30">
             &nbsp;
@@ -165,7 +171,8 @@
             <br/>
             Průměrná spotřeba se liší podle toho, bydlíte-li v
             <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
-                    data-bind="click: dum_spotreba(DATA.cr_domacnost_topeni_byt_avg)">
+                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_byt_avg_est)),
+                               event: { keypress: updatePopover, mouseout: updatePopover }">
                 <div>
                     <i class="material-icons">apartment</i>
                     bytě
@@ -173,10 +180,11 @@
             </button>
             , nebo
             <button type="button" class="btn btn-outline-primary btn-sm" title="Dům"
-                    data-bind="click: dum_spotreba(DATA.cr_domacnost_topeni_dum_avg)">
+                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_dum_avg_est)),
+                               event: { keypress: updatePopover, mouseout: updatePopover }">
                 <div>
                     <i class="material-icons">house</i>
-                    domě
+                    rodinném domě
                 </div>
             </button>
             <!--
@@ -191,11 +199,11 @@
         <ul>
             <li>
                 <b>Kotel na uhlí</b> (účinnost 50%) vyprodukuje za rok <span
-                    data-bind="html: format_co2_cmp_pop(kotel_na_uhli_co2())"></span>
+                    data-bind="html: format_co2_cmp_pop(kotel_na_uhli_co2())"></span>.
             </li>
             <li>
                 <b>Kotel na plyn</b> (účinnost 95%) vyprodukuje za rok <span
-                    data-bind="html: format_co2_cmp_pop(kotel_na_plyn_co2())"></span>
+                    data-bind="html: format_co2_cmp_pop(kotel_na_plyn_co2())"></span>.
 
             </li>
             <li>
@@ -241,7 +249,7 @@
                        data-bind="value: cerpadlo_cena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
                        min="150000" max="350000" step='10000'>
                 &nbsp;
-                <b data-bind="html: format_cena(cerpadlo_cena())"></b>, investice se vám vrátí za
+                <b data-bind="html: format_cena(cerpadlo_cena())"></b>, investice se Vám vrátí za
                 <b data-bind="text: Math.ceil(cerpadlo_navratnost())"></b> let.
             </p>
             <p class="mb-0">
@@ -249,7 +257,7 @@
                 Jaktože má tepelné čerpadlo větší emise CO<sub>2</sub> než plynový kotel? Je to tím, že elektřina v
                 České republice je <b>hodně špinavá</b> &ndash; přes 40% energie se vyrobí v hnědouhelných elektrárnách,
                 viz&nbsp;<span
-                    data-bind="html: render_ref('Energetika v Česku - wikipedie')"></span>.
+                    data-bind="html: render_ref('Energetika v Česku')"></span>.
                 Bude-li ČR v budoucnosti vyrábět energii čistěji, emise tepelných čerpadel (a elektrokotlů) budou
                 klesat.
                 <!--
@@ -259,6 +267,11 @@
                 &nbsp;
                 <b data-bind="html: elektrina_cr_mix_emise"></b>.
                 -->
+            </p>
+            <p class="mb-0">
+                <i class="material-icons">wb_sunny</i>
+                Emise tepelného čerpadla (a svůj účet za elektřinu) můžete dále snížit instalací <b>Solárních panelů</b>.
+                U moderních panelů očekávejte návratnost 5&ndash;10 let, a životnost 30&ndash;40 let.
             </p>
         </div>
         <!-- TODO solar -->
@@ -272,32 +285,40 @@
             kvalitních oken, poté zateplení stěn a střechy.
         </p>
         <p>
-            <b>TODO - nejasne</b>
             Například, zateplením domu o <input type="range"
                                                 data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
                                                 min="0" max="100" step="10"> &nbsp; <b
                 data-bind="text: zatepleni_uspora() + ' %'"></b>
-            sníží průměrný Čech své celkové emise o
-            <b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            sníží průměrný Čech své celkové emise z vytápění o
+            <b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_energy_doma )'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(zatepleni_uspora_kg() / 1000)"></span>.
         </p>
-
+        <p>
+            <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
+                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_byt_avg_est)),
+                               event: { keypress: updatePopover, mouseout: updatePopover }">
+                <div>
+                    <i class="material-icons">apartment</i>
+                    bytě
+                </div>
+            </button>
+        </p>
 
         <h3>3. Snížit spotřebu teplé vody, topit méně.</h3>
         <p>
             <i class="material-icons">bathtub</i>
             <b>Ohřev teplé vody</b> odpovídá zhruba
             <b data-bind='text: format_perc(DATA.mat_cr_avg_tepla_voda / DATA.cr_avg_total_est)'></b>
-            celkových emisí průměrného občana.
+            celkových emisí průměrného Čecha.
         </p>
         <p>
             <b>Omezením spotřeby teplé vody</b> o
             <input type="range"
                    data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
-            sníží průměrný Čech za rok své celkové emise o
-            <b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            sníží průměrný Čech své roční emise z vytápění o
+            <b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_energy_doma)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(tepla_voda_uspora_kg() / 1000)"></span>.
         </p>
@@ -307,8 +328,8 @@
             <input type="range"
                    data-bind="value: teplota_snizena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
-            sníží průměrný Čech za rok své celkové emise o
-            <b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            sníží průměrný Čech své roční emise z vytápění o
+            <b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_energy_doma)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(teplota_uspora_kg() / 1000)"></span>.
         </p>
@@ -352,8 +373,8 @@
         </h3>
         <p><b>Produkce hovězího a vepřového masa</b> má z jídla největší zátěž pro životní prostředí.
             Například krávy potřebují hodně krmiva, vody, půdy, a produkují
-            hodně metanu, který je silným skleníkovým plynem.&nbsp;<span
-                    data-bind="html: render_ref('Atlas Masa')"></span>
+            hodně metanu, který je silným skleníkovým plynem&nbsp;<span
+                    data-bind="html: render_ref('Atlas Masa')"></span>.
             <b>Produkce mléka, másla a sýrů</b> má rovněž velký vliv.</p>
         <p><b>Vynecháním masa a mléčných výrobků</b>
             <input type="range"
@@ -363,8 +384,8 @@
             (aneb <b data-bind="text: (maso_mleko_uspora() / 7 * 100).toFixed(0) + ' %'"></b> celkové spotřeby masa a
             mléčných
             výrobků)
-            snížíte za rok své celkové emise o
-            <b data-bind='text: format_perc1(maso_mleko_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            snížíte za rok své emise z jídla o
+            <b data-bind='text: format_perc1(maso_mleko_uspora_kg() / DATA.cr_avg_jidlo_est)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(maso_mleko_uspora_kg() / 1000)"></span>.
         </p>
@@ -383,14 +404,15 @@
             Kromě omezení celkové spotřeby masa <b>můžete pomoct i změnou skladby jídelníčku</b>. Produkce kuřecího
             masa (nebo ryb) je pro životní prostředí mnohem menší zátěž, než hovězí, nebo vepřové.
             <span data-bind="html: render_ref('Atlas Masa')"></span>
-            <br/>
+        </p>
+        <p>
             Když kuřecím nahradíte
             <input type="range"
                    data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10">
             &nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby hovězího a vepřového,
-            snížíte za rok své celkové emise o
-            <b data-bind='text: format_perc1(vepr_hovezi_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            snížíte za rok své emise z jídla o
+            <b data-bind='text: format_perc1(vepr_hovezi_uspora_kg() / DATA.cr_avg_jidlo_est)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(vepr_hovezi_uspora_kg() / 1000)"></span>.
         </p>
@@ -446,8 +468,8 @@
                    data-bind="value: auto_mhd_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10">
             &nbsp; <b data-bind="text: auto_mhd_uspora() + ' %'"></b>
-            kilometrů které najezdí autem za hromadnou dopravu, za rok by snížil své celkové emise přibližně o
-            <b data-bind='text: format_perc1(auto_mhd_uspora_kg() / DATA.cr_avg_total_est)'></b>
+            kilometrů které najezdí autem za hromadnou dopravu, za rok by snížil své celkové emise z dopravy přibližně o
+            <b data-bind='text: format_perc1(auto_mhd_uspora_kg() / DATA.cr_avg_doprava_est)'></b>
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(auto_mhd_uspora_kg() / 1000)"></span>.
         </p>
@@ -469,14 +491,15 @@
         <div class="alert alert-info">
             <p class="mb-0">
                 <i class="material-icons">info</i>
-                Všimněte si, že dovolená autem (když jedete na dovolenou například ve
+                Všimněte si, že dovolená autem (když jedete na dovolenou ve
                 <span data-bind="text: DATA.auto_naplnenost_dovolena_cr_est"></span> lidech,
                 což zde předpokláme)
                 je mnohem ekologičtější, než letecká dovolená (na kilometr zhruba
                 <b data-bind="text: (DATA.letadlo_co2_km_equiv
 							/ DATA.auto_co2_km_avg
 							* DATA.auto_naplnenost_dovolena_cr_est).toFixed(1)"></b> krát).
-                Krom menších emisí na kilometr je to i tím, že na dovolenou autem se jezdí na menší vzdálenosti.
+                Krom menších emisí na kilometr je to i tím, že na dovolenou autem se jezdí na menší vzdálenosti,
+                což je pro životní prostředí prospěšné.
             </p>
         </div>
     </div>
@@ -533,6 +556,7 @@
 
     <script type="text/javascript">
     $('.popoverData').popover();
+
 
 
     </script>

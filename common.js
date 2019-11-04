@@ -20,7 +20,7 @@ function cesi_html(tuny_co2) {
 		return "<b>" + ratio.toFixed(1) + "</b> Čechů za celý rok";
 		//return "<b>" + ratio.toFixed(1) + "</b> " + format_czechs(integral) + " za celý rok";
     } else {
-		return "<b>" + (100*ratio).toFixed(1) + " %</b> roční spotřeby průměrného Čecha.";
+		return "<b>" + (100*ratio).toFixed(1) + " %</b> ročních emisí průměrného Čecha.";
     }
 }
 
@@ -152,10 +152,10 @@ var dovolena = {
 
 // Reference & odkazy ze stranky
 var refs = {
+	'Zpráva o životním prostředí ČR':  [1, 'https://www.mzp.cz/C1257458002F0DC7/cz/zpravy_o_stavu_zivotniho_prostredi_publikace/$FILE/SOPSZP-Zprava_ZP_CR_2015-20170301.pdf', 'MZP ČR, 2015'],
+	'Energetika v Česku' : [2, 'https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku', 'wikipedia, 2019'],
 	'Atlas Masa' : [3, 'https://www.foeeurope.org/meat-atlas/', ''],
-	'Rostlinné Bílkoviny' :  [4, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/', ''],
-	'Zpráva o životním prostředí ČR':  [1, 'https://www.mzp.cz/C1257458002F0DC7/cz/zpravy_o_stavu_zivotniho_prostredi_publikace/$FILE/SOPSZP-Zprava_ZP_CR_2015-20170301.pdf', ''],
-	'Energetika v Česku - wikipedie' : [2, 'https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku', ''],
+	'Rostlinné Bílkoviny' :  [4, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/', 'Česká veganská společnost'],
 }
 
 function render_ref(key){
@@ -166,7 +166,7 @@ function render_ref(key){
 	//return "<a href='#"+num+"'>["+num+"]</a>";
 	// ten popover zmizi kdyz se na nej najede, ergo ne moc uzitecny, unless fix
 	//
-	var popover_html = '<b>['+num+']</b> ' + key + (suff ? " " + suff:''); //+ ": <a href='"+url+"'>"+key+'</a>'
+	var popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:''); //+ ": <a href='"+url+"'>"+key+'</a>'
 	return '<a class="popoverData popover_bold text-primary" href="'+url+'" data-html="true" data-content="'+popover_html+'" rel="popover" data-placement="bottom" data-trigger="hover">['+num+']</a>';
 }
 
@@ -178,7 +178,7 @@ function render_refs(){
 		var url = refs[key][1];
 
 		ret.push("<li>");
-		ret.push("<a name='"+num+"'>["+num+"]</a>");
+		ret.push("<b><a name='"+num+"'>["+num+"]</a></b>");
 		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
 		ret.push("</li>");
 	}
