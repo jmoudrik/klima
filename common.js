@@ -105,7 +105,7 @@ function format_co2_cmp_pop(tuny_co2) {
 
 function format_cena_ref(cenakwh, cena_tot) {
 	return (
-	'<a class="popoverData" selector="true" text-primary" data-html="true" '+
+	'<a class="popoverData" selector="true" data-html="true" '+
 	'data-content="Při ceně <b>'+cenakwh.toFixed(1)+' Kč</b> za 1 kWh" '+
 	'rel="popover" data-placement="bottom" data-trigger="hover">'+
 	's náklady na elektřinu '+

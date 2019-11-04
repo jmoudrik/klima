@@ -9,6 +9,7 @@
 	  gtag('js', new Date());
 	  gtag('config', 'UA-151241103-1');
 
+
     </script>
 
     <!-- Required meta tags -->
@@ -56,8 +57,9 @@
         border-bottom: 1px dotted #000;
         text-decoration: none;
       }
-
-
+      .btn {
+      font-weight: 600;
+      }
 
     </style>
 
@@ -281,28 +283,55 @@
         -->
         <p>
             <b>Zateplení domu</b> snižuje spotřebu energie na vytápění, často i o <b>30&ndash;60%</b>,
-            a tím klesají i náklady na energie a emise CO2. Zateplení zahrnuje především pořízení
-            kvalitních oken, poté zateplení stěn a střechy.
+            a tím klesají i náklady na energie a emise CO<sub>2</sub>. Zateplení zahrnuje především <b>pořízení
+            kvalitních oken, poté zateplení stěn a střechy</b>.
         </p>
         <p>
-            Například, zateplením domu o <input type="range"
-                                                data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
-                                                min="0" max="100" step="10"> &nbsp; <b
-                data-bind="text: zatepleni_uspora() + ' %'"></b>
-            sníží průměrný Čech své celkové emise z vytápění o
-            <b data-bind='text: format_perc1(zatepleni_uspora_kg() / DATA.cr_energy_doma )'></b>
-            &ndash;
+            Například, představme si starý dům, kde se topí uhlím a kde jsou jen stará špaletová okna.
+           <br>
+                Když zateplením snížíme spotřebu energie na vytápění o
+            <input type="range" data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                            min="0" max="100" step="10"> &nbsp; <b data-bind="text: zatepleni_uspora() + ' %'"></b>,
+             za rok se ušetří
             <span data-bind="html: format_co2_cmp_pop(zatepleni_uspora_kg() / 1000)"></span>.
         </p>
         <p>
-            <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
-                    data-bind="click: dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_byt_avg_est)),
+            Podívejte se,
+            <a class="popoverData under_dot" selector="true" data-html="false"
+               data-content="Efekty se budou pravděpodobně výrazně lišit podle konkrétních parametrů zateplovaného domu."
+               rel="popover" data-placement="bottom" data-trigger="hover">
+                jaký efekt může v takovém domě velmi zhruba mít:
+            </a>
+        </p>
+            <p>
+                <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
+                        data-bind="click: zatepleni_uspora(30),
                                event: { keypress: updatePopover, mouseout: updatePopover }">
-                <div>
-                    <i class="material-icons">apartment</i>
-                    bytě
-                </div>
-            </button>
+                    <div>
+                        <i class="material-icons">border_all</i>
+                        výměna starých špaletových oken za moderní dvojskla
+                    </div>
+                </button>
+        </p>
+        <p>
+                <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
+                        data-bind="click: zatepleni_uspora(40),
+                               event: { keypress: updatePopover, mouseout: updatePopover }">
+                    <div>
+                        <i class="material-icons">house</i>
+                        zateplení polystyrenem
+                    </div>
+                </button>
+        <!--
+        TODO nekam ref:
+        okna:
+        https://www.lepebydlet.cz/vymena-starych-oken-za-nove-usetri-vasi-penezenku
+        https://www.idnes.cz/bydleni/stavba/vymena-oken-kalkulator.A160219_144042_stavba_rez
+
+        barak:
+
+        https://ekolist.cz/cz/publicistika/nazory-a-komentare/jiri-vesely-pri-zatepleni-domu-nad-12-cm-polystyrenu-se-jiz-uspora-nezvetsuje
+        -->
         </p>
 
         <h3>3. Snížit spotřebu teplé vody, topit méně.</h3>
@@ -556,9 +585,6 @@
 
     <script type="text/javascript">
     $('.popoverData').popover();
-
-
-
     </script>
 </div>
 </body>

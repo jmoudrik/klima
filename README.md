@@ -22,7 +22,6 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - grafika na celkovou spotrebu
 - vsechno doladit
 - nejak vylepsit, neco tomu chybi - sekce "Co nejméně jezdit autem a létat"
-- zatepleni domu neni moc uzitecne, protoze nikdo nevi, co znamena zateplit o 30%
 - "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
 - lip ozdrojovat text a upresnit
 - `data.js` - okomentovat
@@ -31,7 +30,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 	- jaky jsou motivace pro odhady/vypocty
 - koupit domenu
 - update google analytics
-- projit TODOs
+- projit TODOs - ve zdrojacich i tady
 - lepsi argumentace pro solarni clanky
 	
 ## good to have

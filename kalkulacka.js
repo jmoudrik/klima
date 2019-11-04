@@ -40,11 +40,11 @@ function AppViewModel() {
 	}, this);
 
     // procenta o kolik zateplim
-	this.zatepleni_uspora = ko.observable(30);
+	this.zatepleni_uspora = ko.observable(20);
 
     // kg co2 uspora
 	this.zatepleni_uspora_kg = ko.computed(function() {
-		var uspora = this.zatepleni_uspora() / 100 * DATA.mat_cr_avg_teplo;
+		var uspora = this.zatepleni_uspora() / 100 * this.kotel_na_uhli_co2() * 1000;
 		return uspora;
 	}, this);
 
@@ -146,6 +146,8 @@ function AppViewModel() {
 // Activates knockout.js
 var model = new AppViewModel();
 ko.applyBindings(model);
+
 //
 model.dum_spotreba(Math.ceil(DATA.cr_domacnost_topeni_avg));
+model.zatepleni_uspora(20);
 
