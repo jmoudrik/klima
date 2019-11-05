@@ -32,6 +32,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - update google analytics
 - projit TODOs - ve zdrojacich i tady
 - lepsi argumentace pro solarni clanky
+- jidlo: research - poznamka o Biogenic Carbon
 	
 ## good to have
 
