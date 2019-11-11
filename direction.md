@@ -24,9 +24,10 @@ kpi / kfs / mission / vision
       vest racionalni debatu, evangelizovat v mediich
 	- formulovat veci jako pozitivni moznosti, ne vycitat a tlacit
 	- pro koho
+
 		0. pro me, moje kamarady, se kteryma si o tom povidam
 		1. vzdelany lidi, co to aktivne hledaji, a sami o tom aktivne premysli
-			- jakoze early adopters, pro bootstrap tyhle iniciativy
+			- jakoze early adopters, pro bootstrap tyhle iniciativy, "nizka CAC"
 		2. sirsi verejnost
 
 - KFS
@@ -42,6 +43,8 @@ kpi / kfs / mission / vision
 mysletklima.cz
 myslimklima.cz
 klimamyslenky.cz
+klimazmena.cz
+
 
 ## scratchpad
 
