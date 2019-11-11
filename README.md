@@ -37,7 +37,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 ## good to have
 
 - lepsi vizualizace
-    - e.g. "co2_cmp" - co lip rika pribeh
+    - e.g. `co2_cmp` - co lip rika pribeh
     - ikonka ke kalkulackam ?
 - research - výměna oken - kolik stoji, kolik setri
 - konzumni zbozi & elektronika - celkem
@@ -48,7 +48,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - research - co zelena energie (e.g. od PRE)
     - je to predrazeny BS, co je jen zisk navic pro PRE, nebo to pomaha?
 - `data.js`
-    - mat_* zkontrolovat vuci originalnim zdrojum
+    - `mat_*` zkontrolovat vuci originalnim zdrojum
     - a pouzit ty
 - zvazit nejaky vic intuitivne pochopitelny
     framing tech procentualnich srovnani jako
@@ -62,6 +62,10 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 ## druha faze
 
-- miniatury
+- miniatury / kazuistiky
+	- konkretni myty, akce & data ktera podporuji, vyvraceji jestli to za to stoji
+	- latkovy tasky, pytliky, trideni odpadu, elektronika, auta
+	- dalsi veci viz [notes.md](./notes.md)
 - kalkulacka typu "bydlim v X,Y,Z; letam ... ; autem ... ; jim ..."
+- kalkulacka leteckych emisi mezi mesty
 
