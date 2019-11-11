@@ -7,6 +7,8 @@ informace o tom, jak pomoct tam, kde to přináší největší užitek.
 Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-requesty) jsou velmi vítány.
 
 ## Odkazy
+
+- [mission statement - direction](./direction.md)
 - [basic research](./research.md)
 - [poznamky](./notes.md)
 - [gdoc](https://docs.google.com/spreadsheets/d/1arbOVZUZKpBNe7P7ySRXM5jGnanavbzEEimG9vPJXX4/edit?usp=sharing)
@@ -68,4 +70,16 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 	- dalsi veci viz [notes.md](./notes.md)
 - kalkulacka typu "bydlim v X,Y,Z; letam ... ; autem ... ; jim ..."
 - kalkulacka leteckych emisi mezi mesty
+
+
+# Feedback
+
+## SM
+
+- sekce blbe oddeleny
+- infografika a dobra vizualni stranka dulezita
+	- nejlepsi by bylo poprosit nekoho kdo to dela
+	- 
+- jidlo:
+	- jaky presne jsou efekty masa - kolik kg kure, kolik hovezi, kolik veprovy
 
