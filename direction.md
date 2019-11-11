@@ -44,6 +44,9 @@ kpi / kfs / mission / vision
 - myslimklima.cz
 - klimamyslenky.cz
 - klimazmena.cz
+- klimaticky.cz
+- pomozklimatu.cz
+- krokyproklima.cz
 
 ### zabrany
 
