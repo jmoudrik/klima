@@ -3,7 +3,7 @@
 kpi / kfs / mission / vision
 
 - Vision - co chceme
-	- rozhejbat verejne mineni
+	- rozhejbat verejne mineni - jaky chceme predat myslenky
 		- aby klimaticka zmena v CR nebyla brana jako
 			- vec co se nas netyka
 			- vec co nas ohrozuje a vyvolava uzkost, a proto na ni nebudeme radsi myslet
@@ -22,6 +22,7 @@ kpi / kfs / mission / vision
 	- delame kalkulacky, infografiky
 	- chceme delat miniatury/kazuistika (vyvracet jednotlivy misconceptions),
       vest racionalni debatu, evangelizovat v mediich
+	- formulovat veci jako pozitivni moznosti, ne vycitat a tlacit
 	- pro koho
 		0. pro me, moje kamarady, se kteryma si o tom povidam
 		1. vzdelany lidi, co to aktivne hledaji, a sami o tom aktivne premysli
@@ -33,3 +34,22 @@ kpi / kfs / mission / vision
 
 - KPI
 	- google analytics
+
+
+## Domeny
+### jsou volny
+
+mysletklima.cz
+myslimklima.cz
+klimamyslenky.cz
+
+## scratchpad
+
+myslenky na klima
+myslenky o klimatu
+myslim na klima
+mysli na klima
+klimamyslenky
+klima
+
+
