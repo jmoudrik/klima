@@ -25,10 +25,10 @@ kpi / kfs / mission / vision
 	- formulovat veci jako pozitivni moznosti, ne vycitat a tlacit
 	- pro koho
 
-		0. pro me, moje kamarady, se kteryma si o tom povidam
+		1. pro me, moje kamarady, se kteryma si o tom povidam
 		1. vzdelany lidi, co to aktivne hledaji, a sami o tom aktivne premysli
 			- jakoze early adopters, pro bootstrap tyhle iniciativy, "nizka CAC"
-		2. sirsi verejnost
+		1. sirsi verejnost
 
 - KFS
 	- TODO
@@ -40,19 +40,22 @@ kpi / kfs / mission / vision
 ## Domeny
 ### jsou volny
 
-mysletklima.cz
-myslimklima.cz
-klimamyslenky.cz
-klimazmena.cz
+- mysletklima.cz
+- myslimklima.cz
+- klimamyslenky.cz
+- klimazmena.cz
 
+### zabrany
 
-## scratchpad
+- zmenaklimatu.cz
+- klimatickazmena.cz
 
-myslenky na klima
-myslenky o klimatu
-myslim na klima
-mysli na klima
-klimamyslenky
-klima
+### scratchpad
+
+- myslenky na klima
+- myslenky o klimatu
+- myslim na klima
+- mysli na klima
+- klimamyslenky
 
 
