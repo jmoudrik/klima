@@ -38,27 +38,5 @@ kpi / kfs / mission / vision
 
 
 ## Domeny
-### jsou volny
-
-- mysletklima.cz
-- myslimklima.cz
-- klimamyslenky.cz
-- klimazmena.cz
-- klimaticky.cz
-- pomozklimatu.cz
+- mame 
 - krokyproklima.cz
-
-### zabrany
-
-- zmenaklimatu.cz
-- klimatickazmena.cz
-
-### scratchpad
-
-- myslenky na klima
-- myslenky o klimatu
-- myslim na klima
-- mysli na klima
-- klimamyslenky
-
-
