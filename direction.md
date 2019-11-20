@@ -3,7 +3,7 @@
 kpi / kfs / mission / vision
 
 - Vision - co chceme
-	- rozhejbat verejne mineni - jaky chceme predat myslenky
+	- rozhejbat verejne mineni - jaky myslenky mi pridou uzitecny:
 		- aby klimaticka zmena v CR nebyla brana jako
 			- vec co se nas netyka
 			- vec co nas ohrozuje a vyvolava uzkost, a proto na ni nebudeme radsi myslet
@@ -14,8 +14,8 @@ kpi / kfs / mission / vision
 				- jak CR, tak kazdy z nas
 			- vec, ktera je super ekonomicka prilezitost pro inovace & pomahani svetu
 			- vec, kde kazdy ma vliv a muze pomoct
-			- vec, kde je v nasem sobeckem zajmu pomahat ostatnim a resit problemy co maji a budou mit jinde
-	- dat lidem informace o moznostech jak neco delat, nadeji, ze je to ovlivnitelny
+			- vec, kde je v nasem sobeckem zajmu pomahat ostatnim a resit problemy co maji a budou mit jinde (e.g. prevence masove migrace za 50 let)
+	- dat lidem informace o moznostech jak lze neco delat (& nadeji / pocit, ze je to ovlivnitelny)
 	- byt dobrym a duveryhodnym zdrojem informaci o klimaticke zmene
 
 - Mission - co pro to delame / chceme delat
