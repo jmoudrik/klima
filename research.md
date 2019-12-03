@@ -3,7 +3,7 @@
 ## Intro
 Jak muzu pomoct v boji s globalnim oteplovanim?
 
-	- oteplovani zpusobuje emise CO2 (a dalsich plynu)
+	- oteplovani zpusobuji emise CO2 (a dalsich plynu)
 	- v prumeru, nejvetsi emise na osobu jsou zpusobeny [...]
 		- bydlenim (40 %)
 		- osobni dopravou (30 %)
