@@ -92,12 +92,15 @@
             data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
     </p>
     <p>
-        Z toho největší část připadá na vytápění domácnosti, poté na produkci jídla a dopravu.
+	Z toho největší část připadá na vytápění domácnosti, zbytek hlavně na produkci jídla a dopravu.
     </p>
+	<h3>Shrnutí:</h3>
+	<p>Co můžu já osobně dělat v boji se změnou klimatu? Co má největší vliv?</p>
     <ul>
         <li>
             <i class="material-icons">house</i> vytápění domácnosti, teplá voda,
             <b data-bind='text: format_perc(DATA.cr_energy_doma  / DATA.cr_avg_total_est)'></b>
+			emisí
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(DATA.cr_energy_doma / 1000)"></span>
             <ul>
@@ -114,6 +117,7 @@
         </li>
         <li><i class="material-icons">restaurant</i> jídelníček,
             <b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>
+			emisí
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_jidlo_est / 1000)"></span>
             <ul>
@@ -127,6 +131,7 @@
         </li>
         <li><i class="material-icons">directions_car</i> doprava,
             <b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>
+			emisí
             &ndash;
             <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
             <ul>
@@ -149,6 +154,7 @@
     <!--
         Doma
     -->
+    <hr/>
     <h2>
         <a name="doma"></a>
         <i class="material-icons">house</i>
@@ -388,6 +394,7 @@
     -->
     <br/>
 
+    <hr/>
     <h2>
         <a name="jidelnicek"></a>
         <i class="material-icons">restaurant</i>
@@ -431,7 +438,7 @@
         </h3>
         <p>
             Kromě omezení celkové spotřeby masa <b>můžete pomoct i změnou skladby jídelníčku</b>. Produkce kuřecího
-            masa (nebo ryb) je pro životní prostředí mnohem menší zátěž, než hovězí, nebo vepřové.
+            masa (nebo ryb) je pro životní prostředí mnohem menší zátěží, než produkce hovězího, nebo vepřového masa.
             <span data-bind="html: render_ref('Atlas Masa')"></span>
         </p>
         <p>
@@ -453,6 +460,7 @@
 
     <br/>
 
+    <hr/>
     <h2>
         <a name="doprava"></a>
         <i class="material-icons">directions_car</i>
@@ -476,14 +484,18 @@
         <div class="alert alert-info">
             <p class="mb-0">
                 <i class="material-icons">info</i>
-                Problém aut je v tom, že jezdí prázdná (při dojíždění do práce například často jen řidič, v průměru
-                <span data-bind='text: DATA.auto_naplnenost_cr_est'></span> pasažéra).
-                Pokud by se v průměrném autě jezdilo ve třech, či čtyřech šlo by v podstatě o ekologickou formu dopravy
-                (na
-                úrovni autobusu).
-                Kromě toho auta produkují prach a další škodliviny, přičemž ve městech jsou tyto jedním z hlavních
-                zdrojů
-                znečištění ovzduší.
+                Problém aut je v tom, že jezdí skoro prázdná &mdash; při dojíždění do práce například
+					často jede jen řidič. Průměrné auto v ČR přepravuje jen
+				<span data-bind='text: DATA.auto_naplnenost_cr_est'></span> osoby.
+                Když se v autě jezdí ve třech (a více) lidech, jde v podstatě o ekologickou formu dopravy
+                (na úrovni autobusu).
+            </p>
+			<br>
+            <p>
+                <i class="material-icons">smoking_rooms</i>
+
+				Kromě CO2 produkují auta navíc prach a další škodliviny, ve městech jsou tyto látky
+				jedním z hlavních zdrojů znečištění ovzduší.
             </p>
         </div>
 
@@ -538,6 +550,7 @@
     -->
     <br/>
 
+		<hr/>
     <h2>Odkazy &amp; zdroje</h2>
     <hr/>
     <ul>
@@ -545,22 +558,25 @@
         <li>
             <a href="data.js">Zdrojovaná a komentovaná data pro výpočty</a>
         </li>
+
+		<div data-bind="html: render_refs()"></div>
     </ul>
-    <div data-bind="html: render_refs()"></div>
     <br/>
 
     <h2>O projektu</h2>
     <hr/>
     <p>
-        Touto stránkou chceme lidem, kteří chtějí vědět jak nejúčinněji mohou pomoct v boji s klimatickou změnou,
-        poskytnout jednoduché informace o tom, jak pomoct tam, kde to přináší největší užitek.
+        Touto stránkou chceme lidem poskytnout jednoduché informace jak pomoct v boji s klimatickou změnou tam,
+		kde to přináší největší užitek.
     </p>
     <p>
-        Snaha je poskytnout ověřené a zdrojované informace, ale je nutné říct, že všechny zde uvedené statistiky a
-        odhady stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat, nelze je tedy brát
-        vážně do poslední desetiny procenta.
-        Smyslem je poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
-        &ndash; aby si každý na základě toho mohl vybrat kroky které mu osobně dávají největší smysl.
+        Důsledně jsme se snažili poskytnout ověřené a zdrojované informace. Je ale nutné říct, že všechny zde
+		uvedené statistiky a odhady stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat,
+		nelze je tedy brát vážně do poslední desetiny procenta.
+    </p>
+    <p>
+        Smyslem je především poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
+        &ndash; aby si každý na základě toho mohl vybrat kroky které jemu osobně dávají největší smysl.
     </p>
 
     <br/>
@@ -569,7 +585,7 @@
         <p>
             Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-requesty) jsou velmi vítány.
             <br/>
-            <b>2019</b>, vytvořil <a href='mailto:j.moudrik@gmail.com'>j.moudrik@gmail.com</a>, vše dostupné pod MIT
+            <b>2019&ndash;2022</b>, vytvořil <a href='mailto:j.moudrik@gmail.com'>j.moudrik@gmail.com</a>, vše dostupné pod MIT
             licencí na <a href="https://github.com/jmoudrik/klima">githubu</a>.
         </p>
     </footer>
