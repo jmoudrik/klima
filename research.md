@@ -1,10 +1,9 @@
 # Summary
-[CR] https://doi.org/10.1016/j.scitotenv.2018.07.233
-	- Matuštík, Jan, and Vladimír Kočí. "Environmental impact of personal consumption from life cycle perspective–A Czech Republic case study." Science of The Total Environment 646 (2019): 177-186.
 
 ## Intro
 Jak muzu pomoct v boji s globalnim oteplovanim?
-	- oteplovani zpusobuje emise CO2 (a dalsich plynu)
+
+	- oteplovani zpusobuji emise CO2 (a dalsich plynu)
 	- v prumeru, nejvetsi emise na osobu jsou zpusobeny [...]
 		- bydlenim (40 %)
 		- osobni dopravou (30 %)
@@ -32,6 +31,7 @@ Jak muzu pomoct v boji s globalnim oteplovanim?
 		- minimalizovat spotrebu
 
 1. domacnost - vytapeni & zatepleni & energie
+
 	- zateplit
 		- prumerny barak sezere 10MWh / rok [..]
 		- prumerna domacnost Y /rok [cesky statisticky urad]
@@ -50,6 +50,7 @@ Jak muzu pomoct v boji s globalnim oteplovanim?
 		- snizeni o 1 stupen usetri X CZK, Y tun CO2
 
 2. doprava
+
 	- faktor je vzdalenost
 	 	- 1 km letadlem ~= 2 km autem sam ~= 6 km autem ve 3 ~= 6 km vlakem
 		- 10000 km letadlem ...
@@ -63,10 +64,12 @@ Jak muzu pomoct v boji s globalnim oteplovanim?
 	- co nejvic vegan
 
 4. male faktory / neuskodi
+
 	- obleceni - e.g. second hand, malo novych veci
 	- odpady
 
-5. negativni faktory
+5. negativni faktory (aktivne skodi / misconception)
+
 	- latkove tasky
 
 # Doprava zbozi
