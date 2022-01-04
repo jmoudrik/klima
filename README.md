@@ -15,8 +15,24 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 
 # TODO
+## DOING
 
-## blocking beta launch
+- "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
+
+## next
+
+
+- grafika s panackama
+
+- miniatury / kazuistiky
+	- konkretni myty, akce & data ktera podporuji, vyvraceji jestli to za to stoji
+	- latkovy tasky, pytliky, trideni odpadu, elektronika, auta
+	- one weekly
+
+- scenare z dan @ [notes.md](./notes.md)
+
+- kalkulacka typu "bydlim v X,Y,Z; letam ... ; autem ... ; jim ..."
+- kalkulacka leteckych emisi mezi mesty
 
 
 ## blocking public launch
@@ -24,20 +40,19 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - grafika na celkovou spotrebu
 - vsechno doladit
 - nejak vylepsit, neco tomu chybi - sekce "Co nejméně jezdit autem a létat"
-- "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
 - lip ozdrojovat text a upresnit
 - `data.js` - okomentovat
 	- co presne jednotlive promenne znamenaji
 	- co je to za zdroj
 	- jaky jsou motivace pro odhady/vypocty
-- koupit domenu
-- update google analytics
 - projit TODOs - ve zdrojacich i tady
 - lepsi argumentace pro solarni clanky
 - jidlo: research - poznamka o Biogenic Carbon
 	
 ## good to have
 
+- speed up web
+- BUG: kalkulacka/popup blbe funguje na mobilech
 - lepsi vizualizace
     - e.g. `co2_cmp` - co lip rika pribeh
     - ikonka ke kalkulackam ?
@@ -64,14 +79,6 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 ## druha faze
 
-- miniatury / kazuistiky
-	- konkretni myty, akce & data ktera podporuji, vyvraceji jestli to za to stoji
-	- latkovy tasky, pytliky, trideni odpadu, elektronika, auta
-	- dalsi veci viz [notes.md](./notes.md)
-- kalkulacka typu "bydlim v X,Y,Z; letam ... ; autem ... ; jim ..."
-- kalkulacka leteckych emisi mezi mesty
-
-
 # Feedback
 
 ## SM
@@ -79,7 +86,7 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - sekce blbe oddeleny
 - infografika a dobra vizualni stranka dulezita
 	- nejlepsi by bylo poprosit nekoho kdo to dela
-	- 
+
 - jidlo:
 	- jaky presne jsou efekty masa - kolik kg kure, kolik hovezi, kolik veprovy
 
