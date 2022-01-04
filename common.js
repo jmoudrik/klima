@@ -98,9 +98,16 @@ function cmp_html(tuny_co2){
 	    wrap_li(autem_html(tuny_co2)));
 }
 
+/*
+            <a class="popoverData under_dot" selector="true" data-html="false"
+               data-content="Efekty se budou pravděpodobně výrazně lišit podle konkrétních parametrů zateplovaného domu."
+               rel="popover" data-placement="bottom" data-trigger="hover">
+                jaký efekt může v takovém domě velmi zhruba mít:
+            </a>
+			*/
 function format_co2_cmp_pop(tuny_co2) {
 	// TODO popoverupdates are broken
-	return '<a class="popoverData popover_bold" selector="true" text-primary" href="#" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+	return '<a class="popoverData popover_bold text-primary" selector="true" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
 };
 
 function format_cena_ref(cenakwh, cena_tot) {
@@ -171,8 +178,9 @@ function render_ref(key){
 }
 
 function render_refs(){
-	var ret = ["<ul>"];
+	var ret = [];
 
+	//ret.push("<ul>");
 	for (key in refs) {
 		var num = refs[key][0];
 		var url = refs[key][1];
@@ -182,7 +190,7 @@ function render_refs(){
 		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
 		ret.push("</li>");
 	}
-	ret.push("</ul>");
+	//ret.push("</ul>");
 	return ret.join("\n");
 }
 
