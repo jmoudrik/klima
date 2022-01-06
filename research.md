@@ -1,4 +1,38 @@
-# Summary
+# Miniatury [1. 2022]
+
+## Látkové Tašky
+
+- Jak je to s nákupními taškami:
+	- Pomáhají látkové tašky?
+		- Kolikrát bych jí musel použít (bez vyprání) aby nebyla horší než igelitka?
+	- Co tašky z bio-bavlny?
+	- Co recyklované papírové tašky?
+	- Co normální igelitky? Jak jsou blbé?
+		- Co se s nimi děje po skončení životnosti?
+			- spálení?
+			- skládky?
+		- Lifecycle: Kolik CO2? Vody?
+	- Špiní plasty moře?
+	- Ale igelitky přeci nejsou udržitelné?
+
+
+- Co pytlíky?
+	- Jak je na tom celofán? 
+		- kolik váží pytlík, kolik CO2 při spálení?
+		- co výroba?
+		- skládka, jak dlouho se rozkládá?
+
+- Co nahrazování plastových brček:
+	- kovem?
+	- sklem?
+	- těstovinou?
+
+- Co psychologické faktory?
+	- nákupní tašky jsou jen marketing firem, které se snaží vypadat dobře
+	- efekt "Používám látkový tašky a nakupuju v bezobalových obchodech,
+		tak přece jednou za rok můžu letět na Maltu, ne?"
+
+# OLD [2019]
 
 ## Intro
 Jak muzu pomoct v boji s globalnim oteplovanim?

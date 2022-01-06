@@ -15,53 +15,40 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 
 # TODO
-## DOING
-
-- "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
-
-## next
-
-
-- grafika s panackama
 
 - miniatury / kazuistiky
 	- konkretni myty, akce & data ktera podporuji, vyvraceji jestli to za to stoji
 	- latkovy tasky, pytliky, trideni odpadu, elektronika, auta
-	- one weekly
 
-- scenare z dan @ [notes.md](./notes.md)
+	- tasky
+	- vypocet: elektricky auto ze zasuvky (elektro mix CR) vs benzin
+		- srovnani s Polskem, Nemeckem, Norskem
+	- solarni clanky
+	- auto : emise na vyrobu vs ujety kilometry
+	- myčka na nádobí
+	- auto vs elektroauto
+		- emise (prach, ...) koncentrované v elektrárně na škále, vs ve městech
+		- teplo ve městech (klima, spalovací motory)
+
+- grafika s panackama
+	- scenare z dan @ [notes.md](./notes.md)
 
 - kalkulacka typu "bydlim v X,Y,Z; letam ... ; autem ... ; jim ..."
 - kalkulacka leteckych emisi mezi mesty
-
-
-## blocking public launch
-
 - grafika na celkovou spotrebu
-- vsechno doladit
-- nejak vylepsit, neco tomu chybi - sekce "Co nejméně jezdit autem a létat"
-- lip ozdrojovat text a upresnit
-- `data.js` - okomentovat
-	- co presne jednotlive promenne znamenaji
-	- co je to za zdroj
-	- jaky jsou motivace pro odhady/vypocty
-- projit TODOs - ve zdrojacich i tady
+
 - lepsi argumentace pro solarni clanky
 - jidlo: research - poznamka o Biogenic Carbon
 	
-## good to have
-
+- "primo" - co znamena "primo vyprodukuje" z 5.25 tun, wrt 9.6 tun per capita
 - speed up web
-- BUG: kalkulacka/popup blbe funguje na mobilech
 - lepsi vizualizace
     - e.g. `co2_cmp` - co lip rika pribeh
     - ikonka ke kalkulackam ?
 - research - výměna oken - kolik stoji, kolik setri
 - konzumni zbozi & elektronika - celkem
 	- obleceni, elektro, hygiena, chemie, ..
-- fix broken popover updates
-	- popover je treba zapnout pomoci jquery, ale generuju je v knockoutu programaticky
-	a tak je ten update trochu hack ("mouse out")
+
 - research - co zelena energie (e.g. od PRE)
     - je to predrazeny BS, co je jen zisk navic pro PRE, nebo to pomaha?
 - `data.js`
@@ -77,16 +64,5 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
     - na druhou stranu je spravne, ze je jasne videt, ze
         "letadlo do thajska" 5x prebije veskerou usporu co clovek dela jinde
 
-## druha faze
-
-# Feedback
-
-## SM
-
-- sekce blbe oddeleny
-- infografika a dobra vizualni stranka dulezita
-	- nejlepsi by bylo poprosit nekoho kdo to dela
-
-- jidlo:
-	- jaky presne jsou efekty masa - kolik kg kure, kolik hovezi, kolik veprovy
+- kalkulacka emisi z letani
 

@@ -1,6 +1,5 @@
 ## Smer
-
-kpi / kfs / mission / vision
+- kpi / kfs / mission / vision
 
 - Vision - co chceme
 	- rozhejbat verejne mineni - jaky myslenky mi pridou uzitecny:
@@ -24,19 +23,10 @@ kpi / kfs / mission / vision
       vest racionalni debatu, evangelizovat v mediich
 	- formulovat veci jako pozitivni moznosti, ne vycitat a tlacit
 	- pro koho
-
 		1. pro me, moje kamarady, se kteryma si o tom povidam
 		1. vzdelany lidi, co to aktivne hledaji, a sami o tom aktivne premysli
 			- jakoze early adopters, pro bootstrap tyhle iniciativy, "nizka CAC"
 		1. sirsi verejnost
 
-- KFS
-	- TODO
-
 - KPI
 	- google analytics
-
-
-## Domeny
-- mame 
-- krokyproklima.cz

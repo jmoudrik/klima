@@ -1,4 +1,5 @@
-# dan
+# Feedback
+## dan
 - 2 sec decision - "love at first sight" - effect
 	- infografika s 2ma panackama & vecma okolo, barchart
 	- H: persony lip nesou pribeh nez grafy
@@ -12,16 +13,26 @@
 - na jiny duveryhodny platforme bootstrap
 	- spojit se s nekym
 
-#  
-	- analytics
-	- SEO - "job to be done"
-		- "jak muzu pomoct s oteplovanim"
-		- "jak usetrit"
+- analytics
+- SEO - "job to be done"
+	- "jak muzu pomoct s oteplovanim"
+	- "jak usetrit"
+
+## SM
+
+- sekce blbe oddeleny
+- infografika a dobra vizualni stranka dulezita
+	- nejlepsi by bylo poprosit nekoho kdo to dela
+
+- jidlo:
+	- jaky presne jsou efekty masa - kolik kg kure, kolik hovezi, kolik veprovy
+
 	
 # jak prezentovat
 gugloval jsem jak co nejlip usetrit
 	- "how to save money"
 	- "jak muzu usetrit penize"
+
 a (sample size = 10):
 	- nasel jsem jen seznamy + textove vysvetleni
 	- nic interaktivniho
@@ -102,20 +113,6 @@ tohle se mi libi:
 - Řešit lokální problémy, povídat si s lidmi.
 - Tlačit na zastupitele, zákonodárce, volit s rozvahou.
 - Investovat zodpovědně.
-
-
-# Miniatury
-
-- tasky
-- vypocet: elektricky auto ze zasuvky (elektro mix CR) vs benzin
-	- srovnani s Polskem, Nemeckem, Norskem
-- solarni clanky
-- auto : emise na vyrobu vs ujety kilometry
-- myčka
-- auto vs elektroauto
-	- emise (prach, ...) koncentrované v elektrárně na škále, vs ve městech
-	- teplo ve městech (klima, spalovací motory)
-
 
 
 # Vliv bohatstvi z pohledu emisi - mozne faktory (hypotezy)
