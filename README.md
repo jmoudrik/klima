@@ -30,6 +30,8 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 		- emise (prach, ...) koncentrované v elektrárně na škále, vs ve městech
 		- teplo ve městech (klima, spalovací motory)
 
+- mig to bootstrap 5 & popper (less deps, faster load)
+
 - grafika s panackama
 	- scenare z dan @ [notes.md](./notes.md)
 

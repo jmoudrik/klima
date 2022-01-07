@@ -1,86 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151241103-1"></script>
-    <script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-151241103-1');
+{% extends "base.html" %}
+
+{% block content %}
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+		<span class="fs-4">krokyproklima.cz</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Jak mohu pomoci?</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Miniatury</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">O Projektu</a></li>
+      </ul>
+    </header>
+  </div>
+  <div class="container">
 
 
-    </script>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- via the awesome https://favicon.io/favicon-generator/ -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript" src="./knockout-latest.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
-    <style>
-	h2 i.material-icons {
-		font-size: 35px;
-	}
-	.popover_bold {
-		 font-weight: bold;
-	}
-	.obsah_block {
-		margin-left: 20px;
-	}
-     button div {
-        display: flex;
-        align-items: center;
-      }
-     h2 span {
-        display: flex;
-        align-items: center;
-      }
-     .material-icons {
-        margin-right: 5px;
-      }
-      .under_dot {
-        border-bottom: 1px dotted #000;
-        text-decoration: none;
-      }
-      .btn {
-      font-weight: 600;
-      }
-
-    </style>
-
-    <title>Klima: jak mohu pomoci?</title>
-
-</head>
-<body>
-<div class="container">
+    <hr/>
     <div class="page-header">
         <h1>Globální oteplování:
             <small class="text-muted">Jak mohu pomoci?</small></h1>
     </div>
     <hr/>
-    <!--
-        Uvod
-
-        <h2><a name="uvod"></a>Úvod</h2>
-    <p>
-    Pomůcka pro lidi, kteří chtějí vědět, jak mohou účinně pomoci v boji s globálním oteplováním.
-    </p>
-    -->
     <p>
         <!--
         TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
@@ -92,10 +34,11 @@
             data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
     </p>
     <p>
-	Z toho největší část připadá na vytápění domácnosti, zbytek hlavně na produkci jídla a dopravu.
+	Největší část z toho připadá na vytápění domácnosti, zbytek hlavně na produkci jídla a dopravu.
     </p>
-	<h3>Shrnutí:</h3>
-	<p>Co můžu já osobně dělat v boji se změnou klimatu? Co má největší vliv?</p>
+	<h3>Stručně: Co s tím můžu dělat?</h3>
+
+	<p>Ve svém životě máme každý dost věcí, jejichž změnou můžeme účinně pomoct v boji s globálním oteplováním:</p>
     <ul>
         <li>
             <i class="material-icons">house</i> vytápění domácnosti, teplá voda,
@@ -115,6 +58,7 @@
                 </li>
             </ul>
         </li>
+		<br>
         <li><i class="material-icons">restaurant</i> jídelníček,
             <b data-bind='text: format_perc(DATA.cr_avg_jidlo_est  / DATA.cr_avg_total_est)'></b>
 			emisí
@@ -129,6 +73,7 @@
                 </li>
             </ul>
         </li>
+		<br>
         <li><i class="material-icons">directions_car</i> doprava,
             <b data-bind='text: format_perc(DATA.cr_avg_doprava_est / DATA.cr_avg_total_est)'></b>
 			emisí
@@ -149,6 +94,8 @@
         </li>
     </ul>
 
+    <br/>
+	<p>Pojďme se nyní podívat na jednotlivé oblasti detailně.</p>
     <br/>
 
     <!--
@@ -200,6 +147,7 @@
             -->
         </p>
 
+		<br>
         <h3>1. Topit ekologicky.</h3>
         <p>
             To znamená především <b>netopit uhlím</b> ve starém kotli a <b>netopit elektrokotlem</b>. Pro výše uvedenou
@@ -282,6 +230,7 @@
                 U moderních panelů očekávejte návratnost 5&ndash;10 let, a životnost 30&ndash;40 let.
             </p>
         </div>
+		<br>
         <!-- TODO solar -->
         <h3>2. Zateplit dům.</h3>
         <!--
@@ -340,6 +289,7 @@
         -->
         </p>
 
+		<br>
         <h3>3. Snížit spotřebu teplé vody, topit méně.</h3>
         <p>
             <i class="material-icons">bathtub</i>
@@ -433,6 +383,8 @@
                 viz&nbsp;<span data-bind="html: render_ref('Rostlinné Bílkoviny')"></span>.
             </p>
         </div>
+
+		<br>
         <h3>
             2. Kuře a ryby místo hovězího a vepřového.
         </h3>
@@ -576,33 +528,23 @@
     </p>
     <p>
         Smyslem je především poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
-        &ndash; aby si každý na základě toho mohl vybrat kroky které jemu osobně dávají největší smysl.
+        &mdash; aby si každý na základě toho mohl vybrat kroky které jemu osobně dávají největší smysl.
     </p>
 
-    <br/>
-    <hr/>
-    <footer>
-        <p>
-            Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-requesty) jsou velmi vítány.
-            <br/>
-            <b>2019&ndash;2022</b>, <a href='http://www.j2m.cz/~jm/'>JM</a>,
-			napište mi na <a href='mailto:j.moudrik@gmail.com'>j.moudrik@gmail.com</a>. Vše dostupné pod MIT
-            licencí na <a href="https://github.com/jmoudrik/klima">githubu</a>.
-        </p>
-    </footer>
 
-    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+	<!--
+	-->
 
-    script
-
-    -->
-    <script type="text/javascript" src="./data.js"></script>
-    <script type="text/javascript" src="./common.js"></script>
-    <script type="text/javascript" src="./kalkulacka.js"></script>
-
+    <script src="./knockout-latest.js"></script>
+    <script src="./data.js"></script>
+    <script src="./kalkulacka.js"></script>
     <script type="text/javascript">
     $('.popoverData').popover();
     </script>
-</div>
-</body>
-</html>
+
+{% endblock content %}
