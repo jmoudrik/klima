@@ -5,8 +5,8 @@
 - Jak je to s nákupními taškami:
 	- Pomáhají látkové tašky?
 		- Kolikrát bych jí musel použít (bez vyprání) aby nebyla horší než igelitka?
-	- Co tašky z bio-bavlny?
-	- Co recyklované papírové tašky?
+		- Co tašky z bio-bavlny?
+	- Co papírové tašky?
 	- Co normální igelitky? Jak jsou blbé?
 		- Co se s nimi děje po skončení životnosti?
 			- spálení?
@@ -14,10 +14,27 @@
 		- Lifecycle: Kolik CO2? Vody?
 	- Špiní plasty moře?
 	- Ale igelitky přeci nejsou udržitelné?
+		- dokud palime jakykoliv fosilni paliva v obrovskym mnozstvi, tak jsou
+			plasty skoro uplne nezajimava vec k reseni, i kdybychom je pouzili 1x a vsechny potom spalili,
+			tak je to lepsi nez uhli (a skoro jak LPG)
+			- a to recyklujeme hodne a budeme recyklovat vic 50%
 
+	- Plasty jsou ale osklive v prirode.
+	- Co kompostovatelne igelitky? vs normalni igelitky
+		- Nevytridene 
+			- spaleni: 50:50
+			- skladka:
+				- z pohledu CO2 jsou kompostovatelne horsi, protoze neukladaji CO2 do zeme (skladky),
+					ale rozkladaji se
+				- z pohledu "mame bordel v prirode" jsou kompostovatelne lepsi, protoze se rozlozi
+		- vytridene
+			- (kompostovatelne zkompostujeme, normalni recyklujeme)
+			- 50:50
 
 - Co pytlíky?
 	- Jak je na tom celofán? 
+		- vetsina pytliku neni pravy celofan (z celulozy, ktery je kompostovatelny, ..), ale PP
+
 		- kolik váží pytlík, kolik CO2 při spálení?
 		- co výroba?
 		- skládka, jak dlouho se rozkládá?
@@ -31,6 +48,199 @@
 	- nákupní tašky jsou jen marketing firem, které se snaží vypadat dobře
 	- efekt "Používám látkový tašky a nakupuju v bezobalových obchodech,
 		tak přece jednou za rok můžu letět na Maltu, ne?"
+
+
+### Lifecycle - tasky
+- refs:
+	https://www.washingtonpost.com/wp-dyn/content/graphic/2007/10/03/GR2007100301385.html?referrer=emaillink
+	https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/291023/scho0711buan-e-e.pdf
+	https://www.heartland.org/_template-assets/documents/publications/threetypeofgrocerybags.pdf
+	https://news.climate.columbia.edu/2020/04/30/plastic-paper-cotton-bags/
+	https://qz.com/1585027/when-it-comes-to-climate-change-cotton-totes-might-be-worse-than-plastic/
+
+- Papir
+	- produkce papiru
+		- MEGA hodne vody, chemikalii a energie
+	- recyklace papiru
+		- hodne vody, chemikalii a energie
+
+- bavna
+	- pestovani:
+		- MEGA HODNE vody, MEGA HODNE hnojiv, MEGA HODNE pesticidu
+		- biobavlna
+			- bez hnojiv => min roste => potrebujeme na 1 tasku vic pudy => potrebujeme vic vody
+	- zpracovani:
+		- chemie (beleni, barveni, ...)
+		- energie (trideni, zpracovani, pleteni, ...)
+
+### papir
+
+
+### Odpady
+
+https://www.europarl.europa.eu/news/cs/headlines/society/20180328STO00751/nakladani-s-odpadem-v-eu-fakta-a-cisla-infografika
+	- odpady komunalni cca 10 % vsech odpadu
+	- (nejvic stavebnictvi 36%, potom hlusina z tezby 25%)
+
+https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech/
+	- celkovy odpad
+		- 3500 kg na osobu rok
+	- komunalni odpad 6M tun
+		- tzn 550kg na osobu / rok
+			- tzn 16%
+
+		- kolik z toho se vubec da spalit?
+			https://www.ekokom.cz/skladba-smesneho-komunalniho-odpadu-z-domacnosti-cr/#
+			- 7% plasty
+				- super palivo, na urovni LPG
+			- 7% papir
+				- dobre palivo, jako drevo, uhli
+			- 25% spalitelny odpad
+				- ?? 
+			- 25% bioodpad
+				- ??
+
+		- kdyby se vsechen komunalni odpad spalil, tak by vygeneroval
+			- neco mezi
+				- 0 M tun CO2 (kdyby byl vsechen odpad nespalitelny)
+				- 6 * 2.7 = 16 Mtun CO2 (kdyby to byly cisty plasty)
+			- mozna rekneme 10M tun CO2; samozrejme to ale znamena,
+				ze cim vic CO2, tim vic uhliku slo spalit, tim vic energie
+				(takze to neni nutne spatne)
+			- kazdopadne, v porovnani s uhelnyma elektrarnama je to minimalni problem
+				
+	- z toho 40% recyklace
+	- 12 % spalovny / cementarny
+		- https://www.e15.cz/byznys/prumysl-a-energetika/cesko-spalilo-nejvetsi-mnozstvi-odpadu-za-desetileti-1348275
+		- tzn 600k - 700k tun za rok
+	- 46 % skladky
+
+	- plastovy kontejnery
+		https://zpravy.aktualne.cz/ekonomika/trideni-plastu-neni-recyklace-novy-vyrobek-vznikne-jen-z-pol/r~6cff72f4046011e9a0680cc47ab5f122/
+		- 50% recyklace
+		- zbytek:
+			26% skladky
+			8+5% spalovny + cementarny
+
+- Zavery:
+	1. trideni (nejen plastovyho) odpadu je dobre, vytridene plasty v podstate nejsou problem
+		- 50% vetsina plastu vyhozeneho do kontejneru na plast se recykluje
+			+ nizka uhlikova stopa
+				- v principu nizsi energeticka narocnost nez vyroba
+				- ALE vyssi naklady na trideni, atp
+			+ udrzitelnost
+		- 26% skladky
+			+ odsouvaji CO2 do budoucnosti, sekvestrace dlouhodobe stabilnich uhlikatych materialu
+				(plasty); ty se ale zaroven nejvic tridi
+			- nevytridena skladkovana biomasa generuje CH4, ktery ma velky sklenikovy efekt
+			- uvolnuji chemikalie (a smrdi)
+		- 13% spalovny & cementarny
+			+ vyuzivaji material pro generaci tepla
+			+ plasty jsou fakt dobre palivo (na urovni LPG!)
+				- super ciste (hodne uhliku a vodiku, malo primesi, v porovnani s e.g. uhlim)
+				https://www.hnutiduha.cz/sites/default/files/publikace/typo3/CO2_odpad.pdf
+
+			- spalovny >> uhelne elektrarny; spalovny ~= LPG
+				- dokud budeme mit uhelne elektrarny (resp LPG)
+					tak jsou spalovny SUPER (resp ok) vec
+				- velky plus je i to, ze spalovna je vlastne "chytra elektrarna",
+					protoze spaluje fosilni material, co se uz jednou pouzil
+
+	2. vyhazovani plastu do smesneho odpadu:
+		- recyklace - super, ale zbytecne narocnejsi vytridit (oproti tridenemu odpadu)
+		- spaleni - v poho
+		- skladkovani
+			+ sekvestrace uhliku
+			- uvolnovani chemikalii
+				- z plastu se to tyka hlavne PVC (ktere je obecne z pohledu na zivotni prostredi
+					nejblbejsi siroce uzivany plast)
+					https://zerowasteeurope.eu/wp-content/uploads/2021/08/2021-06-22-PVC-briefing-FINAL.pdf
+			- nevyuzity recyklacni potencial
+
+### elektrarny v cr
+
+- [teplo tabulka](https://www.engineeringtoolbox.com/co2-emission-fuels-d_1085.html)
+
+- uhli rocne
+	- https://energetika.tzb-info.cz/19810-uhli-v-ceske-republice
+
+	- 39M tun hnede 
+		- 39 * 1.5 = 60M tun CO2
+	- 4 M tun cerne
+		- 4 * 3.7 = 16M tun CO2
+	
+	- dohromady cca 76Mtun CO2
+
+- LPG a ostatni plyny cca 16M tun CO2
+
+- [energie v cr ](https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku)
+	- cca 100 Mtun C02
+	- tzn, to zhruba odpovida
+			
+
+### Spini ceske plasty more?
+
+- z evropy jde jen 0.6% svetovyho plastu, 81% je z asie
+	- navic az 50% (minimalne 10tky procent jsou vyhozene rybarske site)
+
+	- https://ourworldindata.org/plastic-pollution
+	
+- tzn odhadem, z cech je to min nez 0.01%, tzn uplna 0
+
+
+### 
+
+
+
+### Plasty
+- POZOR:
+	- spaleni se deje ve spalovnach a cementarnach, tzn se z toho vyrobi energie / teplo /...
+		- tzn, je to vlastne takovy "uhli, ktery ale pred spalenim slouzi jako obal, ..."
+
+- PP
+	- zdroj 1
+		- http://www.designinsite.dk/htmsider/m0004.htm
+		- http://timeforchange.org/plastic-bags-and-plastic-bottles-co2-emissions-during-their-lifetime/
+
+		- vyroba 1.75 kg ropy / kg (material + energie)
+			- total 5.25 kgCO2 / kg lifecycle (vyroba + spaleni)
+
+	- zdroj 2 - zaliv
+		- Life-Cycle Assessment of Polypropylene Production in the Gulf
+Cooperation Council (GCC) Region https://www.mdpi.com/2073-4360/13/21/3793/pdf
+		- vyroba - 1.6kg CO2 / kg
+			- total 1.6 + 2.7 * 1 = 4.3 CO2/ kg PP
+		- vyroba - 1.722 kg oil eq /kg
+			- co2 emission: 3.2 kgCo2 / kg oil
+				- https://www.engineeringtoolbox.com/co2-emission-fuels-d_1085.html
+			- total 3.2 * 1.722 = 5.5 CO2/ kg 
+
+- zdroj 3 - japonci
+	https://link.springer.com/article/10.1007/BF02978888
+	1) The gross CO2 emissions for the manufacture of plastics in Japan were 1.3, 1.4, and 1.7 kg-CO2/kg-PE, PP, and PVC, respectively.
+		- PP total: 1.4 + 2.7 * 1 = 4.1 CO2/kg PP
+		- PE total: 1.3 + 2.7 * 1 = 4.0 CO2/kg PE
+		- PVC total: 1.7 + 2.7 * 1 = 4.4 CO2/kg PVC
+	- JM: asi to nezahrnuje forming 
+
+- zdroj 4 - eu
+	- zdaleka nejlepsi 
+
+	https://www.eionet.europa.eu/etcs/etc-wmge/products/greenhouse-gas-emissions-and-natural-capital-implications-of-plastics-including-biobased-plastics/@@download/file/ETC_2.1.2.1._GHGEmissionsOfPlastics_FinalReport_v7.0_ED.pdf
+
+	- prod + forming:
+		- PP 1.91 + 0.94
+		- PVC 2.5 + 0.5
+		- PE 1.98 + 1.13
+		- PET 2.94 + 0.94
+
+	- incineration 2.7 CO2/kg plast
+	- total
+		- PP 5.55
+		- PVC 5.7
+		- PE 5.8
+		- PET 6.58
+
 
 # OLD [2019]
 
