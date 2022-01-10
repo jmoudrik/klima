@@ -1,6 +1,9 @@
 # Miniatury [1. 2022]
 
 ## Látkové Tašky
+- co potrebuji pro tasky:
+	- jak skodi plasty?
+	- jak skodi papir & bavlna
 
 - Jak je to s nákupními taškami:
 	- Pomáhají látkové tašky?
@@ -64,7 +67,7 @@
 	- recyklace papiru
 		- hodne vody, chemikalii a energie
 
-- bavna
+- bavlna
 	- pestovani:
 		- MEGA HODNE vody, MEGA HODNE hnojiv, MEGA HODNE pesticidu
 		- biobavlna
@@ -128,7 +131,7 @@ https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech
 			+ nizka uhlikova stopa
 				- v principu nizsi energeticka narocnost nez vyroba
 				- ALE vyssi naklady na trideni, atp
-			+ udrzitelnost
+			+ udrzitelnost, cyklicka ekonomika
 		- 26% skladky
 			+ odsouvaji CO2 do budoucnosti, sekvestrace dlouhodobe stabilnich uhlikatych materialu
 				(plasty); ty se ale zaroven nejvic tridi

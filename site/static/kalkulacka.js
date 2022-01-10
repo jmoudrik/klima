@@ -97,26 +97,25 @@ function cmp_html(tuny_co2){
 		wrap_li(letadlem_html(tuny_co2)) +
 		wrap_li(somalci_html(tuny_co2)) +
 		wrap_li(mobil_html(tuny_co2)) +
-	    wrap_li(autem_html(tuny_co2)));
+	    wrap_li(autem_html(tuny_co2)) + 
+		"</ul>"
+	);
 }
 
-/*
-            <a class="popoverData under_dot" selector="true" data-html="false"
-               data-content="Efekty se budou pravděpodobně výrazně lišit podle konkrétních parametrů zateplovaného domu."
-               rel="popover" data-placement="bottom" data-trigger="hover">
-                jaký efekt může v takovém domě velmi zhruba mít:
-            </a>
-			*/
+
 function format_co2_cmp_pop(tuny_co2) {
+	    //return '<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"    data-bs-html="true" title="'+cmp_html(tuny_co2)+'" >'+format_co2(tuny_co2)+'</button>';
+
 	// TODO popoverupdates are broken
-	return '<a class="popoverData popover_bold text-primary" selector="true" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+	//rel="popover" selector="true" 
+	return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>';
 };
 
 function format_cena_ref(cenakwh, cena_tot) {
 	return (
-	'<a class="popoverData" selector="true" data-html="true" '+
-	'data-content="Při ceně <b>'+cenakwh.toFixed(1)+' Kč</b> za 1 kWh" '+
-	'rel="popover" data-placement="bottom" data-trigger="hover">'+
+	'<a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" '+
+	'title="Při ceně '+cenakwh.toFixed(1)+' Kč</b> za 1 kWh." '+
+	' data-bs-placement="bottom" data-bs-trigger="hover">'+
 	's náklady na elektřinu '+
     format_cena(cena_tot)
 	+'</a>');
@@ -175,8 +174,12 @@ function render_ref(key){
 	//return "<a href='#"+num+"'>["+num+"]</a>";
 	// ten popover zmizi kdyz se na nej najede, ergo ne moc uzitecny, unless fix
 	//
+	//var popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:'') + ": " + url;
 	var popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:''); //+ ": <a href='"+url+"'>"+key+'</a>'
-	return '<a class="popoverData popover_bold text-primary" href="'+url+'" data-html="true" data-content="'+popover_html+'" rel="popover" data-placement="bottom" data-trigger="hover">['+num+']</a>';
+	//
+	//return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+
+	return '<a data-bs-toggle="tooltip" class="popover_bold text-primary" href="'+url+'" data-bs-html="true" title="'+popover_html+'" data-bs-placement="bottom" data-bs-trigger="hover">['+num+']</a>';
 }
 
 function render_refs(){
@@ -197,7 +200,9 @@ function render_refs(){
 }
 
 function updatePopover() {
-        $('.popoverData').popover();
+		var triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		var tooltips = triggers.map(function (tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) });
+        //$('.popoverData').popover();
 }
 
 function updatePopoverDelayedPromise() {
@@ -219,7 +224,7 @@ var updatePopoverDelayed = async function() {
 function AppViewModel() {
     // MWh / rok
 	this.dum_spotreba = ko.observable(Math.ceil(DATA.cr_domacnost_topeni_avg));
-	this.cerpadlo_cop = ko.observable(3.5);       // topny faktor cerpadla
+	this.cerpadlo_cop = ko.observable(3.0);       // topny faktor cerpadla
 	this.cerpadlo_cena = ko.observable(220000);
 	// TODO XXX v html tooltipu co ukazuje cenu je to staticky
 	this.cena_kwh = ko.observable(3);         // kc / kwh

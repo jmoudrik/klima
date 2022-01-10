@@ -1,28 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-		<span class="fs-4">krokyproklima.cz</span>
-      </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Jak mohu pomoci?</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Miniatury</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">O Projektu</a></li>
-      </ul>
-    </header>
-  </div>
-  <div class="container">
-
-
-    <hr/>
     <div class="page-header">
         <h1>Globální oteplování:
             <small class="text-muted">Jak mohu pomoci?</small></h1>
     </div>
     <hr/>
+	<p>
+	Tato stránka si klade za cíl ukázat, <b>čím každý z nás nejvíc přispívá ke klimatické změně</b>.
+	Na základě toho pak můžeme vytipovat v našich životech věci, jejichž změnou můžeme v boji s globálním oteplováním
+	opravdu účinně pomáhat.
+	</p>
+    <p>
+	 <b>Pojďme dělat změny, které opravdu pomáhají!</b>
+	</p>
     <p>
         <!--
         TODO vypocet tohodle odhadu nekde rozepsat. / dat pryc
@@ -32,13 +23,10 @@
          -->
         Průměrný Čech přímo ročně vyprodukuje asi <span
             data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
-    </p>
-    <p>
 	Největší část z toho připadá na vytápění domácnosti, zbytek hlavně na produkci jídla a dopravu.
     </p>
 	<h3>Stručně: Co s tím můžu dělat?</h3>
 
-	<p>Ve svém životě máme každý dost věcí, jejichž změnou můžeme účinně pomoct v boji s globálním oteplováním:</p>
     <ul>
         <li>
             <i class="material-icons">house</i> vytápění domácnosti, teplá voda,
@@ -81,7 +69,7 @@
             <span data-bind="html: format_co2_cmp_pop(DATA.cr_avg_doprava_est / 1000)"></span>
             <ul>
                 <li>
-                    Co nejméně jezdit autem a létat.
+                    Co nejméně létat a jezdit autem.
                 </li>
                 <li>
                     Preferovat hromadnou dopravu.
@@ -96,14 +84,29 @@
 
     <br/>
 	<p>Pojďme se nyní podívat na jednotlivé oblasti detailně.</p>
+	<div class="alert alert-secondary">
+		<h4 class='alert-heading'>Obsah:</h4>
+		<ol>
+			<li>
+				<a href='#vytapeni'>Vytápění domácnosti</a>
+			</li>
+			<li>
+				<a href='#jidelnicek'>Jídelníček</a>
+			</li>
+			<li>
+				<a href='#doprava'>Doprava</a>
+			</li>
+			<li>
+				<a href='#odkazy'>Odkazy a zdroje</a>
+			</li>
+		</ol>
+	</div>
     <br/>
-
     <!--
         Doma
     -->
     <hr/>
-    <h2>
-        <a name="doma"></a>
+    <h2 id='vytapeni'>
         <i class="material-icons">house</i>
         Vytápění domácnosti:
         <small class="text-muted">Co má největší smysl?</small>
@@ -252,11 +255,22 @@
         </p>
         <p>
             Podívejte se,
-            <a class="popoverData under_dot" selector="true" data-html="false"
-               data-content="Efekty se budou pravděpodobně výrazně lišit podle konkrétních parametrů zateplovaného domu."
-               rel="popover" data-placement="bottom" data-trigger="hover">
+			<!--
+	return (
+	'<a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" '+
+	'title="Při ceně '+cenakwh.toFixed(1)+' Kč</b> za 1 kWh." '+
+	' data-bs-placement="bottom" data-bs-trigger="hover">'+
+	's náklady na elektřinu '+
+    format_cena(cena_tot)
+	+'</a>');
+			-->
+			<span class='under_dot'>
+            <a data-bs-toggle="tooltip" data-bs-html="false"
+               title="Efekty se budou pravděpodobně výrazně lišit podle konkrétních parametrů zateplovaného domu."
+               data-bs-placement="bottom" data-bs-trigger="hover">
                 jaký efekt může v takovém domě velmi zhruba mít:
             </a>
+			</span>
         </p>
             <p>
                 <button type="button" class="btn btn-outline-primary btn-sm" title="Byt"
@@ -345,8 +359,7 @@
     <br/>
 
     <hr/>
-    <h2>
-        <a name="jidelnicek"></a>
+    <h2 id='jidelnicek'>
         <i class="material-icons">restaurant</i>
         Jídelníček:
         <small class="text-muted">Co má největší smysl?</small>
@@ -413,8 +426,7 @@
     <br/>
 
     <hr/>
-    <h2>
-        <a name="doprava"></a>
+    <h2 id='doprava'>
         <i class="material-icons">directions_car</i>
         Doprava:
         <small class="text-muted">Co má největší smysl?</small>
@@ -422,7 +434,7 @@
     <hr/>
     <div class='obsah_block'>
         <h3>
-            1. Co nejméně jezdit autem a létat.
+            1. Co nejméně létat a jezdit autem.
         </h3>
         <p>
             Jízda autem produkuje přibližně <span data-bind='text: (1000 * DATA.auto_co2_km_avg).toFixed(0)'></span> g
@@ -503,24 +515,9 @@
     <br/>
 
 		<hr/>
-    <h2>Odkazy &amp; zdroje</h2>
+    <h2 id='odkazy'>Odkazy &amp; zdroje</h2>
     <hr/>
-    <ul>
-        <!-- TODO: udelat to min akademicky a vic UX-friendly -->
-        <li>
-            <a href="data.js">Zdrojovaná a komentovaná data pro výpočty</a>
-        </li>
-
-		<div data-bind="html: render_refs()"></div>
-    </ul>
-    <br/>
-
-    <h2>O projektu</h2>
-    <hr/>
-    <p>
-        Touto stránkou chceme lidem poskytnout jednoduché informace jak pomoct v boji s klimatickou změnou tam,
-		kde to přináší největší užitek.
-    </p>
+    <div class='obsah_block'>
     <p>
         Důsledně jsme se snažili poskytnout ověřené a zdrojované informace. Je ale nutné říct, že všechny zde
 		uvedené statistiky a odhady stojí na zjednodušujících předpokladech a vycházejí z agregovaných dat,
@@ -530,21 +527,39 @@
         Smyslem je především poskytnout orientační přehled a ukázat, jak jsou jednotlivé složky řádově velké
         &mdash; aby si každý na základě toho mohl vybrat kroky které jemu osobně dávají největší smysl.
     </p>
+    <ul>
+        <!-- TODO: udelat to min akademicky a vic UX-friendly -->
+        <li>
+            <a href="data.js">Zdrojovaná a komentovaná data pro výpočty</a>
+        </li>
 
+		<div data-bind="html: render_refs()"></div>
+    </ul>
+	</div>
+    <br/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	
+	<!--
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-	<!--
-	-->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+
+
+
+	TODO RM jquery
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	-->
+	
     <script src="./knockout-latest.js"></script>
     <script src="./data.js"></script>
     <script src="./kalkulacka.js"></script>
+
     <script type="text/javascript">
-    $('.popoverData').popover();
+		updatePopover();
     </script>
 
 {% endblock content %}

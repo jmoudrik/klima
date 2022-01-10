@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ page.title }}
+</h1>
+
+{#
+<p>
+start
+</p>
+<ul>
+{% for k, v in page %}
+<li>
+	'{{ k }}' : '{{ v }}'
+</li>
+{% endfor %}
+</ul>
+end
+</p>
+#}
+
+{% if page.extra.czdate %}
+<p class="subtitle"><strong>{{ page.extra.czdate }}</strong></p>
+{% endif %}
+
+{% if page.description %}
+<p class="lead">{{ page.description | safe }}</p>
+{% endif %}
+
+{{ page.content | safe }}
+{% endblock content %}
+
