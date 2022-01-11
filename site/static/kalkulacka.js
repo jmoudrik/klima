@@ -104,16 +104,14 @@ function cmp_html(tuny_co2){
 
 
 function format_co2_cmp_pop(tuny_co2) {
-	    //return '<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"    data-bs-html="true" title="'+cmp_html(tuny_co2)+'" >'+format_co2(tuny_co2)+'</button>';
-
-	// TODO popoverupdates are broken
-	//rel="popover" selector="true" 
-	return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+	// TODO tooltips a bit broken - we need to hide the opened ones on changes
+	// or they become orphaned
+	return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary poplink" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>'; 
 };
 
 function format_cena_ref(cenakwh, cena_tot) {
 	return (
-	'<a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" '+
+	'<a data-bs-toggle="tooltip" class="poplink" data-bs-placement="bottom" data-bs-html="true" '+
 	'title="Při ceně '+cenakwh.toFixed(1)+' Kč</b> za 1 kWh." '+
 	' data-bs-placement="bottom" data-bs-trigger="hover">'+
 	's náklady na elektřinu '+

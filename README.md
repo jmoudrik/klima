@@ -38,6 +38,8 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 - kalkulacka leteckych emisi mezi mesty
 - grafika na celkovou spotrebu
 
+- tooltips a bit broken - we need to hide the opened ones on changes or they become orphaned
+
 - lepsi argumentace pro solarni clanky
 - jidlo: research - poznamka o Biogenic Carbon
 	

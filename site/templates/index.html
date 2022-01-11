@@ -256,8 +256,9 @@ var refs = {
             Například, představme si starý dům, kde se topí uhlím a kde jsou jen stará špaletová okna.
            <br>
                 Když zateplením snížíme spotřebu energie na vytápění o
-            <input type="range" data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
-                            min="0" max="100" step="10"> &nbsp; <b data-bind="text: zatepleni_uspora() + ' %'"></b>,
+            <input type="range"
+				   data-bind="value: zatepleni_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+				   min="0" max="100" step="10"> &nbsp; <b data-bind="text: zatepleni_uspora() + ' %'"></b>,
              za rok se ušetří
             <span data-bind="html: format_co2_cmp_pop(zatepleni_uspora_kg() / 1000)"></span>.
         </p>
