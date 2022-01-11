@@ -97,26 +97,23 @@ function cmp_html(tuny_co2){
 		wrap_li(letadlem_html(tuny_co2)) +
 		wrap_li(somalci_html(tuny_co2)) +
 		wrap_li(mobil_html(tuny_co2)) +
-	    wrap_li(autem_html(tuny_co2)));
+	    wrap_li(autem_html(tuny_co2)) + 
+		"</ul>"
+	);
 }
 
-/*
-            <a class="popoverData under_dot" selector="true" data-html="false"
-               data-content="Efekty se budou pravděpodobně výrazně lišit podle konkrétních parametrů zateplovaného domu."
-               rel="popover" data-placement="bottom" data-trigger="hover">
-                jaký efekt může v takovém domě velmi zhruba mít:
-            </a>
-			*/
+
 function format_co2_cmp_pop(tuny_co2) {
-	// TODO popoverupdates are broken
-	return '<a class="popoverData popover_bold text-primary" selector="true" data-html="true" data-content="'+cmp_html(tuny_co2)+'" rel="popover" data-placement="bottom" data-trigger="hover">'+format_co2(tuny_co2) +'</a>';
+	// TODO tooltips a bit broken - we need to hide the opened ones on changes
+	// or they become orphaned
+	return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary poplink" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>'; 
 };
 
 function format_cena_ref(cenakwh, cena_tot) {
 	return (
-	'<a class="popoverData" selector="true" data-html="true" '+
-	'data-content="Při ceně <b>'+cenakwh.toFixed(1)+' Kč</b> za 1 kWh" '+
-	'rel="popover" data-placement="bottom" data-trigger="hover">'+
+	'<a data-bs-toggle="tooltip" class="poplink" data-bs-placement="bottom" data-bs-html="true" '+
+	'title="Při ceně '+cenakwh.toFixed(1)+' Kč</b> za 1 kWh." '+
+	' data-bs-placement="bottom" data-bs-trigger="hover">'+
 	's náklady na elektřinu '+
     format_cena(cena_tot)
 	+'</a>');
@@ -160,44 +157,11 @@ var dovolena = {
 };
 
 // Reference & odkazy ze stranky
-var refs = {
-	'Zpráva o životním prostředí ČR':  [1, 'https://www.mzp.cz/C1257458002F0DC7/cz/zpravy_o_stavu_zivotniho_prostredi_publikace/$FILE/SOPSZP-Zprava_ZP_CR_2015-20170301.pdf', 'MZP ČR, 2015'],
-	'Energetika v Česku' : [2, 'https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku', 'wikipedia, 2019'],
-	'Atlas Masa' : [3, 'https://www.foeeurope.org/meat-atlas/', ''],
-	'Rostlinné Bílkoviny' :  [4, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/', 'Česká veganská společnost'],
-}
-
-function render_ref(key){
-	var val = refs[key];
-	var num = val[0];
-	var url = val[1];
-	var suff = val[2];
-	//return "<a href='#"+num+"'>["+num+"]</a>";
-	// ten popover zmizi kdyz se na nej najede, ergo ne moc uzitecny, unless fix
-	//
-	var popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:''); //+ ": <a href='"+url+"'>"+key+'</a>'
-	return '<a class="popoverData popover_bold text-primary" href="'+url+'" data-html="true" data-content="'+popover_html+'" rel="popover" data-placement="bottom" data-trigger="hover">['+num+']</a>';
-}
-
-function render_refs(){
-	var ret = [];
-
-	//ret.push("<ul>");
-	for (key in refs) {
-		var num = refs[key][0];
-		var url = refs[key][1];
-
-		ret.push("<li>");
-		ret.push("<b><a name='"+num+"'>["+num+"]</a></b>");
-		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
-		ret.push("</li>");
-	}
-	//ret.push("</ul>");
-	return ret.join("\n");
-}
 
 function updatePopover() {
-        $('.popoverData').popover();
+		var triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		var tooltips = triggers.map(function (tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) });
+        //$('.popoverData').popover();
 }
 
 function updatePopoverDelayedPromise() {
@@ -219,7 +183,7 @@ var updatePopoverDelayed = async function() {
 function AppViewModel() {
     // MWh / rok
 	this.dum_spotreba = ko.observable(Math.ceil(DATA.cr_domacnost_topeni_avg));
-	this.cerpadlo_cop = ko.observable(3.5);       // topny faktor cerpadla
+	this.cerpadlo_cop = ko.observable(3.0);       // topny faktor cerpadla
 	this.cerpadlo_cena = ko.observable(220000);
 	// TODO XXX v html tooltipu co ukazuje cenu je to staticky
 	this.cena_kwh = ko.observable(3);         // kc / kwh
