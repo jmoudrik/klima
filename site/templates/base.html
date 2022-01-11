@@ -21,7 +21,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- common stuff -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">
 
 	<!--
 	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -86,8 +86,13 @@ h2 i.material-icons {
 .obsah_block {
     margin-left: 20px;
 }
+@font-face {
+  font-family: 'Material Icons';
+  font-display: swap;
+}
 .material-icons {
     margin-right: 5px;
+	
 }
 button div {
     display: flex;
@@ -155,7 +160,6 @@ function render_refs(){
 	</div>
 
 	<div class="container">
-    <hr/>
 		  {% block content %} {% endblock %}
 
 		<br/>
