@@ -176,9 +176,7 @@ var refs = {
             <li>
                 <b>Elektrický kotel</b> vyprodukuje za rok <span
                     data-bind="html: format_co2_cmp_pop(elektrokotel_co2())"></span>,
-                <span class="under_dot">
-                    <span data-bind="html: format_cena_ref(cena_kwh(), dum_spotreba() * 1000 * cena_kwh())"></span>.
-                </span>
+				<span class="under_dot" data-bind="html: format_cena_ref(cena_kwh(), dum_spotreba() * 1000 * cena_kwh())"></span>.
             </li>
             <li>
                 <b>Tepelné čerpadlo</b> s topným faktorem COP
@@ -189,9 +187,7 @@ var refs = {
                 <b data-bind="text: cerpadlo_cop"></b>
                 vyprodukuje za rok
                 <span data-bind="html: format_co2_cmp_pop(cerpadlo_co2())"></span>,
-                <span class="under_dot">
-                    <span data-bind="html: format_cena_ref(cena_kwh(), dum_spotreba() * 1000 * cena_kwh() / cerpadlo_cop())"></span>.
-                </span>
+				<span class="under_dot" data-bind="html: format_cena_ref(cena_kwh(), dum_spotreba() * 1000 * cena_kwh() / cerpadlo_cop())"></span>.
             </li>
         </ul>
         </p>

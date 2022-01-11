@@ -178,8 +178,8 @@ this.cr_avg_doprava_public_est = this.cr_public_per_cap * this.public_co2_km_avg
 
 this.cr_avg_doprava_est = this.cr_avg_doprava_public_est + this.cr_avg_doprava_auto_est + this.cr_avg_doprava_letadlo_est;
 
-console.log("auto " + this.cr_avg_doprava_auto_est);
-console.log("doprava " + this.cr_avg_doprava_est);
+//console.log("auto " + this.cr_avg_doprava_auto_est);
+//console.log("doprava " + this.cr_avg_doprava_est);
 
 //
 //		Jidlo - odhad
@@ -205,7 +205,7 @@ this.cr_avg_jidlo_est = 1200;
 var cr_total_mult_factor = 1.1;
 
 this.cr_avg_total_est = cr_total_mult_factor * (this.mat_cr_avg_energy_total + this.cr_avg_doprava_est + this.cr_avg_jidlo_est);
-console.log("total " + this.cr_avg_total_est );
+//console.log("total " + this.cr_avg_total_est );
 
 // jidlo kg CO2/den
 // maso ~= 40 % ; mliko ~= 25%
