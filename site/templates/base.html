@@ -116,6 +116,17 @@ h2 span {
     display: flex;
     align-items: center;
 }
+/* https://stackoverflow.com/questions/3247358/how-do-i-wrap-text-with-no-whitespace-inside-a-td/5108367#5108367 */
+.wrapword {
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -webkit-pre-wrap;          /* Chrome & Safari */ 
+    white-space: -pre-wrap;                 /* Opera 4-6 */
+    white-space: -o-pre-wrap;               /* Opera 7 */
+    white-space: pre-wrap;                  /* CSS3 */
+    word-wrap: break-word;                  /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+}
     </style>
 
     <title>Klima: jak mohu pomoci?</title>
@@ -140,7 +151,7 @@ function render_refs(){
 		let url = refs[key][1];
 		ret.push("<li>");
 		ret.push("<b><a name='"+num+"'>["+num+"]</a></b>");
-		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
+		ret.push(key + ":<br><a href='"+url+"' class='wrapword'>"+url+"</a>");
 		ret.push("</li>");
 	}
 	return ret.join("\n");
