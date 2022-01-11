@@ -91,7 +91,6 @@ https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech
 	- komunalni odpad 6M tun
 		- tzn 550kg na osobu / rok
 			- tzn 16%
-
 		- kolik z toho se vubec da spalit?
 			https://www.ekokom.cz/skladba-smesneho-komunalniho-odpadu-z-domacnosti-cr/#
 			- 7% plasty
@@ -126,6 +125,10 @@ https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech
 			8+5% spalovny + cementarny
 
 - Zavery:
+
+	TODO
+		- ruzne plasty, spalovny & emisni regulace
+
 	1. trideni (nejen plastovyho) odpadu je dobre, vytridene plasty v podstate nejsou problem
 		- 50% vetsina plastu vyhozeneho do kontejneru na plast se recykluje
 			+ nizka uhlikova stopa
@@ -196,6 +199,17 @@ https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech
 
 
 ### Plasty
+- https://www.quora.com/Does-HDPE-plastic-make-toxic-fumes-when-placed-in-an-oven-at-350-degrees-F
+
+- spalovani plastu
+	- uhlovodiky (PE) v podstate ciste
+	- dabel v detailech
+		- barviva
+		- zmekcovadla
+		- povrchove upravy
+	- spalovny s dobrou technologii
+		=> 
+
 - POZOR:
 	- spaleni se deje ve spalovnach a cementarnach, tzn se z toho vyrobi energie / teplo /...
 		- tzn, je to vlastne takovy "uhli, ktery ale pred spalenim slouzi jako obal, ..."

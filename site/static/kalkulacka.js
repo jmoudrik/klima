@@ -159,45 +159,6 @@ var dovolena = {
 };
 
 // Reference & odkazy ze stranky
-var refs = {
-	'Zpráva o životním prostředí ČR':  [1, 'https://www.mzp.cz/C1257458002F0DC7/cz/zpravy_o_stavu_zivotniho_prostredi_publikace/$FILE/SOPSZP-Zprava_ZP_CR_2015-20170301.pdf', 'MZP ČR, 2015'],
-	'Energetika v Česku' : [2, 'https://cs.wikipedia.org/wiki/Energetika_v_%C4%8Cesku', 'wikipedia, 2019'],
-	'Atlas Masa' : [3, 'https://www.foeeurope.org/meat-atlas/', ''],
-	'Rostlinné Bílkoviny' :  [4, 'https://veganskaspolecnost.cz/vyziva/bilkoviny/', 'Česká veganská společnost'],
-}
-
-function render_ref(key){
-	var val = refs[key];
-	var num = val[0];
-	var url = val[1];
-	var suff = val[2];
-	//return "<a href='#"+num+"'>["+num+"]</a>";
-	// ten popover zmizi kdyz se na nej najede, ergo ne moc uzitecny, unless fix
-	//
-	//var popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:'') + ": " + url;
-	var popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:''); //+ ": <a href='"+url+"'>"+key+'</a>'
-	//
-	//return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>';
-
-	return '<a data-bs-toggle="tooltip" class="popover_bold text-primary" href="'+url+'" data-bs-html="true" title="'+popover_html+'" data-bs-placement="bottom" data-bs-trigger="hover">['+num+']</a>';
-}
-
-function render_refs(){
-	var ret = [];
-
-	//ret.push("<ul>");
-	for (key in refs) {
-		var num = refs[key][0];
-		var url = refs[key][1];
-
-		ret.push("<li>");
-		ret.push("<b><a name='"+num+"'>["+num+"]</a></b>");
-		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
-		ret.push("</li>");
-	}
-	//ret.push("</ul>");
-	return ret.join("\n");
-}
 
 function updatePopover() {
 		var triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

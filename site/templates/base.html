@@ -37,12 +37,14 @@
 	-->
 
     <style>
+.tooltip.in{opacity:1!important;}
 .tooltip-inner {
     background-color: white;
     color: black;
     border: 1px solid grey;
     max-width: 350px;
     text-align: left;
+	opacity: 1!important;
 }
 .under_dot {
     border-bottom: 1px dotted #000;
@@ -77,6 +79,31 @@ h2 span {
 
 </head>
 <body>
+
+	<script>
+function render_ref(key){
+	let val = refs[key];
+	let num = val[0];
+	let url = val[1];
+	let suff = val[2];
+	let popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:'');
+	return '<a data-bs-toggle="tooltip" class="popover_bold text-primary" href="'+url+'" data-bs-html="true" title="'+popover_html+'" data-bs-placement="bottom" data-bs-trigger="hover">['+num+']</a>';
+}
+
+function render_refs(){
+	let ret = [];
+	for (key in refs) {
+		let num = refs[key][0];
+		let url = refs[key][1];
+		ret.push("<li>");
+		ret.push("<b><a name='"+num+"'>["+num+"]</a></b>");
+		ret.push(key + ": <a href='"+url+"'>"+url+"</a>");
+		ret.push("</li>");
+	}
+	return ret.join("\n");
+}
+	</script>
+
   <section class="section">
 	<div class="container">
     <header class="d-flex flex-wrap justify-content-center pt-3 mb-2">
@@ -87,7 +114,9 @@ h2 span {
 
       <ul class="nav nav-pills">
 		<li class="nav-item"><a title='Víte čím nejvíce můžete pomoci v boji s globálním oteplováním?' href="/" class="nav-link{% if current_path == '/' %} active{% endif %}" {% if current_path == '/' %} aria-current="page"{% endif %}>Jak mohu pomoci?</a></li>
-        <li class="nav-item"><a title='Drobné otázky a témata související s klimatickou změnou.' href="/drobnosti/" class="nav-link {% if current_path == '/drobnosti/' %} active{% endif %}" {% if current_path == '/drobnosti/' %} aria-current="page"{% endif %}>Drobnosti</a></li>
+		<!--
+        <li class="nav-item"><a title='Drobné otázky a témata související s klimatickou změnou.' href="/temata/" class="nav-link {% if current_path == '/temata/' %} active{% endif %}" {% if current_path == '/temata/' %} aria-current="page"{% endif %}>Témata</a></li>
+		-->
         <li class="nav-item"><a title='Informace o projektu. Proč to děláme?' href="/o-projektu/" class="nav-link {% if current_path == '/o-projektu/' %} active{% endif %}" {% if current_path == '/o-projektu/' %} aria-current="page"{% endif %}>O Projektu</a></li>
       </ul>
 

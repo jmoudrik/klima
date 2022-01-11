@@ -16,13 +16,10 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 # TODO
 
-- mig to bootstrap 5 & popper (less deps, faster load)
-	- BACHA - zatim jen castecne (css, takze je to rozbity, hnusny odkazy, atp)
-
 - miniatury / kazuistiky
 	- konkretni myty, akce & data ktera podporuji, vyvraceji jestli to za to stoji
 	- latkovy tasky, pytliky, trideni odpadu, elektronika, auta
-
+	- blog: robustnost & krajina - nassim taleb
 	- tasky
 	- vypocet: elektricky auto ze zasuvky (elektro mix CR) vs benzin
 		- srovnani s Polskem, Nemeckem, Norskem
