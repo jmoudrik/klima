@@ -155,6 +155,7 @@ var dovolena = {
 // Reference & odkazy ze stranky
 
 function updatePopover() {
+	console.log("update tooltips");
 		var triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 		var tooltips = triggers.map(function (tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) });
         //$('.popoverData').popover();
