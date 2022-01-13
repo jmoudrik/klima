@@ -222,6 +222,13 @@ this.jidlo_vegetarian_den = this.vegetarian_ratio * this.cr_avg_jidlo_est / 365;
 this.jidlo_avg_den = this.cr_avg_jidlo_est / 365;
 this.jidlo_masozrout_den = 4;
 
+// Misc
+	
+// https://www.eionet.europa.eu/etcs/etc-wmge/products/greenhouse-gas-emissions-and-natural-capital-implications-of-plastics-including-biobased-plastics/@@download/file/ETC_2.1.2.1._GHGEmissionsOfPlastics_FinalReport_v7.0_ED.pdf
+// kg CO2 / kg plastu
+this.plasty_vyroba = 3;
+// kg CO2 / kg plastu
+this.plasty_spaleni = 2.7;
 
 //
 //		Spotrebni elektronika

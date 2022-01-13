@@ -128,6 +128,7 @@ https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech
 
 	TODO
 		- ruzne plasty, spalovny & emisni regulace
+		- spalovny https://arnika.org/o-nas/tiskove-zpravy/koalice-pro-3r-se-obraci-na-novou-vladu
 
 	1. trideni (nejen plastovyho) odpadu je dobre, vytridene plasty v podstate nejsou problem
 		- 50% vetsina plastu vyhozeneho do kontejneru na plast se recykluje
@@ -158,9 +159,26 @@ https://www.samosebou.cz/2021/02/11/kolik-odpadu-vyprodukuje-prumerne-kazdy-cech
 		- skladkovani
 			+ sekvestrace uhliku
 			- uvolnovani chemikalii
-				- z plastu se to tyka hlavne PVC (ktere je obecne z pohledu na zivotni prostredi
+				- z plastu se to tyka hlavne PVC
+					(ktere je obecne z pohledu na zivotni prostredi
 					nejblbejsi siroce uzivany plast)
 					https://zerowasteeurope.eu/wp-content/uploads/2021/08/2021-06-22-PVC-briefing-FINAL.pdf
+
+				- ale https://en.wikipedia.org/wiki/Plasticizer
+					- 90% pouzito pro PVC 
+					- vetsina v evrope uz pouziva high molecular weight ftalaty
+						(ktere jsou stabilni a zdravotne ok)
+					- hezky prehled
+						https://polymer-additives.specialchem.com/selection-guide/plasticizers
+					- tzn, tyka se to hlavne importovanych plastovych vyrobku
+
+					In polymers like PVC, phthalates do not bind chemically and leach out of plastics, leading to their occurrence in the environment
+					Some phthalate plasticizers can pose serious risks to health as they are carcinogens and/or developmental toxins
+					Certain phthalates can accumulate at low levels in the human body
+
+					- https://waste-management-world.com/a/pvc-to-burn-or-not-to-burn
+
+
 			- nevyuzity recyklacni potencial
 
 ### elektrarny v cr

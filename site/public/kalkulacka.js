@@ -77,18 +77,14 @@ function format_perc1(stuff){
 	return (100*stuff).toFixed(1) + "%";
 }
 
-function format_co2(tuny_co2) {
+function format_co2(tuny_co2, kg) {
+	if(kg) return (1000*tuny_co2).toFixed(0) + " kg CO<sub>2</sub>";
 	return tuny_co2.toFixed(2) + " tun CO<sub>2</sub>";
 };
 
 function wrap_li(stuff) {
 	return "<li>"+stuff+"</li>";
 }
-
-function format_co2_cmp(tuny_co2) {
-	var cmp_html = "</b>, stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2);
-	return "za rok <b>" + format_co2(tuny_co2) + cmp_html;
-};
 
 function cmp_html(tuny_co2){
 	//return "Stejně jako " + letadlem_html(tuny_co2) + ", nebo " + autem_html(tuny_co2) + ".";
@@ -103,10 +99,10 @@ function cmp_html(tuny_co2){
 }
 
 
-function format_co2_cmp_pop(tuny_co2) {
+function format_co2_cmp_pop(tuny_co2, kg=null) {
 	// TODO tooltips a bit broken - we need to hide the opened ones on changes
 	// or they become orphaned
-	return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary poplink" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2) +'</a>'; 
+	return '<a data-bs-toggle="tooltip" data-bs-placement="bottom" class="popover_bold text-primary poplink" data-bs-html="true" title="'+cmp_html(tuny_co2)+'" data-bs-trigger="hover">'+format_co2(tuny_co2, kg) +'</a>'; 
 };
 
 function format_cena_ref(cenakwh, cena_tot) {
@@ -235,8 +231,15 @@ function AppViewModel() {
 
     // kg co2 uspora
 	this.tepla_voda_uspora_kg = ko.computed(function() {
-		var uspora = this.tepla_voda_uspora() / 100 * DATA.mat_cr_avg_tepla_voda;
-		return uspora;
+		return this.tepla_voda_uspora() / 100 * DATA.mat_cr_avg_tepla_voda;
+	}, this);
+	//
+    // procenta teply vody co si odpustim
+	this.plasty_uspora = ko.observable(50);
+
+    // kg co2 / kg plastu uspora
+	this.plasty_uspora_na_kg = ko.computed(function() {
+		return DATA.plasty_vyroba * this.plasty_uspora() / 100;
 	}, this);
 
     // procenta veprovyho & hoveziho, co si odpustim

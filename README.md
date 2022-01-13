@@ -16,6 +16,11 @@ Komentáře, feedback, nebo návrhy na vylepšení (nejlépe přímo pull-reques
 
 # TODO
 
+- fix refs
+	- na kliknuti by se melo posunout na konec do odkazu
+		(na pc v poho, hover ukaze tooltip, click odejde pryc,
+		na mobilu rozbity, hover neni, na klik odejdu z webu, to nechci)
+
 - miniatury / kazuistiky
 	- konkretni myty, akce & data ktera podporuji, vyvraceji jestli to za to stoji
 	- latkovy tasky, pytliky, trideni odpadu, elektronika, auta

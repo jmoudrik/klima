@@ -71,6 +71,16 @@
 </style>
 
     <style>
+.alert-toc {
+    color: #41464b;
+    background-color: inherit;
+    border-color: #d3d6d8;
+    display:inline-block;
+}
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300
+}
 .poplink{
 	white-space: nowrap;
 }
@@ -105,6 +115,9 @@ h2 i.material-icons {
     margin-right: 5px;
 	
 }
+.headerlink {
+    text-decoration: none;
+}
 button div {
     display: flex;
     align-items: center;
@@ -127,6 +140,9 @@ h2 span {
     word-break: break-all;
     white-space: normal;
 }
+*:target {
+    border-bottom: 2px dotted #000;
+}
     </style>
 
     <title>Klima: jak mohu pomoci?</title>
@@ -138,7 +154,8 @@ h2 span {
 function render_ref(key){
 	let val = refs[key];
 	let num = val[0];
-	let url = val[1];
+	//let url = val[1];
+	let url = '#ref_' + num;
 	let suff = val[2];
 	let popover_html = '<b>['+num+']</b> ' + key + (suff ? ", " + suff:'');
 	return '<a data-bs-toggle="tooltip" class="popover_bold text-primary" href="'+url+'" data-bs-html="true" title="'+popover_html+'" data-bs-placement="bottom" data-bs-trigger="hover">['+num+']</a>';
@@ -149,9 +166,11 @@ function render_refs(){
 	for (key in refs) {
 		let num = refs[key][0];
 		let url = refs[key][1];
+		let suff = refs[key][2];
+		let txt = key + (suff ? ", " + suff:'');
 		ret.push("<li>");
-		ret.push("<b><a name='"+num+"'>["+num+"]</a></b>");
-		ret.push(key + ":<br><a href='"+url+"' class='wrapword'>"+url+"</a>");
+		ret.push("<a name='ref_"+num+"'><b>["+num+"]</b>");
+		ret.push(txt + "</a>:<br><a href='"+url+"' class='wrapword'>"+url+"</a>");
 		ret.push("</li>");
 	}
 	return ret.join("\n");
@@ -168,9 +187,7 @@ function render_refs(){
 
       <ul class="nav nav-pills">
 		<li class="nav-item"><a title='Víte čím nejvíce můžete pomoci v boji s globálním oteplováním?' href="/" class="nav-link{% if current_path == '/' %} active{% endif %}" {% if current_path == '/' %} aria-current="page"{% endif %}>Jak mohu pomoci?</a></li>
-		<!--
         <li class="nav-item"><a title='Drobné otázky a témata související s klimatickou změnou.' href="/temata/" class="nav-link {% if current_path == '/temata/' %} active{% endif %}" {% if current_path == '/temata/' %} aria-current="page"{% endif %}>Témata</a></li>
-		-->
         <li class="nav-item"><a title='Informace o projektu. Proč to děláme?' href="/o-projektu/" class="nav-link {% if current_path == '/o-projektu/' %} active{% endif %}" {% if current_path == '/o-projektu/' %} aria-current="page"{% endif %}>O Projektu</a></li>
       </ul>
 
@@ -189,7 +206,7 @@ function render_refs(){
 		<footer>
 			<p>
 				Přijde Vám tento web užitečný?
-				Jakékoliv komentáře, feedback, nebo návrhy na vylepšení jsou velmi vítány.
+					Jakékoliv komentáře, zpětná vazba, nebo návrhy na vylepšení jsou velmi vítány.
 			</p>
 			<p>
 				<b>2019&ndash;2022</b>, <a href='http://www.j2m.cz/~jm/'>JM</a>,

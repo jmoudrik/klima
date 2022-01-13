@@ -5,15 +5,18 @@
   {{ section.title }}
 </h1>
 {{ section.content | safe }}
-<ul>
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-	  {% if page.description %}
-	  &mdash; {{ page.description | safe }}
+  <h3>
+  <a class='headerlink' href="{{ page.permalink | safe }}">{{ page.title }}</a>
+  </h3>
+	  {% if page.extra.czdate %}
+	  <p>{{ page.extra.czdate }}</p>
 	  {% endif %}
-
-  </li>
+	  {% if page.description %}
+		<p class="lead">{{ page.description | safe }}</p>
+	  {% endif %}
+	  <br>
+	  <br>
   {% endfor %}
-</ul>
 {% endblock content %}
 
