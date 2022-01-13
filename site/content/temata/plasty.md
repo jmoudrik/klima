@@ -77,7 +77,7 @@ emisí za rok,
 
 **Omezením spotřeby plastů**
 o <input type="range"
-   data-bind="value: plasty_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+   data-bind="value: plasty_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
    min="0" max="100" step="10"> &nbsp; <b data-bind="text: plasty_uspora() + ' %'"></b>
 sníží průměrný Čech své celkové roční emise CO2 o
 <b data-bind='text: format_perc1(70 * plasty_uspora_na_kg() / DATA.cr_avg_total_est)'></b>

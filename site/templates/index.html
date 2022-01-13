@@ -128,7 +128,7 @@ var refs = {
                                event: { keypress: updatePopover, mouseout: updatePopover }">
                 Průměrná česká domácnost
             </button>
-            protopí za rok <input type="range" data-bind="value: dum_spotreba, valueUpdate: 'input'" min="1" max="30">
+            protopí za rok <input type="range" data-bind="value: dum_spotreba, valueUpdate: 'input', event: { touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }" min="1" max="30">
             &nbsp;
             <b data-bind="text: dum_spotreba"></b><b> MWh / rok</b>.
             <!--, což je
@@ -181,7 +181,7 @@ var refs = {
             <li>
                 <b>Tepelné čerpadlo</b> s topným faktorem COP
                 <input type="range"
-                       data-bind="value: cerpadlo_cop, valueUpdate: 'input', event: { touch: updatePopover, click: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
+                       data-bind="value: cerpadlo_cop, valueUpdate: 'input', event: { touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                        min="2" max="5" step='0.1'>
                 &nbsp;
                 <b data-bind="text: cerpadlo_cop"></b>
@@ -209,7 +209,7 @@ var refs = {
                 <b data-bind="html: format_cena(cerpadlo_setrim())"></b>.
                 Stojí-li tepelné čerpadlo
                 <input type="range"
-                       data-bind="value: cerpadlo_cena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                       data-bind="value: cerpadlo_cena, valueUpdate: 'input', event: { touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                        min="150000" max="350000" step='10000'>
                 &nbsp;
                 <b data-bind="html: format_cena(cerpadlo_cena())"></b>, investice se Vám vrátí za
@@ -225,7 +225,7 @@ var refs = {
                 klesat.
                 <!--
                 <input type="range"
-                       data-bind="value: elektrina_cr_mix_emise, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                       data-bind="value: elektrina_cr_mix_emise, valueUpdate: 'input', event: { touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                        min="0.0" max="1.5" step='0.1'>
                 &nbsp;
                 <b data-bind="html: elektrina_cr_mix_emise"></b>.
@@ -319,7 +319,7 @@ var refs = {
         <p>
             <b>Omezením spotřeby teplé vody</b> o
             <input type="range"
-                   data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   data-bind="value: tepla_voda_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10"> &nbsp; <b data-bind="text: tepla_voda_uspora() + ' %'"></b>
             sníží průměrný Čech své roční emise z vytápění o
             <b data-bind='text: format_perc1(tepla_voda_uspora_kg() / DATA.cr_energy_doma)'></b>
@@ -330,7 +330,7 @@ var refs = {
         <p>
             <b>Snížením teploty v domácnosti</b> o
             <input type="range"
-                   data-bind="value: teplota_snizena, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   data-bind="value: teplota_snizena, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="5" step="1"> &nbsp; <b data-bind="text: teplota_snizena() + '° C'"></b>
             sníží průměrný Čech své roční emise z vytápění o
             <b data-bind='text: format_perc1(teplota_uspora_kg() / DATA.cr_energy_doma)'></b>
@@ -382,7 +382,7 @@ var refs = {
             <b>Produkce mléka, másla a sýrů</b> má rovněž velký vliv.</p>
         <p><b>Vynecháním masa a mléčných výrobků</b>
             <input type="range"
-                   data-bind="value: maso_mleko_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   data-bind="value: maso_mleko_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="7" step="1">
             &nbsp; <b data-bind="text: format_days(maso_mleko_uspora())"></b> v týdnu
             (aneb <b data-bind="text: (maso_mleko_uspora() / 7 * 100).toFixed(0) + ' %'"></b> celkové spotřeby masa a
@@ -414,7 +414,7 @@ var refs = {
         <p>
             Když kuřecím nahradíte
             <input type="range"
-                   data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10">
             &nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby hovězího a vepřového,
             snížíte za rok své emise z jídla o
@@ -475,7 +475,7 @@ var refs = {
         <p>
             Pokud by člověk nahradil
             <input type="range"
-                   data-bind="value: auto_mhd_uspora, valueUpdate: 'input', event: { keypress: updatePopover, mouseout: updatePopover }"
+                   data-bind="value: auto_mhd_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10">
             &nbsp; <b data-bind="text: auto_mhd_uspora() + ' %'"></b>
             kilometrů které najezdí autem za hromadnou dopravu, za rok by snížil své celkové emise z dopravy přibližně o
