@@ -33,8 +33,13 @@ var refs = {
             data-bind="html: format_co2_cmp_pop(DATA.cr_avg_total_est / 1000)"></span>.
 	Největší část z toho připadá na vytápění domácnosti, zbytek hlavně na produkci jídla a dopravu.
     </p>
-	<h3>Stručně: Co s tím můžu dělat?</h3>
 
+	</div>
+
+	<div class="container">
+	<div class="row">
+	<div class='col-md-8'>
+	<h3>Stručně: Co s tím můžu dělat?</h3>
     <ul>
         <li>
             <i class="material-icons">house</i> vytápění domácnosti, teplá voda,
@@ -96,7 +101,7 @@ var refs = {
 		<h4 class='alert-heading'>Obsah:</h4>
 		<ol>
 			<li>
-				<a href='#vytapeni'>Vytápění domácnosti</a>
+				<a href='#vytapeni-domacnosti'>Vytápění domácnosti</a>
 			</li>
 			<li>
 				<a href='#jidelnicek'>Jídelníček</a>
@@ -105,19 +110,37 @@ var refs = {
 				<a href='#doprava'>Doprava</a>
 			</li>
 			<li>
-				<a href='#odkazy'>Odkazy a zdroje</a>
+				<a href='#odkazy-a-zdroje'>Odkazy a zdroje</a>
 			</li>
 		</ol>
 	</div>
+	</div> <!-- endcol left-->
+
+	<div class='col-md-4 float-end'>
+	<div class="alert alert-success">
+		<h4 class='alert-heading'>Mohlo by Vás také zajímat:</h4>
+	<a class='lead' href='/temata/plasty'>Téma: Plasty a globální oteplování</a>
+	<!--
+	<span class="material-icons">recycling</span>
+	-->
+	<p>
+	Víte jak a jestli vůbec škodí plasty životnímu prostředí? Co plasty a oxid uhličitý?
+	Jsou plasty z Čech v moři?
+	</p>
+	</div>
+	</div>
+
+	</div> <!-- endrow -->
     <br/>
     <!--
         Doma
     -->
     <hr/>
-    <h2 id='vytapeni'>
+    <h2 id='vytapeni-domacnosti'>
         <i class="material-icons">house</i>
         Vytápění domácnosti:
         <small class="text-muted">Co má největší smysl?</small>
+<a class="zola-anchor" href="#vytapeni-domacnosti" aria-label="Anchor link for: vytapeni-domacnosti">🔗</a>
     </h2>
     <hr/>
     <div class='obsah_block'>
@@ -368,6 +391,7 @@ var refs = {
         <i class="material-icons">restaurant</i>
         Jídelníček:
         <small class="text-muted">Co má největší smysl?</small>
+<a class="zola-anchor" href="#jidelnicek" aria-label="Anchor link for: jidelnicek">🔗</a>
     </h2>
     <hr/>
 
@@ -408,7 +432,7 @@ var refs = {
         </h3>
         <p>
             Kromě omezení celkové spotřeby masa <b>můžete pomoct i změnou skladby jídelníčku</b>. Produkce kuřecího
-            masa (nebo ryb) je pro životní prostředí mnohem menší zátěží, než produkce hovězího, nebo vepřového masa.
+			masa (nebo ryb) je pro životní prostředí mnohem menší zátěží, než produkce hovězího masa.
             <span data-bind="html: render_ref('Atlas Masa')"></span>
         </p>
         <p>
@@ -416,7 +440,7 @@ var refs = {
             <input type="range"
                    data-bind="value: vepr_hovezi_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }"
                    min="0" max="100" step="10">
-            &nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby hovězího a vepřového,
+			&nbsp; <b data-bind="text: vepr_hovezi_uspora() + ' %'"></b> své spotřeby <b>hovězího</b> a vepřového,
             snížíte za rok své emise z jídla o
             <b data-bind='text: format_perc1(vepr_hovezi_uspora_kg() / DATA.cr_avg_jidlo_est)'></b>
             &ndash;
@@ -435,6 +459,7 @@ var refs = {
         <i class="material-icons">directions_car</i>
         Doprava:
         <small class="text-muted">Co má největší smysl?</small>
+<a class="zola-anchor" href="#doprava" aria-label="Anchor link for: doprava">🔗</a>
     </h2>
     <hr/>
     <div class='obsah_block'>
@@ -520,7 +545,9 @@ var refs = {
     <br/>
 
 		<hr/>
-    <h2 id='odkazy'>Odkazy &amp; zdroje</h2>
+    <h2 id='odkazy-a-zdroje'>Odkazy &amp; zdroje
+<a class="zola-anchor" href="#odkazy-a-zdroje" aria-label="Anchor link for: odkazy-a-zdroje">🔗</a>
+	</h2>
     <hr/>
     <div class='obsah_block'>
     <p>

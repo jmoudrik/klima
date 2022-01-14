@@ -1,8 +1,7 @@
 +++
 title = "Témata"
 sort_by = "title"
-template = "mini.html"
-page_template = "mini-page.html"
+insert_anchor_links = "right"
 +++
 
 Tato stránka rozebírá specifická témata a otázky související s klimatickou změnou.

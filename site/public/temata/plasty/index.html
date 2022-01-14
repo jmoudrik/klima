@@ -48,6 +48,11 @@ h2 i.material-icons {
 .headerlink {
     text-decoration: none;
 }
+.zola-anchor {
+	margin-left:10px;
+	float:right;
+    text-decoration: none;
+}
 button div {
     display: flex;
     align-items: center;
@@ -72,6 +77,144 @@ h2 span {
 }
 *:target {
     border-bottom: 2px dotted #000;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x))
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y)
+}
+.col {
+    flex: 1 0 0%
+}
+
+@media (min-width:768px) {
+    .col-md {
+        flex: 1 0 0%
+    }
+
+    .row-cols-md-auto>* {
+        flex: 0 0 auto;
+        width: auto
+    }
+
+    .row-cols-md-1>* {
+        flex: 0 0 auto;
+        width: 100%
+    }
+
+    .row-cols-md-2>* {
+        flex: 0 0 auto;
+        width: 50%
+    }
+
+    .row-cols-md-3>* {
+        flex: 0 0 auto;
+        width: 33.3333333333%
+    }
+
+    .row-cols-md-4>* {
+        flex: 0 0 auto;
+        width: 25%
+    }
+
+    .row-cols-md-5>* {
+        flex: 0 0 auto;
+        width: 20%
+    }
+
+    .row-cols-md-6>* {
+        flex: 0 0 auto;
+        width: 16.6666666667%
+    }
+
+    .col-md-auto {
+        flex: 0 0 auto;
+        width: auto
+    }
+
+    .col-md-1 {
+        flex: 0 0 auto;
+        width: 8.33333333%
+    }
+
+    .col-md-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%
+    }
+
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 25%
+    }
+
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%
+    }
+
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%
+    }
+
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 50%
+    }
+
+    .col-md-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%
+    }
+
+    .col-md-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%
+    }
+
+    .col-md-9 {
+        flex: 0 0 auto;
+        width: 75%
+    }
+
+    .col-md-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%
+    }
+
+    .col-md-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%
+    }
+
+    .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%
+    }
+}
+.float-end {
+    float: right!important
+}
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc
+}
+.alert-success .alert-link {
+    color: #0c4128
 }</style><title>Klima: jak mohu pomoci?</title><body><script>function render_ref(key){
 	let val = refs[key];
 	let num = val[0];
@@ -115,5 +258,5 @@ function render_refs(){
 /*
 '': [10,'', ''],
 */
-}</script><p>Abychom věděli, jak velké negativní efekty plastů jsou, potřebujeme nejprve zjistit, kolik plastů se vůbec v domácnostech používá.<h2 id=kolik-plastoveho-odpadu-vyprodukuji-ceske-domacnosti>Kolik plastového odpadu vyprodukují české domácnosti?</h2><p>Podle <span data-bind="html: render_ref('Produkce odpadu v ČR')"></span> vytřídí průměrný Čech za rok <strong>65kg</strong> odpadu, z toho je přibližně <strong>15kg</strong> plastů. To je množství, které odpovídá <strong>1 vytříděné PET láhvi za den</strong>.<p>Kolik plastů pak vyhodíme do směsného odpadu? Podle <span data-bind="html: render_ref('Produkce odpadu v ČR')"></span> vyprodukujeme každý za rok zhruba <strong>550kg</strong> směsného odpadu, z toho plastů není v průměru více než 10%, viz <span data-bind="html: render_ref('Skladba směsného odpadu')"></span>. To tedy odpovídá přibližně <strong>55kg</strong> nevytříděných plastů, aneb množství odpovídající <strong>3.5 nevytříděné PET láhve za den</strong>.</p><br><br><h2 id=jak-prispiva-pouzivani-plastu-ke-globalnimu-oteplovani>Jak přispívá používání plastů ke globálnímu oteplování?</h2><p>V předchozím bodě jsme odhadli, že průměrný Čech vyprodukuje v domácnosti za rok přibližně <strong>70 kg</strong> plastového odpadu.<p><strong>Výroba 1kg plastů</strong> vyprodukuje zhruba 3kg oxidu uhličitého, a tedy výroba plastů, které jednotlivec spotřebuje za rok odpovídá na osobu asi <span data-bind="html: format_co2_cmp_pop(210 / 1000, 1)"></span> emisí za rok, <span data-bind="html: render_ref('Emise z plastů')"></span>.<p><strong>Omezením spotřeby plastů</strong> o <input data-bind="value: plasty_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }" max=100 min=0 step=10 type=range>   <b data-bind="text: plasty_uspora() + ' %'"></b> sníží průměrný Čech své celkové roční emise CO2 o <b data-bind="text: format_perc1(70 * plasty_uspora_na_kg() / DATA.cr_avg_total_est)"></b> – <span data-bind="html: format_co2_cmp_pop(70 * plasty_uspora_na_kg() / 1000)"></span>.<div class="alert alert-info"><p><i class=material-icons>info</i> Ve výpočtu zde nezahrnujeme efekt recyklace, protože recyklovaný plast má jen malý podíl na celkovém množství použitých plastů, asi polovina vytříděného odpadu. To odpovídá <b>půlce zrecyklované PET láhve na den</b>. S rostoucím podílem recyklovaného plastu budou emise z výroby plastů klesat.<p class=mb-0><i class=material-icons>help</i> <b>Proč nezapočítáváme i emise CO2 z pálení plastů ve spalovnách?</b> — Spálení 1 kg plastu vyprodukuje sice zhruba 2.7 kg oxidu uhličitého, ale je potřeba vzít v potaz, že spalovny generují teplo a elektřinu, a to docela účinně. Spalování plastů zde tak nezapočítáváme, protože už je započteno v emisích ze spotřeby elektřiny (třeba na vytápění).</div><br><br><h2 id=co-se-u-nas-deje-s-plastovym-odpadem>Co se u nás děje s plastovým odpadem?</h2><p>To záleží především na tom, kam plastový odpad vyhazujeme — třídíme, nebo ne? V průměru je Česká republika v třídění odpadu docela dobrá, odpad třídí většina domácností, viz <span data-bind="html: render_ref('Třídění odpadu v ČR')"></span>.<ol><li><p>Plast vyhozený do <strong>tříděného odpadu</strong> — se cca z poloviny recykluje, cca 25 % se odveze na skládky a zhruba 15% se spálí. Recyklují se hlavně plastové nádoby a obaly (e.g. PETky, nádoby na aviváže), folie a tvrdé plasty, viz např. <span data-bind="html: render_ref('Exkurze do třídírny odpadů')"></span>.</p><li><p>Plast vyhozený do <strong>směsného odpadu</strong> — Směsný odpad putuje zvětšiny přímo na skládku nebo do spalovny, podle lokální odpadové infrastruktury. Směsného odpadu je hodně a recyklace drahá, takže směsný odpad se z velké míry už netřídí a nerecykluje.</p></ol><h3 id=recyklace-jak-funguje>Recyklace: Jak funguje?</h3><p>Recyklace je <strong>preferovaným</strong> způsobem zpracování odpadů, teoreticky šetří náklady na výrobu materiálů a umožňuje jejich opakované znovupoužití.<p>Recyklace má v současnosti několik problémů. Je drahá, protože například třídění se zatím do velké míry dělá ručně, viz např. <span data-bind="html: render_ref('Třídění odpadu v ČR')"></span>. Vyprodukovaná druhotná surovina není navíc tak čistá (a levná) jako nový plast, který se vyrábí ve velkých množstvích a automaticky. To znamená, že ani poptávka po recyklovaných plastech není moc velká.<p>Tyto problémy jsou velkou příležitostí pro:<ul><li><strong>inovace</strong> — automatizace třídění a zpracování i recyklace ve větším měřítku způsobí, že recyklovaný produkt bude levnější a kvalitnější.<li><strong>regulace</strong> — nové plasty jsou levné protože jejich cena zahrnuje jen náklady na výrobu, nikoliv náklady na jejich likvidaci. Kdyby regulace dobře nacenily tyto externí náklady (které teď platíme všichni zhoršeným životním prostředím), tak se trh přizpůsobí a výsledkem bude výrazně lepší hospodaření s plasty, inovace v recyklaci a čistší životní prostředí.</ul><h3 id=skladky-jak-spatne-je-skladkovani-plastoveho-odpadu>Skládky: Jak špatné je skládkování plastového odpadu?</h3><p>Skládkování je obecně složité téma, které má nevýhody i výhody.<p>Hlavní <strong>výhodou</strong> je, že uhlík obsažený v plastech zůstane uložen v zemi na dlouhou dobu, a není tak spálen a uvolněn do atmosféry. To znamená, že životní cyklus uhlíku v takových plastech je:<ul><li>ropa ze země -> plastový granulát -> plastový produkt -> plast v zemi</ul><p>Dá se navíc předpokládat, že v budoucnosti se budou skládky zpětně těžit za účelem získávání surovin.<p>Hlavní <strong>nevýhodou</strong> je pak to, že různé druhy plastů obsahují špatně vázané příměsi, které se při skládkování uvolňují do půdy a do vzduchu. Velkým rizikem skládek jsou i <strong>požáry</strong>, které produkují katastrofální množství jedovatých látek (narozdíl od řízeného spalování ve spalovnách).<div class="alert alert-info"><p class=mb-0><i class=material-icons>info</i> Největším problémem je PVC, jehož produkce používá velkou většinu všech vyrobených příměsí <span data-bind="html: render_ref('PVC Briefing')"></span>. Tyto příměsi navíc nejsou vázané chemicky, takže se časem z PVC uvolňují. U nových výrobků z PVC (z Evropské Unie) už toto není tak velký problém, protože se vlivem regulací používají bezpečnější sloučeniny, viz <span data-bind="html: render_ref('Plasticizers')"></span>.</div><h3 id=spalovny-jak-spatne-je-spalovani-plastoveho-odpadu>Spalovny: Jak špatné je spalování plastového odpadu?</h3><p>Spalování ve spalovnách je také složité téma, výhody a nevýhody záleží na tom, podle jakých kritérií spalování hodnotíme.<p><strong>Výhody</strong> spalování ve spalovnách pramení z toho, že spalovny produkují z odpadu teplo a elektřinu.<ul><li>pálení plastů je (co se emisí CO2 týká) někde mezi plynovými a uhelnými elektrárnami <span data-bind="html: render_ref('Spalovny a CO2 z odpadů')"></span>. Je to tím, že plasty jsou dobré palivo (v principu relativně čisté uhlovodíky, lepší než uhlí), které navíc ještě před spálením velmi dobře slouží.<li>to znamená, že dokud se spaluje obrovské množství jiných fosilních paliv — uhlí (horší než plasty), LPG (o trochu lepší než plasty) — tak je z pohledu CO2 spalování ve spalovnách v pohodě.</ul><p><strong>Nevýhody</strong> spalování ve spalovnách pramení hlavně ze špatného regulačního prostředí spojeného s emisemi škodlivin.<ul><li>Emise jedovatých látek do ovzduší jsou pro spalovny měřeny zcela nedostatečně — symbolických 18 hodin 2 krát ročně. To rozhodně není dobrý statistický vzorek, protože: <ul><li>hodně jedů může vznikat při málo častých událostech, jako je třeba zapalování spalovny, než se technologie zahřeje na provozní teplotu. Stabilní a velká teplota je jedním z hlavních mechanizmů jak spalovna snižuje emise jedovatých látek. To v podstatě klidně může znamenat, že 1 zapálení za měsíc vyprodukuje víc škodlivin, než zbytek měsíce dohromady, viz <span data-bind="html: render_ref('Incineration: Hidden emissions')"></span>.<li>obsah jedů závisí na materiálu, který zrovna spalujeme. Ten může být různorodý — představte si rozdíl mezi várkou komunálního odpadu a várkou stavebního odpadu (který může obsahovat velké množství PVC).<li>to znamená, že i kdyby si spalovna emise při měření přímo "nepohlídala" skladbou vstupní suroviny (což nejspíš částečně může), tak pravděpodobnost že se s takto málo častým měřením trefíme do chvíle kdy spalovna hodně "špiní" je malá.</ul><li>Rozhodně tak potřebujeme, aby spalovny byly monitorovány co nejčastěji (nejlépe kontinuálně). To spolu s <strong>přísnými</strong> limity může být hnacím motorem pro implementaci inovativních technologií čištění.<li>Dalším problémem spaloven je nakládání s pevnými zbytky jako je popílek, materiál z filtrů škodlivin a další. Tyto materiály obsahují rakovinotvorné dioxiny a furany, těžké kovy a další jedovaté látky, které se špatně rozkládají (viz <span data-bind="html: render_ref('Incineration: Toxic Ash')"></span>). Na jednu stranu se například popílky výhodně používají jako příměs do betonů (to snižuje množství potřebného cementu, zlepšuje vlastnosti betonu a zároveň to nejspíš výrazně snižuje uvolňování jedů do prostředí), ale každopádně platí, že tyto látky jsou obecně velkým problémem s prostorem pro lepší regulaci, viz <span data-bind="html: render_ref('3R se obrací na vládu')"></span>.</ul><p>Obecně můžeme říct, že je nutné, aby externí náklady (jedovaté látky vypouštěné do vzduchu, vod, apod.) byly zahrnuty do nákladů spaloven a neplatili jsme je my všichni zhoršeným životním prostředím.<div class="alert alert-info"><p class=mb-0><i class=material-icons>info</i> PVC je v podstatě nejproblematičtější z používaných plastů i pro spalovny (<span data-bind="html: render_ref('PVC Briefing')"></span>). Kromě změkčovadel tvoří totiž více než polovinu hmotnosti PVC chlór. Ten při spalování vytváří super-jedovaté zplodiny, které musí spalovny řešit speciální technologií. <br> <i class=material-icons>warning</i> PVC <b>NIKDY</b> nespalujte na ohni, nebo v kamnech. Domácí spalování ostatních plastů je špatný nápad, domácí spalování PVC je super špatný nápad (nádech, výdech, poleptané plíce).</div><br><br><h2 id=prispiva-pouzivani-plastu-v-cr-k-znecisteni-more>Přispívá používání plastů v ČR k znečištění moře?</h2><p>Asi všem je jasné, že plastový odpad v mořích je problém. Je ale tento argument relevantní i v otázce používání plastů v ČR?<p>Podívejme se na to, jak vypadají zdroje plastového odpadu v oceánech. Podle <span data-bind="html: render_ref('Plastic pollution report')"></span> pochází drtivá většina plastového odpadu v mořích z Asie (asi 80%), na Evropu připadá množství menší než 1%. To znamená, že evropský plastový odpad v podstatě není žádný problém. A to lze celkem bezpečně předpokládat, že přímořské státy mají na jednoho obyvatele mnohem větší vliv, než suchozemská Česká Republika, kde navíc žije jen cca 2% evropských občanů.<p>Můžeme tak bezpečně říct, že <strong>používání plastů v ČR má na znečišťování moří zcela zanedbatelný vliv</strong>.<div class="alert alert-info"><p><i class=material-icons>lightbulb</i> Plastový odpad v mořích je velmi emotivní téma. Když je tento argument použit v diskusi, často vyvolává pocit urgence a úzkosti. Nechci tvrdit, že plasty v mořích nejsou problém (jsou, velký), jen je zcela nerelevantní v českých (a v podstatě i v evropských) poměrech.<p class=mb-0>Je podle mne třeba nepoužívat (vlastně podpásově) tento argument v Čechách, a budovat tak kulturu zavádějící argumentace, ale naopak přemýšlet o opravdovém — těžkém — problému plastů v mořích. Problém plastů v mořích je totiž třeba řešit předně zavedením jakéhokoliv odpadového hospodářství v zemích, které odpad do moří vyhazují ve velkém. Zjednodušeně lze říct, že je třeba pomoci tomu, aby lidé v Asii a dalších rozvojových zemích (viz. <span data-bind="html: render_ref('Mismanaged Plastic')"></span>) neházeli odpad do řeky nebo moře, ale třeba spálili ve spalovně, nebo skládkovali. To samozřejmě souvisí i s tím, že tito lidé jsou často chudí, a mají pochopitelně úplně jiné starosti.</div><br><br><hr><br><h2 id=odkazy-zdroje>Odkazy & zdroje</h2><ul><div data-bind="html: render_refs()"></div></ul><script crossorigin=anonymous integrity=sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js></script><script src=/data.js></script><script src=/kalkulacka.js></script><script>var triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+}</script><p>Abychom věděli, jak velké negativní efekty plastů jsou, potřebujeme nejprve zjistit, kolik plastů se vůbec v domácnostech používá.<h2 id=kolik-plastoveho-odpadu-vyprodukuji-ceske-domacnosti>Kolik plastového odpadu vyprodukují české domácnosti?<a aria-label="Anchor link for: kolik-plastoveho-odpadu-vyprodukuji-ceske-domacnosti" class=zola-anchor href=#kolik-plastoveho-odpadu-vyprodukuji-ceske-domacnosti>🔗</a></h2><p>Podle <span data-bind="html: render_ref('Produkce odpadu v ČR')"></span> vytřídí průměrný Čech za rok <strong>65kg</strong> odpadu, z toho je přibližně <strong>15kg</strong> plastů. To je množství, které odpovídá <strong>1 vytříděné PET láhvi za den</strong>.<p>Kolik plastů pak vyhodíme do směsného odpadu? Podle <span data-bind="html: render_ref('Produkce odpadu v ČR')"></span> vyprodukujeme každý za rok zhruba <strong>550kg</strong> směsného odpadu, z toho plastů není v průměru více než 10%, viz <span data-bind="html: render_ref('Skladba směsného odpadu')"></span>. To tedy odpovídá přibližně <strong>55kg</strong> nevytříděných plastů, aneb množství odpovídající <strong>3.5 nevytříděné PET láhve za den</strong>.</p><br><br><h2 id=jak-prispiva-pouzivani-plastu-ke-globalnimu-oteplovani>Jak přispívá používání plastů ke globálnímu oteplování?<a aria-label="Anchor link for: jak-prispiva-pouzivani-plastu-ke-globalnimu-oteplovani" class=zola-anchor href=#jak-prispiva-pouzivani-plastu-ke-globalnimu-oteplovani>🔗</a></h2><p>V předchozím bodě jsme odhadli, že průměrný Čech vyprodukuje v domácnosti za rok přibližně <strong>70 kg</strong> plastového odpadu.<p><strong>Výroba 1kg plastů</strong> vyprodukuje zhruba 3kg oxidu uhličitého, a tedy výroba plastů, které jednotlivec spotřebuje za rok odpovídá na osobu asi <span data-bind="html: format_co2_cmp_pop(210 / 1000, 1)"></span> emisí za rok, <span data-bind="html: render_ref('Emise z plastů')"></span>.<p><strong>Omezením spotřeby plastů</strong> o <input data-bind="value: plasty_uspora, valueUpdate: 'input', event: {touchend: updatePopover, keypress: updatePopover, mouseout: updatePopover }" max=100 min=0 step=10 type=range>   <b data-bind="text: plasty_uspora() + ' %'"></b> sníží průměrný Čech své celkové roční emise CO2 o <b data-bind="text: format_perc1(70 * plasty_uspora_na_kg() / DATA.cr_avg_total_est)"></b> – <span data-bind="html: format_co2_cmp_pop(70 * plasty_uspora_na_kg() / 1000)"></span>.<div class="alert alert-info"><p><i class=material-icons>info</i> Ve výpočtu zde nezahrnujeme efekt recyklace, protože recyklovaný plast má jen malý podíl na celkovém množství použitých plastů, asi polovina vytříděného odpadu. To odpovídá <b>půlce zrecyklované PET láhve na den</b>. S rostoucím podílem recyklovaného plastu budou emise z výroby plastů klesat.<p class=mb-0><i class=material-icons>help</i> <b>Proč nezapočítáváme i emise CO2 z pálení plastů ve spalovnách?</b> — Spálení 1 kg plastu vyprodukuje sice zhruba 2.7 kg oxidu uhličitého, ale je potřeba vzít v potaz, že spalovny generují teplo a elektřinu, a to docela účinně. Spalování plastů zde tak nezapočítáváme, protože už je započteno v emisích ze spotřeby elektřiny (třeba na vytápění).</div><br><br><h2 id=co-se-u-nas-deje-s-plastovym-odpadem>Co se u nás děje s plastovým odpadem?<a aria-label="Anchor link for: co-se-u-nas-deje-s-plastovym-odpadem" class=zola-anchor href=#co-se-u-nas-deje-s-plastovym-odpadem>🔗</a></h2><p>To záleží především na tom, kam plastový odpad vyhazujeme — třídíme, nebo ne? V průměru je Česká republika v třídění odpadu docela dobrá, odpad třídí většina domácností, viz <span data-bind="html: render_ref('Třídění odpadu v ČR')"></span>.<ol><li><p>Plast vyhozený do <strong>tříděného odpadu</strong> — se cca z poloviny recykluje, cca 25 % se odveze na skládky a zhruba 15% se spálí. Recyklují se hlavně plastové nádoby a obaly (e.g. PETky, nádoby na aviváže), folie a tvrdé plasty, viz např. <span data-bind="html: render_ref('Exkurze do třídírny odpadů')"></span>.</p><li><p>Plast vyhozený do <strong>směsného odpadu</strong> — Směsný odpad putuje zvětšiny přímo na skládku nebo do spalovny, podle lokální odpadové infrastruktury. Směsného odpadu je hodně a recyklace drahá, takže směsný odpad se z velké míry už netřídí a nerecykluje.</p></ol><h3 id=recyklace-jak-funguje>Recyklace: Jak funguje?<a aria-label="Anchor link for: recyklace-jak-funguje" class=zola-anchor href=#recyklace-jak-funguje>🔗</a></h3><p>Recyklace je <strong>preferovaným</strong> způsobem zpracování odpadů, teoreticky šetří náklady na výrobu materiálů a umožňuje jejich opakované znovupoužití.<p>Recyklace má v současnosti několik problémů. Je drahá, protože například třídění se zatím do velké míry dělá ručně, viz např. <span data-bind="html: render_ref('Třídění odpadu v ČR')"></span>. Vyprodukovaná druhotná surovina není navíc tak čistá (a levná) jako nový plast, který se vyrábí ve velkých množstvích a automaticky. To znamená, že ani poptávka po recyklovaných plastech není moc velká.<p>Tyto problémy jsou velkou příležitostí pro:<ul><li><strong>inovace</strong> — automatizace třídění a zpracování i recyklace ve větším měřítku způsobí, že recyklovaný produkt bude levnější a kvalitnější.<li><strong>regulace</strong> — nové plasty jsou levné protože jejich cena zahrnuje jen náklady na výrobu, nikoliv náklady na jejich likvidaci. Kdyby regulace dobře nacenily tyto externí náklady (které teď platíme všichni zhoršeným životním prostředím), tak se trh přizpůsobí a výsledkem bude výrazně lepší hospodaření s plasty, inovace v recyklaci a čistší životní prostředí.</ul><h3 id=skladky-jak-spatne-je-skladkovani-plastoveho-odpadu>Skládky: Jak špatné je skládkování plastového odpadu?<a aria-label="Anchor link for: skladky-jak-spatne-je-skladkovani-plastoveho-odpadu" class=zola-anchor href=#skladky-jak-spatne-je-skladkovani-plastoveho-odpadu>🔗</a></h3><p>Skládkování je obecně složité téma, které má nevýhody i výhody.<p>Hlavní <strong>výhodou</strong> je, že uhlík obsažený v plastech zůstane uložen v zemi na dlouhou dobu, a není tak spálen a uvolněn do atmosféry. To znamená, že životní cyklus uhlíku v takových plastech je:<ul><li>ropa ze země -> plastový granulát -> plastový produkt -> plast v zemi</ul><p>Dá se navíc předpokládat, že v budoucnosti se budou skládky zpětně těžit za účelem získávání surovin.<p>Hlavní <strong>nevýhodou</strong> je pak to, že různé druhy plastů obsahují špatně vázané příměsi, které se při skládkování uvolňují do půdy a do vzduchu. Velkým rizikem skládek jsou i <strong>požáry</strong>, které produkují katastrofální množství jedovatých látek (narozdíl od řízeného spalování ve spalovnách).<div class="alert alert-info"><p class=mb-0><i class=material-icons>info</i> Největším problémem je PVC, jehož produkce používá velkou většinu všech vyrobených příměsí <span data-bind="html: render_ref('PVC Briefing')"></span>. Tyto příměsi navíc nejsou vázané chemicky, takže se časem z PVC uvolňují. U nových výrobků z PVC (z Evropské Unie) už toto není tak velký problém, protože se vlivem regulací používají bezpečnější sloučeniny, viz <span data-bind="html: render_ref('Plasticizers')"></span>.</div><h3 id=spalovny-jak-spatne-je-spalovani-plastoveho-odpadu>Spalovny: Jak špatné je spalování plastového odpadu?<a aria-label="Anchor link for: spalovny-jak-spatne-je-spalovani-plastoveho-odpadu" class=zola-anchor href=#spalovny-jak-spatne-je-spalovani-plastoveho-odpadu>🔗</a></h3><p>Spalování ve spalovnách je také složité téma, výhody a nevýhody záleží na tom, podle jakých kritérií spalování hodnotíme.<p><strong>Výhody</strong> spalování ve spalovnách pramení z toho, že spalovny produkují z odpadu teplo a elektřinu.<ul><li>pálení plastů je (co se emisí CO2 týká) někde mezi plynovými a uhelnými elektrárnami <span data-bind="html: render_ref('Spalovny a CO2 z odpadů')"></span>. Je to tím, že plasty jsou dobré palivo (v principu relativně čisté uhlovodíky, lepší než uhlí), které navíc ještě před spálením velmi dobře slouží.<li>to znamená, že dokud se spaluje obrovské množství jiných fosilních paliv — uhlí (horší než plasty), LPG (o trochu lepší než plasty) — tak je z pohledu CO2 spalování ve spalovnách v pohodě.</ul><p><strong>Nevýhody</strong> spalování ve spalovnách pramení hlavně ze špatného regulačního prostředí spojeného s emisemi škodlivin.<ul><li>Emise jedovatých látek do ovzduší jsou pro spalovny měřeny zcela nedostatečně — symbolických 18 hodin 2 krát ročně. To rozhodně není dobrý statistický vzorek, protože: <ul><li>hodně jedů může vznikat při málo častých událostech, jako je třeba zapalování spalovny, než se technologie zahřeje na provozní teplotu. Stabilní a velká teplota je jedním z hlavních mechanizmů jak spalovna snižuje emise jedovatých látek. To v podstatě klidně může znamenat, že 1 zapálení za měsíc vyprodukuje víc škodlivin, než zbytek měsíce dohromady, viz <span data-bind="html: render_ref('Incineration: Hidden emissions')"></span>.<li>obsah jedů závisí na materiálu, který zrovna spalujeme. Ten může být různorodý — představte si rozdíl mezi várkou komunálního odpadu a várkou stavebního odpadu (který může obsahovat velké množství PVC).<li>to znamená, že i kdyby si spalovna emise při měření přímo "nepohlídala" skladbou vstupní suroviny (což nejspíš částečně může), tak pravděpodobnost že se s takto málo častým měřením trefíme do chvíle kdy spalovna hodně "špiní" je malá.</ul><li>Rozhodně tak potřebujeme, aby spalovny byly monitorovány co nejčastěji (nejlépe kontinuálně). To spolu s <strong>přísnými</strong> limity může být hnacím motorem pro implementaci inovativních technologií čištění.<li>Dalším problémem spaloven je nakládání s pevnými zbytky jako je popílek, materiál z filtrů škodlivin a další. Tyto materiály obsahují rakovinotvorné dioxiny a furany, těžké kovy a další jedovaté látky, které se špatně rozkládají (viz <span data-bind="html: render_ref('Incineration: Toxic Ash')"></span>). Na jednu stranu se například popílky výhodně používají jako příměs do betonů (to snižuje množství potřebného cementu, zlepšuje vlastnosti betonu a zároveň to nejspíš výrazně snižuje uvolňování jedů do prostředí), ale každopádně platí, že tyto látky jsou obecně velkým problémem s prostorem pro lepší regulaci, viz <span data-bind="html: render_ref('3R se obrací na vládu')"></span>.</ul><p>Obecně můžeme říct, že je nutné, aby externí náklady (jedovaté látky vypouštěné do vzduchu, vod, apod.) byly zahrnuty do nákladů spaloven a neplatili jsme je my všichni zhoršeným životním prostředím.<div class="alert alert-info"><p class=mb-0><i class=material-icons>info</i> PVC je v podstatě nejproblematičtější z používaných plastů i pro spalovny (<span data-bind="html: render_ref('PVC Briefing')"></span>). Kromě změkčovadel tvoří totiž více než polovinu hmotnosti PVC chlór. Ten při spalování vytváří super-jedovaté zplodiny, které musí spalovny řešit speciální technologií. <br> <i class=material-icons>warning</i> PVC <b>NIKDY</b> nespalujte na ohni, nebo v kamnech. Domácí spalování ostatních plastů je špatný nápad, domácí spalování PVC je super špatný nápad (nádech, výdech, poleptané plíce).</div><br><br><h2 id=prispiva-pouzivani-plastu-v-cr-k-znecisteni-more>Přispívá používání plastů v ČR k znečištění moře?<a aria-label="Anchor link for: prispiva-pouzivani-plastu-v-cr-k-znecisteni-more" class=zola-anchor href=#prispiva-pouzivani-plastu-v-cr-k-znecisteni-more>🔗</a></h2><p>Asi všem je jasné, že plastový odpad v mořích je problém. Je ale tento argument relevantní i v otázce používání plastů v ČR?<p>Podívejme se na to, jak vypadají zdroje plastového odpadu v oceánech. Podle <span data-bind="html: render_ref('Plastic pollution report')"></span> pochází drtivá většina plastového odpadu v mořích z Asie (asi 80%), na Evropu připadá množství menší než 1%. To znamená, že evropský plastový odpad v podstatě není žádný problém. A to lze celkem bezpečně předpokládat, že přímořské státy mají na jednoho obyvatele mnohem větší vliv, než suchozemská Česká Republika, kde navíc žije jen cca 2% evropských občanů.<p>Můžeme tak bezpečně říct, že <strong>používání plastů v ČR má na znečišťování moří zcela zanedbatelný vliv</strong>.<div class="alert alert-info"><p><i class=material-icons>lightbulb</i> Plastový odpad v mořích je velmi emotivní téma. Když je tento argument použit v diskusi, často vyvolává pocit urgence a úzkosti. Nechci tvrdit, že plasty v mořích nejsou problém (jsou, velký), jen je zcela nerelevantní v českých (a v podstatě i v evropských) poměrech.<p class=mb-0>Je podle mne třeba nepoužívat (vlastně podpásově) tento argument v Čechách, a budovat tak kulturu zavádějící argumentace, ale naopak přemýšlet o opravdovém — těžkém — problému plastů v mořích. Problém plastů v mořích je totiž třeba řešit předně zavedením jakéhokoliv odpadového hospodářství v zemích, které odpad do moří vyhazují ve velkém. Zjednodušeně lze říct, že je třeba pomoci tomu, aby lidé v Asii a dalších rozvojových zemích (viz. <span data-bind="html: render_ref('Mismanaged Plastic')"></span>) neházeli odpad do řeky nebo moře, ale třeba spálili ve spalovně, nebo skládkovali. To samozřejmě souvisí i s tím, že tito lidé jsou často chudí, a mají pochopitelně úplně jiné starosti.</div><br><br><hr><br><h2 id=odkazy-zdroje>Odkazy & zdroje<a aria-label="Anchor link for: odkazy-zdroje" class=zola-anchor href=#odkazy-zdroje>🔗</a></h2><ul><div data-bind="html: render_refs()"></div></ul><script crossorigin=anonymous integrity=sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js></script><script src=/data.js></script><script src=/kalkulacka.js></script><script>var triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 	var tooltips = triggers.map(function (tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) });</script><br><hr><footer><p>Přijde Vám tento web užitečný? Jakékoliv komentáře, zpětná vazba, nebo návrhy na vylepšení jsou velmi vítány.<p><b>2019–2022</b>, <a href=http://www.j2m.cz/~jm/>JM</a>, napište mi na <a href=mailto:josef@moudrik.cz>josef@moudrik.cz</a>. Vše dostupné pod MIT licencí na <a href=https://github.com/jmoudrik/klima>githubu</a>.</footer></div></section>
