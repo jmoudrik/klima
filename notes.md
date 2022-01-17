@@ -1,4 +1,30 @@
-# Feedback
+
+# Feedback - FB - muj post z 13.1.2022
+
+- Ondřej Oňďa Bláha
+	- doprava,
+	- "Proč je v Olomouci Jihočeské máslo levnější než to z Olmy, která je za rohem ?"
+
+- Kachna a dalsi
+	- jak vyvíjet tlak na autority
+
+- seby - effective altruism -
+
+- Jaroslav Dvořák
+	- nizky tarif & vzit v potaz smart-grid a realtime pouzity mix
+	- tlak na lokalni autority 
+		- budovani teplovodu => pouzivame zbytkove teplo
+		- neodchazet zbtecne od centralizovane topne infrastruktury
+	https://www.facebook.com/ondrej.platek/posts/10227736313173412?comment_id=10227740679522568&reply_comment_id=10227756450596835&notif_id=1642147805338460&notif_t=mentions_comment&ref=notif
+
+
+## done / not-actionable
+- zbynek dach
+	- carbon capture kalkulacka
+
+
+# Feedback - osobni
+
 ## dan
 - 2 sec decision - "love at first sight" - effect
 	- infografika s 2ma panackama & vecma okolo, barchart
