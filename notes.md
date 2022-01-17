@@ -1,3 +1,5 @@
+# FB promo
+Zajímá Vás, čím každý nejvíc přispíváme ke klimatické změně? Na stránce krokyproklima.cz můžete ve svém životě vytipovat oblasti, jejichž změnou opravdu účinně pomůžete v boji s globálním oteplováním.
 
 # Feedback - FB - muj post z 13.1.2022
 
